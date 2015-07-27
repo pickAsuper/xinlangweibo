@@ -15,6 +15,8 @@
 		9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */; };
 		9D49CEAA1B65F2A900E4DC87 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEA91B65F2A900E4DC87 /* ____Tests.m */; };
 		9D49CEB51B65F67E00E4DC87 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEB41B65F67E00E4DC87 /* LCTabBarController.m */; };
+		9D49CEB81B6648C200E4DC87 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEB71B6648C200E4DC87 /* LCTabBar.m */; };
+		9D49CEBE1B664FDF00E4DC87 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,11 @@
 		9D49CEA91B65F2A900E4DC87 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
 		9D49CEB31B65F67E00E4DC87 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
 		9D49CEB41B65F67E00E4DC87 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
+		9D49CEB61B6648C200E4DC87 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
+		9D49CEB71B6648C200E4DC87 /* LCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBar.m; sourceTree = "<group>"; };
+		9D49CEBC1B664FDF00E4DC87 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		9D49CEBF1B66500C00E4DC87 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,10 @@
 				9D49CE921B65F2A900E4DC87 /* AppDelegate.m */,
 				9D49CEB31B65F67E00E4DC87 /* LCTabBarController.h */,
 				9D49CEB41B65F67E00E4DC87 /* LCTabBarController.m */,
+				9D49CEB61B6648C200E4DC87 /* LCTabBar.h */,
+				9D49CEB71B6648C200E4DC87 /* LCTabBar.m */,
+				9D49CEBC1B664FDF00E4DC87 /* UIView+Extension.h */,
+				9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */,
 				9D49CE941B65F2A900E4DC87 /* ViewController.h */,
 				9D49CE951B65F2A900E4DC87 /* ViewController.m */,
 				9D49CE971B65F2A900E4DC87 /* Main.storyboard */,
@@ -102,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				9D49CE8E1B65F2A900E4DC87 /* Info.plist */,
+				9D49CEBF1B66500C00E4DC87 /* Prefix.pch */,
 				9D49CE8F1B65F2A900E4DC87 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -224,8 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D49CEBE1B664FDF00E4DC87 /* UIView+Extension.m in Sources */,
 				9D49CE961B65F2A900E4DC87 /* ViewController.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
+				9D49CEB81B6648C200E4DC87 /* LCTabBar.m in Sources */,
 				9D49CEB51B65F67E00E4DC87 /* LCTabBarController.m in Sources */,
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,
 			);
@@ -354,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/新浪微博/Prefix.pch";
 				INFOPLIST_FILE = "新浪微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -366,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/新浪微博/Prefix.pch";
 				INFOPLIST_FILE = "新浪微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -426,6 +442,7 @@
 				9D49CEAF1B65F2A900E4DC87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D49CEB01B65F2A900E4DC87 /* Build configuration list for PBXNativeTarget "新浪微博Tests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +451,7 @@
 				9D49CEB21B65F2A900E4DC87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

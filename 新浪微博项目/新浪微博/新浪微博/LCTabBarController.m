@@ -7,6 +7,8 @@
 //
 
 #import "LCTabBarController.h"
+#import "LCTabBar.h"
+
 
 @interface LCTabBarController ()
 
@@ -16,7 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    LCTabBar *tabbar =[[LCTabBar alloc]init];
+    //不能
+    [self setValue:tabbar forKeyPath:@"tabBar"];
     
+    
+
     //创建首页
     UITableViewController *home =[[UITableViewController alloc]init];
     [self tableViewWithTableViewCtrl:home image:@"tabbar_home" titel:@"首页"];
