@@ -31,14 +31,20 @@
 }
 -(void)tableViewWithTableViewCtrl:(UITableViewController *)ctrl image:(NSString *)image titel:(NSString *)titel{
     
+    //设置底部tabbar文字颜色
     ctrl.tabBarItem.title =titel;
-    NSMutableDictionary *dict =[NSMutableDictionary dictionary];
-    dict[NSForegroundColorAttributeName] =[UIColor orangeColor];
-    [ctrl.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
+   // NSMutableDictionary *dict =[NSMutableDictionary dictionary];
+    //dict[NSForegroundColorAttributeName] =[UIColor orangeColor];
+    //[ctrl.tabBarItem setTitleTextAttributes:dict forState:UIControlStateSelected];
    
+    self.tabBar.tintColor =[UIColor orangeColor];
     ctrl.tabBarItem.image =[[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     ctrl.tabBarItem.selectedImage =[[UIImage imageNamed:[NSString stringWithFormat:@"%@_selected",image]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-  
+    
+    
+    
+    
+    
     [self addChildViewController:ctrl];
 
 }
