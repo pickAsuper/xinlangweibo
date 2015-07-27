@@ -10,7 +10,7 @@
 #import "LCTabBar.h"
 
 
-@interface LCTabBarController ()
+@interface LCTabBarController ()<LCTabBarDelegate>
 
 @end
 
@@ -18,8 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     LCTabBar *tabbar =[[LCTabBar alloc]init];
-    //不能
+    tabbar.delegate =self;
+    //不能直接赋值给系统tabBar 需要通过KVC的方式
     [self setValue:tabbar forKeyPath:@"tabBar"];
     
     
@@ -55,7 +58,12 @@
     [self addChildViewController:ctrl];
 
 }
+-(void)tabbar:(LCTabBar *)tabbar btnClick:(UIButton *)btn{
+    
+    NSLog(@"xzfa");
+    NSLog(@"%s",__func__);
 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -15,6 +15,10 @@
 
 @implementation LCTabBar
 
+//告诉系统我已经在父类中实现了这个方法
+@dynamic delegate;
+
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -49,6 +53,9 @@
 //中间按钮点击事件
 -(void)btnClick:(UIButton *)btn{
     NSLog(@"asd");
+    if ([self.delegate respondsToSelector:@selector(tabbar:btnClick:)]) {
+        [self.delegate tabbar:self btnClick:btn];
+    }
     
 }
 

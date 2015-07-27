@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LCTabBar;
+@protocol LCTabBarDelegate  <NSObject,UITabBarDelegate>
+
+-(void)tabbar:(LCTabBar *)tabbar btnClick:(UIButton *)btn;
+
+@end
 
 @interface LCTabBar : UITabBar
+
+@property (nonatomic ,weak)id<LCTabBarDelegate> delegate;
 
 
 
