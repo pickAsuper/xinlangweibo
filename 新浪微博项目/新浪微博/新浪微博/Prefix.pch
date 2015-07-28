@@ -20,4 +20,7 @@
 #define SCREENW [UIScreen mainScreen].bounds.size.width
 #define SCREENH [UIScreen mainScreen].bounds.size.height
 
+//设置XIB圆角和边框的类
+#import "UIView+Inspectable.h"
+
 #endif

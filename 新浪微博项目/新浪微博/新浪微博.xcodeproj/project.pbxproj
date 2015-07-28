@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		9D49CE901B65F2A900E4DC87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE8F1B65F2A900E4DC87 /* main.m */; };
 		9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE921B65F2A900E4DC87 /* AppDelegate.m */; };
-		9D49CE961B65F2A900E4DC87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE951B65F2A900E4DC87 /* ViewController.m */; };
-		9D49CE991B65F2A900E4DC87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE971B65F2A900E4DC87 /* Main.storyboard */; };
 		9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */; };
 		9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */; };
 		9D49CEAA1B65F2A900E4DC87 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEA91B65F2A900E4DC87 /* ____Tests.m */; };
@@ -26,6 +24,7 @@
 		9D49CED41B6797A500E4DC87 /* LCSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CED31B6797A500E4DC87 /* LCSearchView.m */; };
 		9D49CEDA1B67982E00E4DC87 /* LCSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CED91B67982E00E4DC87 /* LCSearchView.xib */; };
 		9D49CEDD1B679F7400E4DC87 /* LCDiscoverViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEDC1B679F7300E4DC87 /* LCDiscoverViewCtrl.m */; };
+		9D62CAE21B67D8390035063F /* UIView+Inspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CAE11B67D8390035063F /* UIView+Inspectable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +43,6 @@
 		9D49CE8F1B65F2A900E4DC87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D49CE911B65F2A900E4DC87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9D49CE921B65F2A900E4DC87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9D49CE941B65F2A900E4DC87 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9D49CE951B65F2A900E4DC87 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9D49CE981B65F2A900E4DC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9D49CE9D1B65F2A900E4DC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9D49CEA31B65F2A900E4DC87 /* 新浪微博Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "新浪微博Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +72,8 @@
 		9D49CED91B67982E00E4DC87 /* LCSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCSearchView.xib; sourceTree = "<group>"; };
 		9D49CEDB1B679F7300E4DC87 /* LCDiscoverViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDiscoverViewCtrl.h; sourceTree = "<group>"; };
 		9D49CEDC1B679F7300E4DC87 /* LCDiscoverViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDiscoverViewCtrl.m; sourceTree = "<group>"; };
+		9D62CAE01B67D8390035063F /* UIView+Inspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Inspectable.h"; sourceTree = "<group>"; };
+		9D62CAE11B67D8390035063F /* UIView+Inspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Inspectable.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +131,8 @@
 				9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */,
 				9D49CEDB1B679F7300E4DC87 /* LCDiscoverViewCtrl.h */,
 				9D49CEDC1B679F7300E4DC87 /* LCDiscoverViewCtrl.m */,
+				9D62CAE01B67D8390035063F /* UIView+Inspectable.h */,
+				9D62CAE11B67D8390035063F /* UIView+Inspectable.m */,
 				9D49CED21B6797A500E4DC87 /* LCSearchView.h */,
 				9D49CED31B6797A500E4DC87 /* LCSearchView.m */,
 				9D49CED91B67982E00E4DC87 /* LCSearchView.xib */,
@@ -142,9 +142,6 @@
 				9D49CECD1B6746E100E4DC87 /* Sun2View.m */,
 				9D49CEBC1B664FDF00E4DC87 /* UIView+Extension.h */,
 				9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */,
-				9D49CE941B65F2A900E4DC87 /* ViewController.h */,
-				9D49CE951B65F2A900E4DC87 /* ViewController.m */,
-				9D49CE971B65F2A900E4DC87 /* Main.storyboard */,
 				9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */,
 				9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */,
 				9D49CE8D1B65F2A900E4DC87 /* Supporting Files */,
@@ -260,7 +257,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D49CE991B65F2A900E4DC87 /* Main.storyboard in Resources */,
 				9D49CEDA1B67982E00E4DC87 /* LCSearchView.xib in Resources */,
 				9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */,
 				9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */,
@@ -284,7 +280,6 @@
 				9D49CED41B6797A500E4DC87 /* LCSearchView.m in Sources */,
 				9D49CEBE1B664FDF00E4DC87 /* UIView+Extension.m in Sources */,
 				9D49CEC51B66891A00E4DC87 /* LCHomeTitelBtn.m in Sources */,
-				9D49CE961B65F2A900E4DC87 /* ViewController.m in Sources */,
 				9D49CEC21B6683C200E4DC87 /* LCHomeVirewController.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
 				9D49CECE1B6746E100E4DC87 /* Sun2View.m in Sources */,
@@ -295,6 +290,7 @@
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,
 				9D49CEC81B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m in Sources */,
 				9D49CECB1B67466700E4DC87 /* SunView.m in Sources */,
+				9D62CAE21B67D8390035063F /* UIView+Inspectable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +313,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9D49CE971B65F2A900E4DC87 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9D49CE981B65F2A900E4DC87 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

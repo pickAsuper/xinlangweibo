@@ -30,12 +30,17 @@
     
     //设置照片的显示模式
     imageView.contentMode =UIViewContentModeCenter;
-
+    
+    imageView.width =35;
+    
+    
     //设置文本框属性左边视图
     self.searchFiled.leftView =imageView;
     //设置为总是显示 >>默认是不显示的
     self.searchFiled.leftViewMode =UITextFieldViewModeAlways;
     self.searchFiled.delegate =self;
+    
+    
     
 }
 //textField的代理方法
@@ -43,7 +48,11 @@
     
 //    让右边的自动布局等于取消按钮的宽度
     self.horizon.constant = self.quertBtn.width;
+  
     //自动布局不能直接放动画里>>没有效果 >>需要掉重绘的方法
+    //textField开始编辑的时候，会回调这个方法
+    //更新约束，完新完约束，代表需要重新布局。如果想执行执行，就把重新布局的代码放在动画的block里面
+    
     [UIView animateWithDuration:0.25 animations:^{
         [self layoutIfNeeded];
     }];
