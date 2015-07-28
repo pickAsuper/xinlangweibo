@@ -11,6 +11,7 @@
 @interface LCSearchView ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchFiled;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *horizon;
+@property (weak, nonatomic) IBOutlet UIButton *quertBtn;
 
 
 @end
@@ -37,12 +38,26 @@
     self.searchFiled.delegate =self;
     
 }
+//textField的代理方法
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    self.horizon.constant = self.searchFiled.width;
+    
+//    让右边的自动布局等于取消按钮的宽度
+    self.horizon.constant = self.quertBtn.width;
+    //自动布局不能直接放动画里>>没有效果 >>需要掉重绘的方法
     [UIView animateWithDuration:0.25 animations:^{
-        [self setNeedsDisplay];
+        [self layoutIfNeeded];
     }];
     
 }
+//点击按钮事件 >>让textField长度恢复 并且取消第一响应者
+- (IBAction)quertBtn:(UIButton *)sender {
+    self.horizon.constant =0;
+    [UIView animateWithDuration:0.25 animations:^{
+        [self layoutIfNeeded];
+    }];
+    [self endEditing:YES];
+}
+
+
 
 @end

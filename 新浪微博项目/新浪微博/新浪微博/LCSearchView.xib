@@ -13,21 +13,26 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2y-yN-1x9">
                     <rect key="frame" x="275" y="0.0" width="45" height="35"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="YmV-aY-oAG"/>
                     </constraints>
                     <state key="normal" title="取消">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="quertBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="ctX-hL-Icx"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="听下雨天音乐和辣条更配哟" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-AV-Ikm">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="C2y-yN-1x9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BVo-V9-fjV"/>
                 <constraint firstAttribute="bottom" secondItem="kaA-AV-Ikm" secondAttribute="bottom" id="BnR-gK-uK3"/>
@@ -41,6 +46,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="horizon" destination="cqN-hk-2eB" id="JxW-h8-9Pw"/>
+                <outlet property="quertBtn" destination="C2y-yN-1x9" id="b4A-NH-sSg"/>
                 <outlet property="searchFiled" destination="kaA-AV-Ikm" id="fe9-oe-5R9"/>
             </connections>
             <point key="canvasLocation" x="348" y="-189.5"/>
