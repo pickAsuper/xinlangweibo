@@ -17,6 +17,12 @@
 		9D49CEB51B65F67E00E4DC87 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEB41B65F67E00E4DC87 /* LCTabBarController.m */; };
 		9D49CEB81B6648C200E4DC87 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEB71B6648C200E4DC87 /* LCTabBar.m */; };
 		9D49CEBE1B664FDF00E4DC87 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */; };
+		9D49CEC21B6683C200E4DC87 /* LCHomeVirewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEC11B6683C200E4DC87 /* LCHomeVirewController.m */; };
+		9D49CEC51B66891A00E4DC87 /* LCHomeTitelBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEC41B66891A00E4DC87 /* LCHomeTitelBtn.m */; };
+		9D49CEC81B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEC71B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m */; };
+		9D49CECB1B67466700E4DC87 /* SunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CECA1B67466700E4DC87 /* SunView.m */; };
+		9D49CECE1B6746E100E4DC87 /* Sun2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CECD1B6746E100E4DC87 /* Sun2View.m */; };
+		9D49CED11B6751FC00E4DC87 /* LCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,18 @@
 		9D49CEBC1B664FDF00E4DC87 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		9D49CEBF1B66500C00E4DC87 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		9D49CEC01B6683C200E4DC87 /* LCHomeVirewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeVirewController.h; sourceTree = "<group>"; };
+		9D49CEC11B6683C200E4DC87 /* LCHomeVirewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeVirewController.m; sourceTree = "<group>"; };
+		9D49CEC31B66891A00E4DC87 /* LCHomeTitelBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeTitelBtn.h; sourceTree = "<group>"; };
+		9D49CEC41B66891A00E4DC87 /* LCHomeTitelBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeTitelBtn.m; sourceTree = "<group>"; };
+		9D49CEC61B668D9A00E4DC87 /* UIBarButtonItem+Extetion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extetion.h"; sourceTree = "<group>"; };
+		9D49CEC71B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extetion.m"; sourceTree = "<group>"; };
+		9D49CEC91B67466700E4DC87 /* SunView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunView.h; sourceTree = "<group>"; };
+		9D49CECA1B67466700E4DC87 /* SunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunView.m; sourceTree = "<group>"; };
+		9D49CECC1B6746E100E4DC87 /* Sun2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sun2View.h; sourceTree = "<group>"; };
+		9D49CECD1B6746E100E4DC87 /* Sun2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sun2View.m; sourceTree = "<group>"; };
+		9D49CECF1B6751FC00E4DC87 /* LCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationController.h; sourceTree = "<group>"; };
+		9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +115,18 @@
 				9D49CEB41B65F67E00E4DC87 /* LCTabBarController.m */,
 				9D49CEB61B6648C200E4DC87 /* LCTabBar.h */,
 				9D49CEB71B6648C200E4DC87 /* LCTabBar.m */,
+				9D49CEC01B6683C200E4DC87 /* LCHomeVirewController.h */,
+				9D49CEC11B6683C200E4DC87 /* LCHomeVirewController.m */,
+				9D49CEC61B668D9A00E4DC87 /* UIBarButtonItem+Extetion.h */,
+				9D49CEC71B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m */,
+				9D49CEC31B66891A00E4DC87 /* LCHomeTitelBtn.h */,
+				9D49CEC41B66891A00E4DC87 /* LCHomeTitelBtn.m */,
+				9D49CECF1B6751FC00E4DC87 /* LCNavigationController.h */,
+				9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */,
+				9D49CEC91B67466700E4DC87 /* SunView.h */,
+				9D49CECA1B67466700E4DC87 /* SunView.m */,
+				9D49CECC1B6746E100E4DC87 /* Sun2View.h */,
+				9D49CECD1B6746E100E4DC87 /* Sun2View.m */,
 				9D49CEBC1B664FDF00E4DC87 /* UIView+Extension.h */,
 				9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */,
 				9D49CE941B65F2A900E4DC87 /* ViewController.h */,
@@ -237,11 +267,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D49CEBE1B664FDF00E4DC87 /* UIView+Extension.m in Sources */,
+				9D49CEC51B66891A00E4DC87 /* LCHomeTitelBtn.m in Sources */,
 				9D49CE961B65F2A900E4DC87 /* ViewController.m in Sources */,
+				9D49CEC21B6683C200E4DC87 /* LCHomeVirewController.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
+				9D49CECE1B6746E100E4DC87 /* Sun2View.m in Sources */,
+				9D49CED11B6751FC00E4DC87 /* LCNavigationController.m in Sources */,
 				9D49CEB81B6648C200E4DC87 /* LCTabBar.m in Sources */,
 				9D49CEB51B65F67E00E4DC87 /* LCTabBarController.m in Sources */,
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,
+				9D49CEC81B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m in Sources */,
+				9D49CECB1B67466700E4DC87 /* SunView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

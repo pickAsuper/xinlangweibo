@@ -8,7 +8,7 @@
 
 #import "LCTabBarController.h"
 #import "LCTabBar.h"
-
+#import "LCHomeVirewController.h"
 
 @interface LCTabBarController ()<LCTabBarDelegate>
 
@@ -28,7 +28,7 @@
     
 
     //创建首页
-    UITableViewController *home =[[UITableViewController alloc]init];
+    LCHomeVirewController *home =[[LCHomeVirewController alloc]init];
     [self tableViewWithTableViewCtrl:home image:@"tabbar_home" titel:@"首页"];
     
     UITableViewController *message =[[UITableViewController alloc]init];
@@ -52,10 +52,12 @@
     ctrl.tabBarItem.selectedImage =[[UIImage imageNamed:[NSString stringWithFormat:@"%@_selected",image]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
+    //给所以的UITableViewController 包装一个导航栏
+    UINavigationController *navctrl =[[UINavigationController alloc]initWithRootViewController:ctrl];
     
     
     
-    [self addChildViewController:ctrl];
+    [self addChildViewController:navctrl];
 
 }
 -(void)tabbar:(LCTabBar *)tabbar btnClick:(UIButton *)btn{
