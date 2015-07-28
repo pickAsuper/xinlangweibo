@@ -9,6 +9,8 @@
 #import "LCTabBarController.h"
 #import "LCTabBar.h"
 #import "LCHomeVirewController.h"
+#import "LCDiscoverViewCtrl.h"
+
 
 @interface LCTabBarController ()<LCTabBarDelegate>
 
@@ -33,7 +35,7 @@
     
     UITableViewController *message =[[UITableViewController alloc]init];
     [self tableViewWithTableViewCtrl:message image:@"tabbar_message_center" titel:@"消息"];
-    UITableViewController *discover =[[UITableViewController alloc]init];
+    LCDiscoverViewCtrl *discover =[[LCDiscoverViewCtrl alloc]init];
     [self tableViewWithTableViewCtrl:discover image:@"tabbar_discover" titel:@"发现"];
     UITableViewController *profile =[[UITableViewController alloc]init];
     [self tableViewWithTableViewCtrl:profile image:@"tabbar_profile" titel:@"我"];

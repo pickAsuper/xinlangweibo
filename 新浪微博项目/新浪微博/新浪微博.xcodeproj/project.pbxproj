@@ -23,6 +23,9 @@
 		9D49CECB1B67466700E4DC87 /* SunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CECA1B67466700E4DC87 /* SunView.m */; };
 		9D49CECE1B6746E100E4DC87 /* Sun2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CECD1B6746E100E4DC87 /* Sun2View.m */; };
 		9D49CED11B6751FC00E4DC87 /* LCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */; };
+		9D49CED41B6797A500E4DC87 /* LCSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CED31B6797A500E4DC87 /* LCSearchView.m */; };
+		9D49CEDA1B67982E00E4DC87 /* LCSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CED91B67982E00E4DC87 /* LCSearchView.xib */; };
+		9D49CEDD1B679F7400E4DC87 /* LCDiscoverViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEDC1B679F7300E4DC87 /* LCDiscoverViewCtrl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,11 @@
 		9D49CECD1B6746E100E4DC87 /* Sun2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sun2View.m; sourceTree = "<group>"; };
 		9D49CECF1B6751FC00E4DC87 /* LCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationController.h; sourceTree = "<group>"; };
 		9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationController.m; sourceTree = "<group>"; };
+		9D49CED21B6797A500E4DC87 /* LCSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSearchView.h; sourceTree = "<group>"; };
+		9D49CED31B6797A500E4DC87 /* LCSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSearchView.m; sourceTree = "<group>"; };
+		9D49CED91B67982E00E4DC87 /* LCSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCSearchView.xib; sourceTree = "<group>"; };
+		9D49CEDB1B679F7300E4DC87 /* LCDiscoverViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDiscoverViewCtrl.h; sourceTree = "<group>"; };
+		9D49CEDC1B679F7300E4DC87 /* LCDiscoverViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDiscoverViewCtrl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,11 @@
 				9D49CEC41B66891A00E4DC87 /* LCHomeTitelBtn.m */,
 				9D49CECF1B6751FC00E4DC87 /* LCNavigationController.h */,
 				9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */,
+				9D49CEDB1B679F7300E4DC87 /* LCDiscoverViewCtrl.h */,
+				9D49CEDC1B679F7300E4DC87 /* LCDiscoverViewCtrl.m */,
+				9D49CED21B6797A500E4DC87 /* LCSearchView.h */,
+				9D49CED31B6797A500E4DC87 /* LCSearchView.m */,
+				9D49CED91B67982E00E4DC87 /* LCSearchView.xib */,
 				9D49CEC91B67466700E4DC87 /* SunView.h */,
 				9D49CECA1B67466700E4DC87 /* SunView.m */,
 				9D49CECC1B6746E100E4DC87 /* Sun2View.h */,
@@ -210,6 +223,7 @@
 		9D49CE821B65F2A800E4DC87 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LC;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "___Super___";
 				TargetAttributes = {
@@ -247,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D49CE991B65F2A900E4DC87 /* Main.storyboard in Resources */,
+				9D49CEDA1B67982E00E4DC87 /* LCSearchView.xib in Resources */,
 				9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */,
 				9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */,
 			);
@@ -266,12 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D49CED41B6797A500E4DC87 /* LCSearchView.m in Sources */,
 				9D49CEBE1B664FDF00E4DC87 /* UIView+Extension.m in Sources */,
 				9D49CEC51B66891A00E4DC87 /* LCHomeTitelBtn.m in Sources */,
 				9D49CE961B65F2A900E4DC87 /* ViewController.m in Sources */,
 				9D49CEC21B6683C200E4DC87 /* LCHomeVirewController.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
 				9D49CECE1B6746E100E4DC87 /* Sun2View.m in Sources */,
+				9D49CEDD1B679F7400E4DC87 /* LCDiscoverViewCtrl.m in Sources */,
 				9D49CED11B6751FC00E4DC87 /* LCNavigationController.m in Sources */,
 				9D49CEB81B6648C200E4DC87 /* LCTabBar.m in Sources */,
 				9D49CEB51B65F67E00E4DC87 /* LCTabBarController.m in Sources */,
