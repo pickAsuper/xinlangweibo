@@ -66,7 +66,7 @@
         UIImageView *imageView =[[UIImageView alloc]init];
         NSString *imageName =[NSString stringWithFormat:@"new_feature_%d",i+1];
         imageView.image =[UIImage imageNamed:imageName];
-         NSLog(@"imageView.width =%f",imageView.width);
+        // NSLog(@"imageView.width =%f",imageView.width);
          imageView.x = i * scrollView.width;
          imageView.size =scrollView.size;
          self.imageView =imageView;
@@ -145,12 +145,13 @@
 
 //拖拽的时候调用
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-  CGFloat offset =scrollView.contentOffset.x/scrollView.width;
-    NSUInteger off = (int)(offset + 0.5);
+  CGFloat page =scrollView.contentOffset.x/scrollView.width;
+    NSUInteger pageNum = (int)(page + 0.5);
     
-    self.pageCtrl.currentPage =off;
-    if (!self.pageCtrl.currentPage == off) {
-        self.pageCtrl.currentPage=off;
+    self.pageCtrl.currentPage =pageNum;
+   
+    if (!self.pageCtrl.currentPage == pageNum) {
+        self.pageCtrl.currentPage=pageNum;
     }
     
 

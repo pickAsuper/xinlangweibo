@@ -11,8 +11,8 @@
 @interface LCSearchView ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchFiled;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *horizon;
-@property (weak, nonatomic) IBOutlet UIButton *quertBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *quertBtn;
 
 @end
 
@@ -40,6 +40,8 @@
     self.searchFiled.leftViewMode =UITextFieldViewModeAlways;
     self.searchFiled.delegate =self;
     
+   // self.searchFiled.layer.borderColor =nil;
+//    self.searchFiled.layer.borderWidth =1;
     
     
 }
