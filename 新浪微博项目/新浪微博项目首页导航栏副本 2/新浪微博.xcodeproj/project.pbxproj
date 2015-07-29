@@ -7,26 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D110D471B6880EC00D2B84B /* LCDiscoverViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D461B6880EC00D2B84B /* LCDiscoverViewCtrl.m */; };
-		9D110D4B1B68812500D2B84B /* LCSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D491B68812500D2B84B /* LCSearchView.m */; };
-		9D110D4C1B68812500D2B84B /* LCSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D110D4A1B68812500D2B84B /* LCSearchView.xib */; };
-		9D110D4F1B68825F00D2B84B /* UIView+Inspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D4E1B68825F00D2B84B /* UIView+Inspectable.m */; };
+		9D110D831B6885EA00D2B84B /* LCDiscoverViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D541B6885EA00D2B84B /* LCDiscoverViewCtrl.m */; };
+		9D110D841B6885EA00D2B84B /* LCHomeVirewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D5A1B6885EA00D2B84B /* LCHomeVirewController.m */; };
+		9D110D851B6885EA00D2B84B /* LCHomeTitelBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D5E1B6885EA00D2B84B /* LCHomeTitelBtn.m */; };
+		9D110D861B6885EA00D2B84B /* UIBarButtonItem+Extetion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D6A1B6885EA00D2B84B /* UIBarButtonItem+Extetion.m */; };
+		9D110D871B6885EA00D2B84B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D6C1B6885EA00D2B84B /* UIView+Extension.m */; };
+		9D110D881B6885EA00D2B84B /* UIView+Inspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D6E1B6885EA00D2B84B /* UIView+Inspectable.m */; };
+		9D110D891B6885EA00D2B84B /* LCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D711B6885EA00D2B84B /* LCNavigationController.m */; };
+		9D110D8A1B6885EA00D2B84B /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D731B6885EA00D2B84B /* LCTabBarController.m */; };
+		9D110D8B1B6885EA00D2B84B /* LCSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D771B6885EA00D2B84B /* LCSearchView.m */; };
+		9D110D8C1B6885EA00D2B84B /* LCSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D110D781B6885EA00D2B84B /* LCSearchView.xib */; };
+		9D110D8D1B6885EA00D2B84B /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D7A1B6885EA00D2B84B /* LCTabBar.m */; };
+		9D110D8E1B6885EA00D2B84B /* Sun2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D7E1B6885EA00D2B84B /* Sun2View.m */; };
+		9D110D8F1B6885EA00D2B84B /* SunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D801B6885EA00D2B84B /* SunView.m */; };
 		9D49CE901B65F2A900E4DC87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE8F1B65F2A900E4DC87 /* main.m */; };
 		9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE921B65F2A900E4DC87 /* AppDelegate.m */; };
-		9D49CE961B65F2A900E4DC87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE951B65F2A900E4DC87 /* ViewController.m */; };
-		9D49CE991B65F2A900E4DC87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE971B65F2A900E4DC87 /* Main.storyboard */; };
 		9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */; };
 		9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */; };
 		9D49CEAA1B65F2A900E4DC87 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEA91B65F2A900E4DC87 /* ____Tests.m */; };
-		9D49CEB51B65F67E00E4DC87 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEB41B65F67E00E4DC87 /* LCTabBarController.m */; };
-		9D49CEB81B6648C200E4DC87 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEB71B6648C200E4DC87 /* LCTabBar.m */; };
-		9D49CEBE1B664FDF00E4DC87 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */; };
-		9D49CEC21B6683C200E4DC87 /* LCHomeVirewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEC11B6683C200E4DC87 /* LCHomeVirewController.m */; };
-		9D49CEC51B66891A00E4DC87 /* LCHomeTitelBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEC41B66891A00E4DC87 /* LCHomeTitelBtn.m */; };
-		9D49CEC81B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEC71B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m */; };
-		9D49CECB1B67466700E4DC87 /* SunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CECA1B67466700E4DC87 /* SunView.m */; };
-		9D49CECE1B6746E100E4DC87 /* Sun2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CECD1B6746E100E4DC87 /* Sun2View.m */; };
-		9D49CED11B6751FC00E4DC87 /* LCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,45 +38,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9D110D451B6880EC00D2B84B /* LCDiscoverViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDiscoverViewCtrl.h; sourceTree = "<group>"; };
-		9D110D461B6880EC00D2B84B /* LCDiscoverViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDiscoverViewCtrl.m; sourceTree = "<group>"; };
-		9D110D481B68812500D2B84B /* LCSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSearchView.h; sourceTree = "<group>"; };
-		9D110D491B68812500D2B84B /* LCSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSearchView.m; sourceTree = "<group>"; };
-		9D110D4A1B68812500D2B84B /* LCSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCSearchView.xib; sourceTree = "<group>"; };
-		9D110D4D1B68825F00D2B84B /* UIView+Inspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Inspectable.h"; sourceTree = "<group>"; };
-		9D110D4E1B68825F00D2B84B /* UIView+Inspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Inspectable.m"; sourceTree = "<group>"; };
+		9D110D531B6885EA00D2B84B /* LCDiscoverViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDiscoverViewCtrl.h; sourceTree = "<group>"; };
+		9D110D541B6885EA00D2B84B /* LCDiscoverViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDiscoverViewCtrl.m; sourceTree = "<group>"; };
+		9D110D591B6885EA00D2B84B /* LCHomeVirewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeVirewController.h; sourceTree = "<group>"; };
+		9D110D5A1B6885EA00D2B84B /* LCHomeVirewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeVirewController.m; sourceTree = "<group>"; };
+		9D110D5D1B6885EA00D2B84B /* LCHomeTitelBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeTitelBtn.h; sourceTree = "<group>"; };
+		9D110D5E1B6885EA00D2B84B /* LCHomeTitelBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeTitelBtn.m; sourceTree = "<group>"; };
+		9D110D691B6885EA00D2B84B /* UIBarButtonItem+Extetion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extetion.h"; sourceTree = "<group>"; };
+		9D110D6A1B6885EA00D2B84B /* UIBarButtonItem+Extetion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extetion.m"; sourceTree = "<group>"; };
+		9D110D6B1B6885EA00D2B84B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		9D110D6C1B6885EA00D2B84B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		9D110D6D1B6885EA00D2B84B /* UIView+Inspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Inspectable.h"; sourceTree = "<group>"; };
+		9D110D6E1B6885EA00D2B84B /* UIView+Inspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Inspectable.m"; sourceTree = "<group>"; };
+		9D110D701B6885EA00D2B84B /* LCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationController.h; sourceTree = "<group>"; };
+		9D110D711B6885EA00D2B84B /* LCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationController.m; sourceTree = "<group>"; };
+		9D110D721B6885EA00D2B84B /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
+		9D110D731B6885EA00D2B84B /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
+		9D110D761B6885EA00D2B84B /* LCSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSearchView.h; sourceTree = "<group>"; };
+		9D110D771B6885EA00D2B84B /* LCSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSearchView.m; sourceTree = "<group>"; };
+		9D110D781B6885EA00D2B84B /* LCSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCSearchView.xib; sourceTree = "<group>"; };
+		9D110D791B6885EA00D2B84B /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
+		9D110D7A1B6885EA00D2B84B /* LCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBar.m; sourceTree = "<group>"; };
+		9D110D7D1B6885EA00D2B84B /* Sun2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sun2View.h; sourceTree = "<group>"; };
+		9D110D7E1B6885EA00D2B84B /* Sun2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sun2View.m; sourceTree = "<group>"; };
+		9D110D7F1B6885EA00D2B84B /* SunView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunView.h; sourceTree = "<group>"; };
+		9D110D801B6885EA00D2B84B /* SunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunView.m; sourceTree = "<group>"; };
 		9D49CE8A1B65F2A900E4DC87 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D49CE8E1B65F2A900E4DC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D49CE8F1B65F2A900E4DC87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D49CE911B65F2A900E4DC87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9D49CE921B65F2A900E4DC87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9D49CE941B65F2A900E4DC87 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9D49CE951B65F2A900E4DC87 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9D49CE981B65F2A900E4DC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9D49CE9D1B65F2A900E4DC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9D49CEA31B65F2A900E4DC87 /* 新浪微博Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "新浪微博Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D49CEA81B65F2A900E4DC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D49CEA91B65F2A900E4DC87 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
-		9D49CEB31B65F67E00E4DC87 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
-		9D49CEB41B65F67E00E4DC87 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
-		9D49CEB61B6648C200E4DC87 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
-		9D49CEB71B6648C200E4DC87 /* LCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBar.m; sourceTree = "<group>"; };
-		9D49CEBC1B664FDF00E4DC87 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		9D49CEBF1B66500C00E4DC87 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		9D49CEC01B6683C200E4DC87 /* LCHomeVirewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeVirewController.h; sourceTree = "<group>"; };
-		9D49CEC11B6683C200E4DC87 /* LCHomeVirewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeVirewController.m; sourceTree = "<group>"; };
-		9D49CEC31B66891A00E4DC87 /* LCHomeTitelBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeTitelBtn.h; sourceTree = "<group>"; };
-		9D49CEC41B66891A00E4DC87 /* LCHomeTitelBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeTitelBtn.m; sourceTree = "<group>"; };
-		9D49CEC61B668D9A00E4DC87 /* UIBarButtonItem+Extetion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extetion.h"; sourceTree = "<group>"; };
-		9D49CEC71B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extetion.m"; sourceTree = "<group>"; };
-		9D49CEC91B67466700E4DC87 /* SunView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunView.h; sourceTree = "<group>"; };
-		9D49CECA1B67466700E4DC87 /* SunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunView.m; sourceTree = "<group>"; };
-		9D49CECC1B6746E100E4DC87 /* Sun2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sun2View.h; sourceTree = "<group>"; };
-		9D49CECD1B6746E100E4DC87 /* Sun2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sun2View.m; sourceTree = "<group>"; };
-		9D49CECF1B6751FC00E4DC87 /* LCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationController.h; sourceTree = "<group>"; };
-		9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +94,238 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D110D501B6885EA00D2B84B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D511B6885EA00D2B84B /* Discover */,
+				9D110D571B6885EA00D2B84B /* Home */,
+				9D110D5F1B6885EA00D2B84B /* Message */,
+				9D110D631B6885EA00D2B84B /* Profile */,
+				9D110D671B6885EA00D2B84B /* pubile */,
+				9D110D7B1B6885EA00D2B84B /* Temp */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9D110D511B6885EA00D2B84B /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D521B6885EA00D2B84B /* Controller */,
+				9D110D551B6885EA00D2B84B /* Model */,
+				9D110D561B6885EA00D2B84B /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		9D110D521B6885EA00D2B84B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D531B6885EA00D2B84B /* LCDiscoverViewCtrl.h */,
+				9D110D541B6885EA00D2B84B /* LCDiscoverViewCtrl.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D110D551B6885EA00D2B84B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D110D561B6885EA00D2B84B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D110D571B6885EA00D2B84B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D581B6885EA00D2B84B /* Controller */,
+				9D110D5B1B6885EA00D2B84B /* Model */,
+				9D110D5C1B6885EA00D2B84B /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9D110D581B6885EA00D2B84B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D591B6885EA00D2B84B /* LCHomeVirewController.h */,
+				9D110D5A1B6885EA00D2B84B /* LCHomeVirewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D110D5B1B6885EA00D2B84B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D110D5C1B6885EA00D2B84B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D5D1B6885EA00D2B84B /* LCHomeTitelBtn.h */,
+				9D110D5E1B6885EA00D2B84B /* LCHomeTitelBtn.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D110D5F1B6885EA00D2B84B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D601B6885EA00D2B84B /* Controller */,
+				9D110D611B6885EA00D2B84B /* Model */,
+				9D110D621B6885EA00D2B84B /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		9D110D601B6885EA00D2B84B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D110D611B6885EA00D2B84B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D110D621B6885EA00D2B84B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D110D631B6885EA00D2B84B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D641B6885EA00D2B84B /* Controller */,
+				9D110D651B6885EA00D2B84B /* Model */,
+				9D110D661B6885EA00D2B84B /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9D110D641B6885EA00D2B84B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D110D651B6885EA00D2B84B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D110D661B6885EA00D2B84B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D110D671B6885EA00D2B84B /* pubile */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D681B6885EA00D2B84B /* Category */,
+				9D110D6F1B6885EA00D2B84B /* Controller */,
+				9D110D741B6885EA00D2B84B /* Model */,
+				9D110D751B6885EA00D2B84B /* View */,
+			);
+			path = pubile;
+			sourceTree = "<group>";
+		};
+		9D110D681B6885EA00D2B84B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D691B6885EA00D2B84B /* UIBarButtonItem+Extetion.h */,
+				9D110D6A1B6885EA00D2B84B /* UIBarButtonItem+Extetion.m */,
+				9D110D6B1B6885EA00D2B84B /* UIView+Extension.h */,
+				9D110D6C1B6885EA00D2B84B /* UIView+Extension.m */,
+				9D110D6D1B6885EA00D2B84B /* UIView+Inspectable.h */,
+				9D110D6E1B6885EA00D2B84B /* UIView+Inspectable.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9D110D6F1B6885EA00D2B84B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D701B6885EA00D2B84B /* LCNavigationController.h */,
+				9D110D711B6885EA00D2B84B /* LCNavigationController.m */,
+				9D110D721B6885EA00D2B84B /* LCTabBarController.h */,
+				9D110D731B6885EA00D2B84B /* LCTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D110D741B6885EA00D2B84B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D110D751B6885EA00D2B84B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D761B6885EA00D2B84B /* LCSearchView.h */,
+				9D110D771B6885EA00D2B84B /* LCSearchView.m */,
+				9D110D781B6885EA00D2B84B /* LCSearchView.xib */,
+				9D110D791B6885EA00D2B84B /* LCTabBar.h */,
+				9D110D7A1B6885EA00D2B84B /* LCTabBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D110D7B1B6885EA00D2B84B /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D7C1B6885EA00D2B84B /* Controller */,
+				9D110D811B6885EA00D2B84B /* Model */,
+				9D110D821B6885EA00D2B84B /* View */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
+		9D110D7C1B6885EA00D2B84B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D110D7D1B6885EA00D2B84B /* Sun2View.h */,
+				9D110D7E1B6885EA00D2B84B /* Sun2View.m */,
+				9D110D7F1B6885EA00D2B84B /* SunView.h */,
+				9D110D801B6885EA00D2B84B /* SunView.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D110D811B6885EA00D2B84B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D110D821B6885EA00D2B84B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9D49CE811B65F2A800E4DC87 = {
 			isa = PBXGroup;
 			children = (
@@ -120,36 +347,9 @@
 		9D49CE8C1B65F2A900E4DC87 /* 新浪微博 */ = {
 			isa = PBXGroup;
 			children = (
+				9D110D501B6885EA00D2B84B /* Classes */,
 				9D49CE911B65F2A900E4DC87 /* AppDelegate.h */,
 				9D49CE921B65F2A900E4DC87 /* AppDelegate.m */,
-				9D49CEB31B65F67E00E4DC87 /* LCTabBarController.h */,
-				9D49CEB41B65F67E00E4DC87 /* LCTabBarController.m */,
-				9D49CEB61B6648C200E4DC87 /* LCTabBar.h */,
-				9D49CEB71B6648C200E4DC87 /* LCTabBar.m */,
-				9D49CEC01B6683C200E4DC87 /* LCHomeVirewController.h */,
-				9D49CEC11B6683C200E4DC87 /* LCHomeVirewController.m */,
-				9D49CEC61B668D9A00E4DC87 /* UIBarButtonItem+Extetion.h */,
-				9D49CEC71B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m */,
-				9D49CEC31B66891A00E4DC87 /* LCHomeTitelBtn.h */,
-				9D49CEC41B66891A00E4DC87 /* LCHomeTitelBtn.m */,
-				9D49CECF1B6751FC00E4DC87 /* LCNavigationController.h */,
-				9D49CED01B6751FC00E4DC87 /* LCNavigationController.m */,
-				9D110D451B6880EC00D2B84B /* LCDiscoverViewCtrl.h */,
-				9D110D461B6880EC00D2B84B /* LCDiscoverViewCtrl.m */,
-				9D110D481B68812500D2B84B /* LCSearchView.h */,
-				9D110D491B68812500D2B84B /* LCSearchView.m */,
-				9D110D4A1B68812500D2B84B /* LCSearchView.xib */,
-				9D49CEC91B67466700E4DC87 /* SunView.h */,
-				9D110D4D1B68825F00D2B84B /* UIView+Inspectable.h */,
-				9D110D4E1B68825F00D2B84B /* UIView+Inspectable.m */,
-				9D49CECA1B67466700E4DC87 /* SunView.m */,
-				9D49CECC1B6746E100E4DC87 /* Sun2View.h */,
-				9D49CECD1B6746E100E4DC87 /* Sun2View.m */,
-				9D49CEBC1B664FDF00E4DC87 /* UIView+Extension.h */,
-				9D49CEBD1B664FDF00E4DC87 /* UIView+Extension.m */,
-				9D49CE941B65F2A900E4DC87 /* ViewController.h */,
-				9D49CE951B65F2A900E4DC87 /* ViewController.m */,
-				9D49CE971B65F2A900E4DC87 /* Main.storyboard */,
 				9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */,
 				9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */,
 				9D49CE8D1B65F2A900E4DC87 /* Supporting Files */,
@@ -264,8 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D49CE991B65F2A900E4DC87 /* Main.storyboard in Resources */,
-				9D110D4C1B68812500D2B84B /* LCSearchView.xib in Resources */,
+				9D110D8C1B6885EA00D2B84B /* LCSearchView.xib in Resources */,
 				9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */,
 				9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */,
 			);
@@ -285,21 +484,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D49CEBE1B664FDF00E4DC87 /* UIView+Extension.m in Sources */,
-				9D49CEC51B66891A00E4DC87 /* LCHomeTitelBtn.m in Sources */,
-				9D49CE961B65F2A900E4DC87 /* ViewController.m in Sources */,
-				9D49CEC21B6683C200E4DC87 /* LCHomeVirewController.m in Sources */,
+				9D110D831B6885EA00D2B84B /* LCDiscoverViewCtrl.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
-				9D49CECE1B6746E100E4DC87 /* Sun2View.m in Sources */,
-				9D49CED11B6751FC00E4DC87 /* LCNavigationController.m in Sources */,
-				9D110D4B1B68812500D2B84B /* LCSearchView.m in Sources */,
-				9D49CEB81B6648C200E4DC87 /* LCTabBar.m in Sources */,
-				9D110D471B6880EC00D2B84B /* LCDiscoverViewCtrl.m in Sources */,
-				9D49CEB51B65F67E00E4DC87 /* LCTabBarController.m in Sources */,
+				9D110D861B6885EA00D2B84B /* UIBarButtonItem+Extetion.m in Sources */,
+				9D110D881B6885EA00D2B84B /* UIView+Inspectable.m in Sources */,
+				9D110D841B6885EA00D2B84B /* LCHomeVirewController.m in Sources */,
+				9D110D891B6885EA00D2B84B /* LCNavigationController.m in Sources */,
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,
-				9D49CEC81B668D9A00E4DC87 /* UIBarButtonItem+Extetion.m in Sources */,
-				9D110D4F1B68825F00D2B84B /* UIView+Inspectable.m in Sources */,
-				9D49CECB1B67466700E4DC87 /* SunView.m in Sources */,
+				9D110D8A1B6885EA00D2B84B /* LCTabBarController.m in Sources */,
+				9D110D8B1B6885EA00D2B84B /* LCSearchView.m in Sources */,
+				9D110D871B6885EA00D2B84B /* UIView+Extension.m in Sources */,
+				9D110D8D1B6885EA00D2B84B /* LCTabBar.m in Sources */,
+				9D110D8E1B6885EA00D2B84B /* Sun2View.m in Sources */,
+				9D110D851B6885EA00D2B84B /* LCHomeTitelBtn.m in Sources */,
+				9D110D8F1B6885EA00D2B84B /* SunView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,14 +520,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9D49CE971B65F2A900E4DC87 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9D49CE981B65F2A900E4DC87 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

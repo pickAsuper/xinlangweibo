@@ -31,7 +31,7 @@
     
     [titelBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [titelBtn sizeToFit];
-    
+    [titelBtn setBackgroundColor:[UIColor redColor]];
     
     self.navigationItem.titleView =titelBtn;
     

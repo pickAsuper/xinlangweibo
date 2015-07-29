@@ -1,62 +1,35 @@
 //
-//  LCHomeVirewController.m
+//  LCDiscoverViewCtrl.m
 //  新浪微博
 //
-//  Created by lichao on 15/7/27.
+//  Created by lichao on 15/7/28.
 //  Copyright (c) 2015年 ___Super___. All rights reserved.
 //
 
-#import "LCHomeVirewController.h"
-#import "LCHomeTitelBtn.h"
-#import "SunView.h"
+#import "LCDiscoverViewCtrl.h"
+#import "LCSearchView.h"
 
-@interface LCHomeVirewController ()
+
+@interface LCDiscoverViewCtrl ()
 
 @end
 
-@implementation LCHomeVirewController
+@implementation LCDiscoverViewCtrl
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupNav];
+    LCSearchView *searchView =[LCSearchView searchWithView];
+    //SCREENW 屏幕的宽度 宏 >>定义在了PCH文件里面
+    searchView.width =SCREENW;
+    searchView.height = 35;
+    self.navigationItem.titleView = searchView;
     
-
-
-}
--(void)setupNav{
-    LCHomeTitelBtn *titelBtn =[[LCHomeTitelBtn alloc]init];
-    [titelBtn setTitle:@"首页" forState:UIControlStateNormal];
-    [titelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    
-    [titelBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    [titelBtn sizeToFit];
-    
-    
-    self.navigationItem.titleView =titelBtn;
-    
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" target:self action:@selector(barButtonClick)];
-    
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_pop" target:self action:@selector(rightbarClick)];
-
-}
-
--(void)barButtonClick{
-   // NSLog(@"btn =%s",__func__);
-    SunView *view =[[SunView alloc]init];
    
     
-    [self.navigationController pushViewController:view animated:YES];
-    
-    
-    
     
 }
 
--(void)rightbarClick{
-    //NSLog(@"right = %s",__func__);
-  
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
