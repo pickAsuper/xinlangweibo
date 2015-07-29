@@ -9,6 +9,8 @@
 #import "LCHomeVirewController.h"
 #import "LCHomeTitelBtn.h"
 #import "SunView.h"
+#import "LCPopView.h"
+
 
 @interface LCHomeVirewController ()
 
@@ -25,6 +27,7 @@
 
 }
 -(void)setupNav{
+    //创建首页标题按钮
     LCHomeTitelBtn *titelBtn =[[LCHomeTitelBtn alloc]init];
     [titelBtn setTitle:@"首页" forState:UIControlStateNormal];
     [titelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -32,9 +35,15 @@
     [titelBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [titelBtn sizeToFit];
     
-    
+    //添加到中间标题
     self.navigationItem.titleView =titelBtn;
+     //给中间按钮添加点击事件
+    [titelBtn addTarget:self action:@selector(titelBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    
+    
+//设置左右按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" target:self action:@selector(barButtonClick)];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_pop" target:self action:@selector(rightbarClick)];
@@ -57,6 +66,31 @@
     //NSLog(@"right = %s",__func__);
   
 }
+
+//首页中间按钮的点击事件
+-(void)titelBtnClick:(UIButton *)btn{
+    UIView *view =[[UIView alloc]init];
+    view.width =120;
+    view.height =120;
+    view.backgroundColor =[UIColor grayColor];
+    //当点击中间按钮的时候就创建一个按钮作为蒙版
+    LCPopView *popView =[[LCPopView alloc]initWithCustomsView:view];
+//    设置背景图片
+    popView.backgroundColor =[UIColor redColor];
+    popView.alpha = 0.5;
+    //添加到主窗口上 这个蒙版创建出来 是让用户不能和下面的控件进行交互
+  //[[UIApplication sharedApplication].keyWindow addSubview:popView];
+    
+    UIWindow *window=  [[UIApplication sharedApplication].windows lastObject];
+    [window addSubview:popView];
+    
+
+}
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

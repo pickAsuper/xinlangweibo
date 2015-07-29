@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D110D921B688A4700D2B84B /* LCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D911B688A4700D2B84B /* LCPopView.m */; };
 		9D49CE901B65F2A900E4DC87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE8F1B65F2A900E4DC87 /* main.m */; };
 		9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE921B65F2A900E4DC87 /* AppDelegate.m */; };
 		9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D110D901B688A4700D2B84B /* LCPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPopView.h; sourceTree = "<group>"; };
+		9D110D911B688A4700D2B84B /* LCPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPopView.m; sourceTree = "<group>"; };
 		9D49CE8A1B65F2A900E4DC87 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D49CE8E1B65F2A900E4DC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D49CE8F1B65F2A900E4DC87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 			children = (
 				9D62CAF11B67E5870035063F /* LCHomeTitelBtn.h */,
 				9D62CAF21B67E5870035063F /* LCHomeTitelBtn.m */,
+				9D110D901B688A4700D2B84B /* LCPopView.h */,
+				9D110D911B688A4700D2B84B /* LCPopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D110D921B688A4700D2B84B /* LCPopView.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
 				9D62CB171B67E5870035063F /* LCDiscoverViewCtrl.m in Sources */,
 				9D62CB1A1B67E5870035063F /* UIBarButtonItem+Extetion.m in Sources */,
