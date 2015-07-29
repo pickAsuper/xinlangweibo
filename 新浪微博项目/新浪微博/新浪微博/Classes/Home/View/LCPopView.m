@@ -33,7 +33,7 @@
         contentView.image =[UIImage imageNamed:@"popover_background"];
         contentView.width =view.width +10;
         contentView.height= view.height +20;
-        
+        contentView.userInteractionEnabled=YES;
         self.contentView =contentView;
           //把图片背景设置到按钮上去
         [self addSubview:contentView];

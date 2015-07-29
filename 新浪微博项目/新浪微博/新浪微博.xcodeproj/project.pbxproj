@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D110D921B688A4700D2B84B /* LCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D911B688A4700D2B84B /* LCPopView.m */; };
+		9D3D1AD11B68B5D000E93011 /* LCNewFeatureCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */; };
 		9D49CE901B65F2A900E4DC87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE8F1B65F2A900E4DC87 /* main.m */; };
 		9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE921B65F2A900E4DC87 /* AppDelegate.m */; };
 		9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		9D110D901B688A4700D2B84B /* LCPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPopView.h; sourceTree = "<group>"; };
 		9D110D911B688A4700D2B84B /* LCPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPopView.m; sourceTree = "<group>"; };
+		9D3D1ACF1B68B5D000E93011 /* LCNewFeatureCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNewFeatureCtrl.h; sourceTree = "<group>"; };
+		9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNewFeatureCtrl.m; sourceTree = "<group>"; };
 		9D49CE8A1B65F2A900E4DC87 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D49CE8E1B65F2A900E4DC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D49CE8F1B65F2A900E4DC87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D3D1ACD1B68B53600E93011 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				9D3D1ACE1B68B53600E93011 /* controller */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		9D3D1ACE1B68B53600E93011 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D3D1ACF1B68B5D000E93011 /* LCNewFeatureCtrl.h */,
+				9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		9D49CE811B65F2A800E4DC87 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +178,7 @@
 		9D62CAE41B67E5870035063F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9D3D1ACD1B68B53600E93011 /* NewFeature */,
 				9D62CAE51B67E5870035063F /* Discover */,
 				9D62CAEB1B67E5870035063F /* Home */,
 				9D62CAF31B67E5870035063F /* Message */,
@@ -497,6 +518,7 @@
 				9D62CB231B67E5870035063F /* SunView.m in Sources */,
 				9D62CB1F1B67E5870035063F /* LCSearchView.m in Sources */,
 				9D62CB1B1B67E5870035063F /* UIView+Extension.m in Sources */,
+				9D3D1AD11B68B5D000E93011 /* LCNewFeatureCtrl.m in Sources */,
 				9D62CB221B67E5870035063F /* Sun2View.m in Sources */,
 				9D62CB191B67E5870035063F /* LCHomeTitelBtn.m in Sources */,
 				9D62CB1C1B67E5870035063F /* UIView+Inspectable.m in Sources */,

@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "LCTabBarController.h"
+#import "LCNewFeatureCtrl.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -16,10 +19,41 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //获取偏好设置
+    NSLog(@"%@",[NSBundle mainBundle].infoDictionary);
+     //取出当前的版本号version
+  NSDictionary *info = [NSBundle mainBundle].infoDictionary;
+   NSString *version = info[VERSION];
+    
+    
+    //创建主窗口
     self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    LCTabBarController *tabbarCtrl =[[LCTabBarController alloc]init];
-    self.window.rootViewController = tabbarCtrl;
+    //取出保存的版本号
+   NSString *saveVesion =[[NSUserDefaults standardUserDefaults] stringForKey:VERSION];
+    
+    //如果不是当前版本号 .或者 当前的版本号大于了本地保存的版本号都要显示新特性
+    if (!version || [version compare:saveVesion]) {
+         //创建新特性
+        LCNewFeatureCtrl *newFeat =[[LCNewFeatureCtrl alloc]init];
+        self.window.rootViewController =newFeat;
+        
+        //保存偏好设置
+        [[NSUserDefaults standardUserDefaults]setObject:version forKey:VERSION];
+         //同步
+      [[NSUserDefaults standardUserDefaults]synchronize];
+
+    }else{  //否则 直接进入
+        LCTabBarController *tabbarCtrl =[[LCTabBarController alloc]init];
+        self.window.rootViewController = tabbarCtrl;
+
+    
+    }
+    
+    
+    
+    
     
     
     [self.window makeKeyAndVisible];
