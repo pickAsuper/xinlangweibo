@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LCPopView : UIButton
+
+//传一个view进去 >> 为了灰色框的大小和 和添加控件
 - (instancetype)initWithCustomsView:(UIView *)view;
+
+-(void)showFromView:(UIView *)showView;
 
 @end
