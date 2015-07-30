@@ -10,6 +10,16 @@
 		9D110D921B688A4700D2B84B /* LCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D911B688A4700D2B84B /* LCPopView.m */; };
 		9D27311B1B69F08800108ED9 /* LCOAuthViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */; };
 		9D3D1AD11B68B5D000E93011 /* LCNewFeatureCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */; };
+		9D49A4A81B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4961B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m */; };
+		9D49A4A91B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4981B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m */; };
+		9D49A4AA1B6A5ED000B9F3E3 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A49A1B6A5ED000B9F3E3 /* AFHTTPSessionManager.m */; };
+		9D49A4AB1B6A5ED000B9F3E3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A49D1B6A5ED000B9F3E3 /* AFNetworkReachabilityManager.m */; };
+		9D49A4AC1B6A5ED000B9F3E3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A49F1B6A5ED000B9F3E3 /* AFSecurityPolicy.m */; };
+		9D49A4AD1B6A5ED000B9F3E3 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4A11B6A5ED000B9F3E3 /* AFURLConnectionOperation.m */; };
+		9D49A4AE1B6A5ED000B9F3E3 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4A31B6A5ED000B9F3E3 /* AFURLRequestSerialization.m */; };
+		9D49A4AF1B6A5ED000B9F3E3 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4A51B6A5ED000B9F3E3 /* AFURLResponseSerialization.m */; };
+		9D49A4B01B6A5ED000B9F3E3 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4A71B6A5ED000B9F3E3 /* AFURLSessionManager.m */; };
+		9D49A4B31B6A62DB00B9F3E3 /* LCOauth.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4B21B6A62DB00B9F3E3 /* LCOauth.m */; };
 		9D49CE901B65F2A900E4DC87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE8F1B65F2A900E4DC87 /* main.m */; };
 		9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE921B65F2A900E4DC87 /* AppDelegate.m */; };
 		9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */; };
@@ -47,6 +57,27 @@
 		9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOAuthViewCtrl.m; sourceTree = "<group>"; };
 		9D3D1ACF1B68B5D000E93011 /* LCNewFeatureCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNewFeatureCtrl.h; sourceTree = "<group>"; };
 		9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNewFeatureCtrl.m; sourceTree = "<group>"; };
+		9D49A4951B6A5ED000B9F3E3 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		9D49A4961B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		9D49A4971B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		9D49A4981B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		9D49A4991B6A5ED000B9F3E3 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		9D49A49A1B6A5ED000B9F3E3 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		9D49A49B1B6A5ED000B9F3E3 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		9D49A49C1B6A5ED000B9F3E3 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		9D49A49D1B6A5ED000B9F3E3 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		9D49A49E1B6A5ED000B9F3E3 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		9D49A49F1B6A5ED000B9F3E3 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		9D49A4A01B6A5ED000B9F3E3 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		9D49A4A11B6A5ED000B9F3E3 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		9D49A4A21B6A5ED000B9F3E3 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		9D49A4A31B6A5ED000B9F3E3 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		9D49A4A41B6A5ED000B9F3E3 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		9D49A4A51B6A5ED000B9F3E3 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		9D49A4A61B6A5ED000B9F3E3 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		9D49A4A71B6A5ED000B9F3E3 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		9D49A4B11B6A62DB00B9F3E3 /* LCOauth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCOauth.h; sourceTree = "<group>"; };
+		9D49A4B21B6A62DB00B9F3E3 /* LCOauth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOauth.m; sourceTree = "<group>"; };
 		9D49CE8A1B65F2A900E4DC87 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D49CE8E1B65F2A900E4DC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D49CE8F1B65F2A900E4DC87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,6 +156,8 @@
 		9D2731181B69E81C00108ED9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9D49A4B11B6A62DB00B9F3E3 /* LCOauth.h */,
+				9D49A4B21B6A62DB00B9F3E3 /* LCOauth.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,12 +179,48 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		9D49A4931B6A5ED000B9F3E3 /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+				9D49A4941B6A5ED000B9F3E3 /* AFNetworking */,
+			);
+			name = ThirdLib;
+			path = "新浪微博/ThirdLib";
+			sourceTree = "<group>";
+		};
+		9D49A4941B6A5ED000B9F3E3 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				9D49A4951B6A5ED000B9F3E3 /* AFHTTPRequestOperation.h */,
+				9D49A4961B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m */,
+				9D49A4971B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.h */,
+				9D49A4981B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m */,
+				9D49A4991B6A5ED000B9F3E3 /* AFHTTPSessionManager.h */,
+				9D49A49A1B6A5ED000B9F3E3 /* AFHTTPSessionManager.m */,
+				9D49A49B1B6A5ED000B9F3E3 /* AFNetworking.h */,
+				9D49A49C1B6A5ED000B9F3E3 /* AFNetworkReachabilityManager.h */,
+				9D49A49D1B6A5ED000B9F3E3 /* AFNetworkReachabilityManager.m */,
+				9D49A49E1B6A5ED000B9F3E3 /* AFSecurityPolicy.h */,
+				9D49A49F1B6A5ED000B9F3E3 /* AFSecurityPolicy.m */,
+				9D49A4A01B6A5ED000B9F3E3 /* AFURLConnectionOperation.h */,
+				9D49A4A11B6A5ED000B9F3E3 /* AFURLConnectionOperation.m */,
+				9D49A4A21B6A5ED000B9F3E3 /* AFURLRequestSerialization.h */,
+				9D49A4A31B6A5ED000B9F3E3 /* AFURLRequestSerialization.m */,
+				9D49A4A41B6A5ED000B9F3E3 /* AFURLResponseSerialization.h */,
+				9D49A4A51B6A5ED000B9F3E3 /* AFURLResponseSerialization.m */,
+				9D49A4A61B6A5ED000B9F3E3 /* AFURLSessionManager.h */,
+				9D49A4A71B6A5ED000B9F3E3 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
 		9D49CE811B65F2A800E4DC87 = {
 			isa = PBXGroup;
 			children = (
 				9D49CE8C1B65F2A900E4DC87 /* 新浪微博 */,
 				9D49CEA61B65F2A900E4DC87 /* 新浪微博Tests */,
 				9D49CE8B1B65F2A900E4DC87 /* Products */,
+				9D49A4931B6A5ED000B9F3E3 /* ThirdLib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -541,22 +610,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D49A4A81B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m in Sources */,
 				9D110D921B688A4700D2B84B /* LCPopView.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
 				9D62CB171B67E5870035063F /* LCDiscoverViewCtrl.m in Sources */,
 				9D62CB1A1B67E5870035063F /* UIBarButtonItem+Extetion.m in Sources */,
 				9D62CB231B67E5870035063F /* SunView.m in Sources */,
 				9D62CB1F1B67E5870035063F /* LCSearchView.m in Sources */,
+				9D49A4AA1B6A5ED000B9F3E3 /* AFHTTPSessionManager.m in Sources */,
 				9D62CB1B1B67E5870035063F /* UIView+Extension.m in Sources */,
 				9D3D1AD11B68B5D000E93011 /* LCNewFeatureCtrl.m in Sources */,
+				9D49A4AB1B6A5ED000B9F3E3 /* AFNetworkReachabilityManager.m in Sources */,
+				9D49A4B01B6A5ED000B9F3E3 /* AFURLSessionManager.m in Sources */,
 				9D62CB221B67E5870035063F /* Sun2View.m in Sources */,
 				9D62CB191B67E5870035063F /* LCHomeTitelBtn.m in Sources */,
+				9D49A4AD1B6A5ED000B9F3E3 /* AFURLConnectionOperation.m in Sources */,
+				9D49A4AF1B6A5ED000B9F3E3 /* AFURLResponseSerialization.m in Sources */,
 				9D62CB1C1B67E5870035063F /* UIView+Inspectable.m in Sources */,
+				9D49A4AE1B6A5ED000B9F3E3 /* AFURLRequestSerialization.m in Sources */,
 				9D27311B1B69F08800108ED9 /* LCOAuthViewCtrl.m in Sources */,
 				9D62CB1E1B67E5870035063F /* LCTabBarController.m in Sources */,
 				9D62CB211B67E5870035063F /* LCTabBar.m in Sources */,
 				9D62CB1D1B67E5870035063F /* LCNavigationController.m in Sources */,
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,
+				9D49A4A91B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m in Sources */,
+				9D49A4AC1B6A5ED000B9F3E3 /* AFSecurityPolicy.m in Sources */,
+				9D49A4B31B6A62DB00B9F3E3 /* LCOauth.m in Sources */,
 				9D62CB181B67E5870035063F /* LCHomeVirewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,8 @@
 
 #import "LCNewFeatureCtrl.h"
 #import "LCTabBarController.h"
-
+#import "LCOauth.h"
+#import "LCOAuthViewCtrl.h"
 
 @interface LCNewFeatureCtrl ()<UIScrollViewDelegate>
 
@@ -163,16 +164,32 @@
     btn.selected = !btn.selected;
     
     
+    
+    
 }
 //进入开始微博
 -(void)starWeiBo:(UIButton *)btn{
     
    UIWindow *window = [[UIApplication sharedApplication]keyWindow];
-    window.rootViewController =[[LCTabBarController alloc]init];
-
+  //  window.rootViewController =[[LCTabBarController alloc]init];
+    //把模型解档
+    NSString *pathField =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    //拼接一个路径 account.archiver
+    pathField = [pathField stringByAppendingPathComponent:@"account.archiver"];
     
-}
+    //解档
+    LCOauth *ot = [NSKeyedUnarchiver unarchiveObjectWithFile:pathField];
+    NSLog(@"pathFiel =%@",pathField);
+    if (!ot) {
+        LCOAuthViewCtrl *lcoaCtr =[[LCOAuthViewCtrl alloc]init];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController =lcoaCtr;
 
+    }else{
+        window.rootViewController =[LCTabBarController new];
+    
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

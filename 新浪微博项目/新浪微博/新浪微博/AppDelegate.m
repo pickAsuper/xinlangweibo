@@ -10,6 +10,7 @@
 #import "LCTabBarController.h"
 #import "LCNewFeatureCtrl.h"
 #import "LCOAuthViewCtrl.h"
+#import "LCOauth.h"
 
 @interface AppDelegate ()
 
@@ -21,36 +22,59 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     
-//    //获取偏好设置
-//    NSLog(@"%@",[NSBundle mainBundle].infoDictionary);
-//     //取出当前的版本号version
-//  NSDictionary *info = [NSBundle mainBundle].infoDictionary;
-//   NSString *version = info[VERSION];
-//    
-//    
-//    //创建主窗口
+    //获取偏好设置
+    NSLog(@"%@",[NSBundle mainBundle].infoDictionary);
+     //取出当前的版本号version
+  NSDictionary *info = [NSBundle mainBundle].infoDictionary;
+   NSString *version = info[VERSION];
+    
+    
+    //创建主窗口
     self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-//    //取出保存的版本号
-//   NSString *saveVesion =[[NSUserDefaults standardUserDefaults] stringForKey:VERSION];
-//    
-//    //如果不是当前版本号 .或者 当前的版本号大于了本地保存的版本号都要显示新特性
-//    if (!version || [version compare:saveVesion]) {
-//         //创建新特性
-//        LCNewFeatureCtrl *newFeat =[[LCNewFeatureCtrl alloc]init];
-//        self.window.rootViewController =newFeat;
-//        
-//        //保存偏好设置
-//        [[NSUserDefaults standardUserDefaults]setObject:version forKey:VERSION];
-//         //同步
-//      [[NSUserDefaults standardUserDefaults]synchronize];
-//
-//    }else{  //否则 直接进入
-//        LCTabBarController *tabbarCtrl =[[LCTabBarController alloc]init];
-//        self.window.rootViewController = tabbarCtrl;
-//
+    //取出保存的版本号
+   NSString *saveVesion =[[NSUserDefaults standardUserDefaults] stringForKey:VERSION];
     
-//    }
+    //如果不是当前版本号 .或者 当前的版本号大于了本地保存的版本号都要显示新特性
+    if (!version || [version compare:saveVesion]) {
+         //创建新特性
+        
+        self.window.rootViewController =[[LCOAuthViewCtrl alloc]init];;
+        
+        //保存偏好设置
+        [[NSUserDefaults standardUserDefaults]setObject:version forKey:VERSION];
+         //同步
+      [[NSUserDefaults standardUserDefaults]synchronize];
+
+    }else{  //否则 直接进入
+       
+        //把模型解档
+        NSString *pathField =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        //拼接一个路径 account.archiver
+        pathField = [pathField stringByAppendingPathComponent:@"account.archiver"];
+        
+        //解档
+       LCOauth *ot = [NSKeyedUnarchiver unarchiveObjectWithFile:pathField];
+        NSLog(@"pathFiel =%@",pathField);
+        if (!ot) {
+            LCOAuthViewCtrl *lcoaCtr =[[LCOAuthViewCtrl alloc]init];
+            UIWindow *window = [UIApplication sharedApplication].keyWindow;
+            window.rootViewController =lcoaCtr;
+       
+        }else{
+        LCTabBarController *tabvarCtr =[[LCTabBarController alloc]init];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController =tabvarCtr;
+        }
+
+        
+        
+        
+        LCTabBarController *tabbarCtrl =[[LCTabBarController alloc]init];
+        self.window.rootViewController = tabbarCtrl;
+
+    
+    }
     
     LCOAuthViewCtrl *oatuth =[[LCOAuthViewCtrl alloc]init];
     self.window.rootViewController=oatuth;
