@@ -20,6 +20,7 @@
 		9D49A4AF1B6A5ED000B9F3E3 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4A51B6A5ED000B9F3E3 /* AFURLResponseSerialization.m */; };
 		9D49A4B01B6A5ED000B9F3E3 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4A71B6A5ED000B9F3E3 /* AFURLSessionManager.m */; };
 		9D49A4B31B6A62DB00B9F3E3 /* LCOauth.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4B21B6A62DB00B9F3E3 /* LCOauth.m */; };
+		9D49A4B61B6A89B400B9F3E3 /* UIWindow+Extetion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4B51B6A89B400B9F3E3 /* UIWindow+Extetion.m */; };
 		9D49CE901B65F2A900E4DC87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE8F1B65F2A900E4DC87 /* main.m */; };
 		9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CE921B65F2A900E4DC87 /* AppDelegate.m */; };
 		9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */; };
@@ -78,6 +79,8 @@
 		9D49A4A71B6A5ED000B9F3E3 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		9D49A4B11B6A62DB00B9F3E3 /* LCOauth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCOauth.h; sourceTree = "<group>"; };
 		9D49A4B21B6A62DB00B9F3E3 /* LCOauth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOauth.m; sourceTree = "<group>"; };
+		9D49A4B41B6A89B400B9F3E3 /* UIWindow+Extetion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extetion.h"; sourceTree = "<group>"; };
+		9D49A4B51B6A89B400B9F3E3 /* UIWindow+Extetion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extetion.m"; sourceTree = "<group>"; };
 		9D49CE8A1B65F2A900E4DC87 /* 新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D49CE8E1B65F2A900E4DC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D49CE8F1B65F2A900E4DC87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -440,6 +443,8 @@
 				9D62CB001B67E5870035063F /* UIView+Extension.m */,
 				9D62CB011B67E5870035063F /* UIView+Inspectable.h */,
 				9D62CB021B67E5870035063F /* UIView+Inspectable.m */,
+				9D49A4B41B6A89B400B9F3E3 /* UIWindow+Extetion.h */,
+				9D49A4B51B6A89B400B9F3E3 /* UIWindow+Extetion.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -633,6 +638,7 @@
 				9D62CB211B67E5870035063F /* LCTabBar.m in Sources */,
 				9D62CB1D1B67E5870035063F /* LCNavigationController.m in Sources */,
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,
+				9D49A4B61B6A89B400B9F3E3 /* UIWindow+Extetion.m in Sources */,
 				9D49A4A91B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m in Sources */,
 				9D49A4AC1B6A5ED000B9F3E3 /* AFSecurityPolicy.m in Sources */,
 				9D49A4B31B6A62DB00B9F3E3 /* LCOauth.m in Sources */,
