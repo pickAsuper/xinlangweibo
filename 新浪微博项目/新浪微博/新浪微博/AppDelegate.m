@@ -11,7 +11,7 @@
 #import "LCNewFeatureCtrl.h"
 #import "LCOAuthViewCtrl.h"
 #import "LCOauth.h"
-
+#import "UIWindow+Extetion.h"
 @interface AppDelegate ()
 
 @end
@@ -25,14 +25,15 @@
     
     //创建主窗口
     self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self switchRootCtrl];
+    //加载根控制器
+    [self switchRootViewCtrl];
     
 
     [self.window makeKeyAndVisible];
   
     return YES;
 }
--(void)switchRootCtrl{
+-(void)switchRootViewCtrl{
     //获取偏好设置
     NSLog(@"%@",[NSBundle mainBundle].infoDictionary);
     //取出当前的版本号version
@@ -53,27 +54,26 @@
         self.window.rootViewController =[LCNewFeatureCtrl new];
     }else{  //否则 直接进入
         
-        //把模型解档
-        NSString *pathField =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        //拼接一个路径 account.archiver
-        pathField = [pathField stringByAppendingPathComponent:@"account.archiver"];
+        [self.window switchRootViewCtrl];
         
-        //解档
-        LCOauth *ot = [NSKeyedUnarchiver unarchiveObjectWithFile:pathField];
-        NSLog(@"pathFiel =%@",pathField);
-        if (!ot) {
-            LCOAuthViewCtrl *lcoaCtr =[[LCOAuthViewCtrl alloc]init];
-            UIWindow *window = [UIApplication sharedApplication].keyWindow;
-            window.rootViewController =lcoaCtr;
-            
-        }else{
-            
-            LCTabBarController *tabvarCtr =[[LCTabBarController alloc]init];
-            UIWindow *window = [UIApplication sharedApplication].keyWindow;
-            window.rootViewController =tabvarCtr;
-        }
-        
-       
+        //下面这段代码个新特性的选择window控制器重复 抽取出来一个工具类来解档和选择根控制器
+//        //把模型解档
+//        NSString *pathField =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//        //拼接一个路径 account.archiver
+//        pathField = [pathField stringByAppendingPathComponent:@"account.archiver"];
+//        
+//        //解档
+//        LCOauth *ot = [NSKeyedUnarchiver unarchiveObjectWithFile:pathField];
+//        NSLog(@"pathFiel =%@",pathField);
+//        if (!ot) {
+//
+//            self.window.rootViewController =[LCOAuthViewCtrl new];
+//            
+//        }else{
+//        
+//            self.window.rootViewController =[LCTabBarController new];
+//
+//        }
         
     }
 

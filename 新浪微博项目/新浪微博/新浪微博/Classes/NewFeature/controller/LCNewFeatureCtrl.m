@@ -10,6 +10,7 @@
 #import "LCTabBarController.h"
 #import "LCOauth.h"
 #import "LCOAuthViewCtrl.h"
+#import "UIWindow+Extetion.h"
 
 @interface LCNewFeatureCtrl ()<UIScrollViewDelegate>
 
@@ -171,24 +172,27 @@
 -(void)starWeiBo:(UIButton *)btn{
     
    UIWindow *window = [[UIApplication sharedApplication]keyWindow];
-  //  window.rootViewController =[[LCTabBarController alloc]init];
-    //把模型解档
-    NSString *pathField =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    //拼接一个路径 account.archiver
-    pathField = [pathField stringByAppendingPathComponent:@"account.archiver"];
+     //把下面方法抽取到UIWindow分类去了
+    [window switchRootViewCtrl];
     
-    //解档
-    LCOauth *ot = [NSKeyedUnarchiver unarchiveObjectWithFile:pathField];
-    NSLog(@"pathFiel =%@",pathField);
-    if (!ot) {
-        LCOAuthViewCtrl *lcoaCtr =[[LCOAuthViewCtrl alloc]init];
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        window.rootViewController =lcoaCtr;
-
-    }else{
-        window.rootViewController =[LCTabBarController new];
-    
-    }
+    //  //  window.rootViewController =[[LCTabBarController alloc]init];
+//    //把模型解档
+//    NSString *pathField =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    //拼接一个路径 account.archiver
+//    pathField = [pathField stringByAppendingPathComponent:@"account.archiver"];
+//    
+//    //解档
+//    LCOauth *ot = [NSKeyedUnarchiver unarchiveObjectWithFile:pathField];
+//    NSLog(@"pathFiel =%@",pathField);
+//    if (!ot) {
+//        LCOAuthViewCtrl *lcoaCtr =[[LCOAuthViewCtrl alloc]init];
+//        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//        window.rootViewController =lcoaCtr;
+//
+//    }else{
+//        window.rootViewController =[LCTabBarController new];
+//    
+//    }
 }
 
 - (void)didReceiveMemoryWarning {

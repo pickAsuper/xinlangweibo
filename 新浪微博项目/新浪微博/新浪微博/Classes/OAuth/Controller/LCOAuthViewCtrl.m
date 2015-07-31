@@ -59,7 +59,7 @@
      NSString *str =request.URL.absoluteString;
     //判断是否为回调页
     if ([str hasPrefix:Redirect_uri]) {
-        NSString *testr =@"?code=";
+        NSString *testr =@"&code=";
        NSRange range = [str rangeOfString:testr];
         //不等于空 NSNotFound
         if (range.location != NSNotFound) {
@@ -118,6 +118,7 @@
         [NSKeyedArchiver archiveRootObject:oauth toFile:pathField];
         NSLog(@"pathFiel =%@",pathField);
        
+        //创建根控制器
         LCTabBarController *tabvarCtr =[[LCTabBarController alloc]init];
        UIWindow *window = [UIApplication sharedApplication].keyWindow;
         window.rootViewController =tabvarCtr;

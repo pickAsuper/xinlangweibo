@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIWindow (Extetion)
-+(void)switchRootViewCtrl;
+-(void)switchRootViewCtrl;
 
 @end
