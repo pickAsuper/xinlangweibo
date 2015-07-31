@@ -10,6 +10,8 @@
 #import "AFNetworking.h"
 #import "LCOauth.h"
 #import "LCTabBarController.h"
+#import "LCAccountTool.h"
+
 
 //appKey
 #define Client_id @"2914063897"
@@ -18,7 +20,7 @@
 #define client_secret @"e1f26fae6da3a074bc9074e89d8f8749"
 
 // 请求回调地址
-#define Redirect_uri @"http://weibo.com/u/5386939902/home?leftnav=1"
+#define Redirect_uri @"http://www.baidu.com/"
 
 
 
@@ -50,7 +52,7 @@
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     
-    NSLog(@"%@",request.URL.absoluteString);
+  //  NSLog(@"%@",request.URL.absoluteString);
     
     //通过request.URL.absoluteString 可以获取到 :
 //htps://api.weibo.com/oauth2/authorize?client_id=2914063897&redirect_uri=htp://weibo.com/u/5386939902/home?leftnav=1
@@ -59,7 +61,7 @@
      NSString *str =request.URL.absoluteString;
     //判断是否为回调页
     if ([str hasPrefix:Redirect_uri]) {
-        NSString *testr =@"&code=";
+        NSString *testr =@"?code=";
        NSRange range = [str rangeOfString:testr];
         //不等于空 NSNotFound
         if (range.location != NSNotFound) {
@@ -103,22 +105,27 @@
     // >>通过这个类去找到错误的地方 text/plain AFJSONResponseSerializer
     [maneger POST:postStr parameters:dict success:^(AFHTTPRequestOperation *op,id dict ) {
         
-        NSLog(@"dict=%@",dict);
+       // NSLog(@"dict=%@",dict);
         //请求成功
         //字典转模型
         LCOauth *oauth =[[LCOauth alloc]init];
         [oauth setValuesForKeysWithDictionary:dict];
         
-        //把模型归档保存
-        NSString *pathField =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        //拼接一个路径 account.archiver
-       pathField = [pathField stringByAppendingPathComponent:@"account.archiver"];
-        
         //归档
-        [NSKeyedArchiver archiveRootObject:oauth toFile:pathField];
-        NSLog(@"pathFiel =%@",pathField);
-       
-        //创建根控制器
+        [LCAccountTool accountTool:oauth];
+        NSLog(@"asdsadasa----%zd",oauth.expires_in);
+      //  NSLog(@"%@",oauth.access_token);
+        //NSLog(@"%@",oauth.uid);
+//        //把模型归档保存
+//        NSString *pathField =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//        //拼接一个路径 account.archiver
+//       pathField = [pathField stringByAppendingPathComponent:@"account.archiver"];
+//        
+//        //归档
+//        [NSKeyedArchiver archiveRootObject:oauth toFile:pathField];
+//        NSLog(@"pathFiel =%@",pathField);
+//       
+//        //创建根控制器
         LCTabBarController *tabvarCtr =[[LCTabBarController alloc]init];
        UIWindow *window = [UIApplication sharedApplication].keyWindow;
         window.rootViewController =tabvarCtr;

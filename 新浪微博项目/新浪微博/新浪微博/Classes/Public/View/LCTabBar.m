@@ -52,7 +52,7 @@
 
 //中间按钮点击事件
 -(void)btnClick:(UIButton *)btn{
-    NSLog(@"asd");
+  //  NSLog(@"asd");
     if ([self.delegate respondsToSelector:@selector(tabbar:btnClick:)]) {
         [self.delegate tabbar:self btnClick:btn];
     }
@@ -79,7 +79,7 @@
            //NSLog(@"%@",view);
         //判断是不是系统的UITabBarButton
         if ([view isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-            NSLog(@"%@",view);
+          //  NSLog(@"%@",view);
 
             //每个控件的位置
            view.width = barw;

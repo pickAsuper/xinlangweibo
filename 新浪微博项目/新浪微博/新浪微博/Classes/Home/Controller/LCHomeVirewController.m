@@ -10,7 +10,11 @@
 #import "LCHomeTitelBtn.h"
 #import "SunView.h"
 #import "LCPopView.h"
-
+#import "LCOauth.h"
+#import "LCAccountTool.h"
+#import "AFNetworking.h"
+#import "LCUser.h"
+#import "MJExtension.h"
 
 @interface LCHomeVirewController ()
 
@@ -22,8 +26,13 @@
     [super viewDidLoad];
     
     [self setupNav];
+   
+//    LCOauth *oauthq = [LCAccountTool AccountOpen];
+//    NSLog(@"%@",oauthq.access_token);
+//    NSLog(@"%@",oauthq.uid);
     
-
+    //用户信息
+    [self getUserData];
 
 }
 -(void)setupNav{
@@ -34,7 +43,7 @@
     
     [titelBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [titelBtn sizeToFit];
-    NSLog(@"titelBtn = %f",titelBtn.centerX);
+   // NSLog(@"titelBtn = %f",titelBtn.centerX);
     
     
      //给中间按钮添加点击事件
@@ -91,6 +100,39 @@
     
 
 }
+-(void)getUserData{
+    
+    //NSString *str =@"https://api.weibo.com/2/users/show.json?access_token=2.009JDZsFbIHNLDd2f5f867cbUDEeUE&uid=5386939902";
+   // 2.009JDZsFbIHNLDd2f5f867cbUDEeUE
+//     5386939902
+    
+    NSString *str =@"https://api.weibo.com/2/users/show.json";
+    NSMutableDictionary *dict =[NSMutableDictionary dictionary];
+    LCOauth *oauth = [LCAccountTool AccountOpen];
+    dict[@"access_token"]=oauth.access_token;
+    dict[@"uid"]=oauth.uid;
+    
+    
+    AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
+    [manager POST:str parameters:dict success:^(AFHTTPRequestOperation * op, id asd) {
+       // NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+        LCUser *userInfo =[LCUser new];
+        
+        //调用了第三方框架
+        [userInfo setKeyValues:asd];
+        
+        LCHomeTitelBtn *homeTitel =(LCHomeTitelBtn *)self.navigationItem.titleView;
+        [homeTitel setTitle:userInfo.screen_name forState:UIControlStateNormal];
+
+    } failure:
+    ^(AFHTTPRequestOperation *op, NSError *error) {
+        
+    }];
+    
+
+}
+
+
 
 
 

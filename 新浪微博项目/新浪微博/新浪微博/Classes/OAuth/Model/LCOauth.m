@@ -10,6 +10,11 @@
 
 @implementation LCOauth
 
+//重写expires_in 赋值时间
+-(void)setExpires_in:(NSInteger)expires_in{
+    _expires_in =expires_in;
+    self.create_at =[NSDate date];
+}
 //获取的数据进行归档操作
 -(void)encodeWithCoder:(NSCoder *)encode{
     [encode encodeInteger:self.expires_in forKey:@"expires_in"];

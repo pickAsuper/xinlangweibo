@@ -35,7 +35,7 @@
 }
 -(void)switchRootViewCtrl{
     //获取偏好设置
-    NSLog(@"%@",[NSBundle mainBundle].infoDictionary);
+   // NSLog(@"%@",[NSBundle mainBundle].infoDictionary);
     //取出当前的版本号version
     NSDictionary *info = [NSBundle mainBundle].infoDictionary;
     NSString *version = info[VERSION];
@@ -55,6 +55,7 @@
     }else{  //否则 直接进入
         
         [self.window switchRootViewCtrl];
+          
         
         //下面这段代码个新特性的选择window控制器重复 抽取出来一个工具类来解档和选择根控制器
 //        //把模型解档

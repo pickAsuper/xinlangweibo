@@ -64,7 +64,7 @@
 }
 -(void)tabbar:(LCTabBar *)tabbar btnClick:(UIButton *)btn{
     
-    NSLog(@"xzfa");
+   // NSLog(@"xzfa");
     NSLog(@"%s",__func__);
 
 }

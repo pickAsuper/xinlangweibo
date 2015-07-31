@@ -65,7 +65,7 @@
 
 
 -(void)btnClick:(UIButton *)btn{
-    NSLog(@"点击了中间按钮");
+  //  NSLog(@"点击了中间按钮");
     [self removeFromSuperview];
 }
 

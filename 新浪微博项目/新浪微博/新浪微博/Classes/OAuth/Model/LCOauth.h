@@ -29,6 +29,7 @@
 @property (nonatomic ,copy)NSString *remind_in;
 @property (nonatomic ,copy)NSString *uid;
 
-
+//请求超时时间
+@property (nonatomic ,strong)NSDate *create_at;
 
 @end

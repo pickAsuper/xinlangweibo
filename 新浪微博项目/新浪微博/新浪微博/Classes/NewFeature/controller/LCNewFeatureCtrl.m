@@ -40,7 +40,7 @@
     pageCtrl.centerX =SCREENW *0.5;
     pageCtrl.y =SCREENH -100;
     pageCtrl.numberOfPages =count;
-    NSLog(@"%@",pageCtrl);
+  //  NSLog(@"%@",pageCtrl);
     self.pageCtrl =pageCtrl;
     [self.view addSubview:pageCtrl];
     
@@ -174,6 +174,7 @@
    UIWindow *window = [[UIApplication sharedApplication]keyWindow];
      //把下面方法抽取到UIWindow分类去了
     [window switchRootViewCtrl];
+    
     
     //  //  window.rootViewController =[[LCTabBarController alloc]init];
 //    //把模型解档
