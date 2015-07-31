@@ -114,21 +114,21 @@
     
     
     AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
-    [manager POST:str parameters:dict success:^(AFHTTPRequestOperation * op, id asd) {
-       // NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+    [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id reque) {
+        // NSMutableDictionary *dic =[NSMutableDictionary dictionary];
         LCUser *userInfo =[LCUser new];
         
         //调用了第三方框架
-        [userInfo setKeyValues:asd];
+        [userInfo setKeyValues:reque];
         
         LCHomeTitelBtn *homeTitel =(LCHomeTitelBtn *)self.navigationItem.titleView;
         [homeTitel setTitle:userInfo.screen_name forState:UIControlStateNormal];
+        
 
-    } failure:
-    ^(AFHTTPRequestOperation *op, NSError *error) {
+        
+    } failure:^(AFHTTPRequestOperation * op, NSError *error) {
         
     }];
-    
 
 }
 
