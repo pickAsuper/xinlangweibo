@@ -40,6 +40,7 @@
 		9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */; };
 		9D49CEAA1B65F2A900E4DC87 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEA91B65F2A900E4DC87 /* ____Tests.m */; };
 		9D6292271B6CA17F009E30BC /* LCUnReacount.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6292261B6CA17F009E30BC /* LCUnReacount.m */; };
+		9D62922A1B6CBD95009E30BC /* LCIWTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6292291B6CBD95009E30BC /* LCIWTabBarItem.m */; };
 		9D62CB171B67E5870035063F /* LCDiscoverViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CAE81B67E5870035063F /* LCDiscoverViewCtrl.m */; };
 		9D62CB181B67E5870035063F /* LCHomeVirewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CAEE1B67E5870035063F /* LCHomeVirewController.m */; };
 		9D62CB191B67E5870035063F /* LCHomeTitelBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CAF21B67E5870035063F /* LCHomeTitelBtn.m */; };
@@ -134,6 +135,8 @@
 		9D49CEBF1B66500C00E4DC87 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		9D6292251B6CA17F009E30BC /* LCUnReacount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUnReacount.h; sourceTree = "<group>"; };
 		9D6292261B6CA17F009E30BC /* LCUnReacount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUnReacount.m; sourceTree = "<group>"; };
+		9D6292281B6CBD95009E30BC /* LCIWTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCIWTabBarItem.h; sourceTree = "<group>"; };
+		9D6292291B6CBD95009E30BC /* LCIWTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCIWTabBarItem.m; sourceTree = "<group>"; };
 		9D62CAE71B67E5870035063F /* LCDiscoverViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDiscoverViewCtrl.h; sourceTree = "<group>"; };
 		9D62CAE81B67E5870035063F /* LCDiscoverViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDiscoverViewCtrl.m; sourceTree = "<group>"; };
 		9D62CAED1B67E5870035063F /* LCHomeVirewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeVirewController.h; sourceTree = "<group>"; };
@@ -557,6 +560,8 @@
 		9D62CB081B67E5870035063F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9D6292281B6CBD95009E30BC /* LCIWTabBarItem.h */,
+				9D6292291B6CBD95009E30BC /* LCIWTabBarItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -715,6 +720,7 @@
 				9D6292271B6CA17F009E30BC /* LCUnReacount.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
 				9D62CB171B67E5870035063F /* LCDiscoverViewCtrl.m in Sources */,
+				9D62922A1B6CBD95009E30BC /* LCIWTabBarItem.m in Sources */,
 				9D49A4BA1B6B3BD100B9F3E3 /* LCAccountTool.m in Sources */,
 				9D62CB1A1B67E5870035063F /* UIBarButtonItem+Extetion.m in Sources */,
 				9D4697A31B6BDD49000B7CC4 /* LCStatus.m in Sources */,

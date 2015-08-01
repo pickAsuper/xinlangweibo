@@ -20,7 +20,8 @@
 #import "LCLoadMoreView.h"
 #import "LCUnReacount.h"
 
-
+//运行时
+#import <objc/runtime.h>
 
 // 加载条数
 #define LOAD_COUNT 20
@@ -69,19 +70,22 @@ static NSString *identifier =@"cell";
     // [self loadNewStatues];
     [self setRefreshView];
     
+    self.tabBarItem.badgeValue =@"10";
+    
     //创建timer 定时器
     NSTimer *timer =[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(loadUnReadCount) userInfo:nil repeats:YES];
+    //timer立马运行
     [timer fire];
      //添加到消息循环
     NSRunLoop *runloop =[NSRunLoop mainRunLoop];
     [runloop addTimer:timer forMode:NSRunLoopCommonModes];
-    
-    
-    
-
 }
-
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarItem.badgeValue =nil;
+    
+    
+}
 
 
 #pragma -mark 下拉加载更多
@@ -236,7 +240,8 @@ static NSString *identifier =@"cell";
         
         // 取出 statuses 里面的值>>最外层是字典{statuses是字典里面的数组 statuses里面存的也是字典}
         NSArray *array = retuq[@"statuses"];
-        NSLog(@"retup %@",retuq[@"statuses"]);
+       // NSLog(@"retup %@",retuq[@"statuses"]);
+      
         // 通过第三方框架进行字典转模型
        NSArray *arr = [LCStatus objectArrayWithKeyValuesArray:array];
         
@@ -352,6 +357,10 @@ static NSString *identifier =@"cell";
       //如果指标有值
       if (reaCount.status) {
           self.tabBarItem.badgeValue =[NSString stringWithFormat:@"%zd",reaCount.status];
+          //设置桌面上应用图标右上角的badgeNumber
+          [UIApplication sharedApplication].applicationIconBadgeNumber =reaCount.status;
+          
+          
       }else{
           self.tabBarItem.badgeValue=nil;
       }
@@ -392,7 +401,9 @@ static NSString *identifier =@"cell";
     
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+self.tabBarItem.badgeValue =@"15";
+}
 
 
 @end

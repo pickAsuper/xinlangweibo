@@ -20,7 +20,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
+    if ([[UIDevice currentDevice].systemVersion doubleValue]>=8.0 ) {
+       UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+     ////注册这个设置--只要我们一注册这个设置,就会在启动的时候应用里面会提示用户是否允许弹这个BadgeNumber
+        [application registerUserNotificationSettings:setting];
+    }
     
     
     //创建主窗口
@@ -87,9 +92,20 @@
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
+//后台挂起状态
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+  
+    
+    //1.定义一个identifier
+    //2.开启一个后台的任务-->配置block-->identifier这个时候identifier是没有值
+    //3.开启一个后台的任务的返回值赋值给identifier
+    
+    __block UIBackgroundTaskIdentifier identifier =[application beginBackgroundTaskWithExpirationHandler:^{
+         [application endBackgroundTask:identifier];
+     }];
+    
+    
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
