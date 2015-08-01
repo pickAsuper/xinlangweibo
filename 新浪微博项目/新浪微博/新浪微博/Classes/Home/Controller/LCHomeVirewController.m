@@ -15,26 +15,43 @@
 #import "AFNetworking.h"
 #import "LCUser.h"
 #import "MJExtension.h"
+#import "LCStatus.h"
+#import "UIViewController+ESSeparatorInset.h"
 
 @interface LCHomeVirewController ()
 
-@end
+@property(nonatomic ,strong)NSArray *statueS;
 
+@end
+static NSString *identifier =@"cell";
 @implementation LCHomeVirewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupNav];
-   
-//    LCOauth *oauthq = [LCAccountTool AccountOpen];
+    
+    //就不用去缓存池中找了
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
+    
+    //这段代码让cell的横线 靠左边了(系统默认是不靠左边的)
+      [self setSeparatorInsetZeroWithTableView:self.tableView];
+
+    //LCOauth *oauthq = [LCAccountTool AccountOpen];
 //    NSLog(@"%@",oauthq.access_token);
 //    NSLog(@"%@",oauthq.uid);
     
     //用户信息
     [self getUserData];
 
+    //加载首页微博数据
+//    [self loadNewStatues];
+    [self getNewStatus];
 }
+
+
+
+#pragma mark --加载首页
 -(void)setupNav{
     //创建首页标题按钮
     LCHomeTitelBtn *titelBtn =[[LCHomeTitelBtn alloc]init];
@@ -59,19 +76,15 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_pop" target:self action:@selector(rightbarClick)];
 
 }
-
+#pragma mark --按钮点击事件
 -(void)barButtonClick{
    // NSLog(@"btn =%s",__func__);
     SunView *view =[[SunView alloc]init];
    
     
     [self.navigationController pushViewController:view animated:YES];
-    
-    
-    
-    
-}
 
+}
 -(void)rightbarClick{
     //NSLog(@"right = %s",__func__);
   
@@ -100,6 +113,12 @@
     
 
 }
+
+
+
+
+
+#pragma mark -获取用户信息
 -(void)getUserData{
     
     //NSString *str =@"https://api.weibo.com/2/users/show.json?access_token=2.009JDZsFbIHNLDd2f5f867cbUDEeUE&uid=5386939902";
@@ -132,83 +151,60 @@
 
 }
 
+#pragma -mark  加载首页微博数据
+ 
+-(void)getNewStatus{
+   
+    //请求地址
+    NSString *str =@"https://api.weibo.com/2/statuses/friends_timeline.json";
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    LCOauth *oau =[LCAccountTool AccountOpen];
+    dict[@"access_token"] = oau.access_token;
+    dict[@"count"] =@(5);
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id retuq) {
+       // NSLog(@"getNewUserData %@",retuq);
+         //获取字典数组
+        NSLog(@"ret %@",retuq);
+        NSArray *array = retuq[@"statuses"];
+        
+//        通过第三方框架进行字典转模型
+       NSArray *arr = [LCStatus objectArrayWithKeyValuesArray:array];
+        self.statueS =arr;
 
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+        //刷新tableView
+        [self.tableView reloadData];
+     
+    } failure:^(AFHTTPRequestOperation *op, NSError * error) {
+        NSLog(@"首页数据获取失败信息 - error%@",error);
+    }];
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
+#pragma mark - 数据源方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    
+    return self.statueS.count;
+
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    //NSString *ID =@"CELL";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+//    if (cell ==nil) {
+//        cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+//    }
+ 
+    LCStatus *status = self.statueS[indexPath.row];
+    cell.textLabel.text =status.text;
+    
+    
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
