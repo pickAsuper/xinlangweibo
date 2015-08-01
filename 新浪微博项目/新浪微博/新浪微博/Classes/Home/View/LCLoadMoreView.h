@@ -1,16 +1,16 @@
 //
-//  LCStatus.m
+//  LCLoadMoreView.h
 //  新浪微博
 //
 //  Created by lichao on 15/8/1.
 //  Copyright (c) 2015年 ___Super___. All rights reserved.
 //
 
-#import "LCStatus.h"
+#import <UIKit/UIKit.h>
 
-@implementation LCStatus
+@interface LCLoadMoreView : UIView
 
++(instancetype)loadMoreView;
 
 
 @end
-

@@ -17,6 +17,14 @@
 #import "MJExtension.h"
 #import "LCStatus.h"
 #import "UIViewController+ESSeparatorInset.h"
+#import "LCLoadMoreView.h"
+#import "LCUnReacount.h"
+
+
+
+// 加载条数
+#define LOAD_COUNT 20
+
 
 @interface LCHomeVirewController ()
 
@@ -37,25 +45,45 @@ static NSString *identifier =@"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupNav];
-    
     //就不用去缓存池中找了
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
     
     //这段代码让cell的横线 靠左边了(系统默认是不靠左边的)
       [self setSeparatorInsetZeroWithTableView:self.tableView];
 
-    //LCOauth *oauthq = [LCAccountTool AccountOpen];
-//    NSLog(@"%@",oauthq.access_token);
-//    NSLog(@"%@",oauthq.uid);
+    //去掉tableView  最后的cell的线
+    UIView *footView =[UIView new];
+    self.tableView.tableFooterView = footView;
+    //去掉cell 最后一根线
+    self.tableView.separatorInset =UIEdgeInsetsMake(0, 0, 5, 0);
     
-    //用户信息
+    
+    //首页
+    [self setupNav];
+
+    
+    // 用户信息
     [self getUserData];
 
-    //加载首页微博数据
-//    [self loadNewStatues];
+    // 加载首页微博数据
+    // [self loadNewStatues];
     [self setRefreshView];
+    
+    //创建timer 定时器
+    NSTimer *timer =[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(loadUnReadCount) userInfo:nil repeats:YES];
+    [timer fire];
+     //添加到消息循环
+    NSRunLoop *runloop =[NSRunLoop mainRunLoop];
+    [runloop addTimer:timer forMode:NSRunLoopCommonModes];
+    
+    
+    
+
 }
+
+
+
+
 #pragma -mark 下拉加载更多
 
 -(void)setRefreshView{
@@ -68,8 +96,17 @@ static NSString *identifier =@"cell";
     
     //添加到tableView 上
     [self.tableView addSubview:refresh];
+    [refresh beginRefreshing];
+    
+     //加载用户新数据
     [self getNewStatus:refresh];
-
+    
+    //创建Xib 底部加载更多
+    LCLoadMoreView *loadMoreView =[LCLoadMoreView loadMoreView];
+    loadMoreView.hidden = YES;
+    self.tableView.tableFooterView =loadMoreView;
+    
+    
 }
 
 #pragma mark --加载首页
@@ -182,7 +219,7 @@ static NSString *identifier =@"cell";
     //解档模型取值
     LCOauth *oau =[LCAccountTool AccountOpen];
     dict[@"access_token"] = oau.access_token;
-    dict[@"count"] =@(5);
+    dict[@"count"] =@(LOAD_COUNT);
     
     //如果是第一个数据 就从去加载最新的数据时间的数据 id 定义为了long long 类型
     if ([self.statueS firstObject]) {
@@ -218,6 +255,118 @@ static NSString *identifier =@"cell";
         [refreshCtrl endRefreshing];
     }];
 }
+
+
+//cell滑动到最后 >>滑动到最后在这里计算
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //没有数据或者有显示tableFooterView 就直接返回
+    if (self.statueS.count == 0 || self.tableView.tableFooterView.hidden ==NO) {
+        return;
+        }
+ 
+    // scrollView的滚动的高度 - 整个屏幕的高度
+  CGFloat result =  scrollView.contentSize.height-SCREENH;
+   
+    // 如果说这个宽度小于 或者 等于了 scrollView的偏移量 就要加载旧的数据(之前的数据)
+    // self.tabBarController.tabBar.height tabBar(底部)高度 49
+    if (result <= scrollView.contentOffset.y - self.tabBarController.tabBar.height) {
+        //显示加载条 tableFooterView >> (是Xib)
+        self.tableView.tableFooterView.hidden=NO;
+        
+        //加载底部数据(之前的数据)
+        [self getMoreStatus];
+        
+        
+    }
+    
+
+}
+
+#pragma -mark tableViewCELL  滑动到cell的最后加载的数据
+-(void)getMoreStatus{
+    //请求地址
+    NSString *str =@"https://api.weibo.com/2/statuses/friends_timeline.json";
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    //解档模型取值
+    LCOauth *oau =[LCAccountTool AccountOpen];
+    dict[@"access_token"] = oau.access_token;
+    dict[@"count"] =@(LOAD_COUNT);
+    
+    //如果是最后的数据 就从去加载最新的数据时间的数据 id 定义为了long long 类型
+    if ([self.statueS lastObject]) {
+        dict[@"max_id"] =@([[self.statueS lastObject] id]-1);
+        
+    }
+    
+    //发送请求获取数据
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id retuq) {
+       
+        //加载数据完成之后，把底部控件设置为隐藏，以及再次下拉的时候执行加载更多的逻辑
+      self.tableView.tableFooterView.hidden = YES;
+        
+    // 取出 statuses 里面的值>>最外层是字典{statuses是字典里面的数组 statuses里面存的也是字典}
+        NSArray *array = retuq[@"statuses"];
+     
+        // 通过第三方框架进行字典转模型
+        NSArray *arr = [LCStatus objectArrayWithKeyValuesArray:array];
+        
+//        //初始一个范围-->我们刷新回来的数据，需要添加到的tableView的前面(添加到数组的前面)
+//        NSIndexSet *indexSet =[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, arr.count)];
+        // /添加到数组的什么位置
+       // [self.statueS insertObjects:arr atIndexes:indexSet];
+        
+        [self.statueS addObjectsFromArray:arr];
+        
+        
+        //刷新tableView
+        [self.tableView reloadData];
+        
+        
+    } failure:^(AFHTTPRequestOperation *op, NSError * error) {
+        NSLog(@"首页数据获取失败信息 - error%@",error);
+    
+    }];
+    
+    
+
+}
+#pragma mark -loadUnReadCount
+-(void)loadUnReadCount{
+   NSString *str =@"https://rm.api.weibo.com/2/remind/unread_count.json";
+    NSMutableDictionary *dict =[NSMutableDictionary dictionary];
+    
+    LCOauth *oua =[LCAccountTool AccountOpen];
+    dict[@"access_token"]=oua.access_token;
+    dict[@"uid"]=oua.uid;
+    
+    
+    
+    AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
+  [manager GET:str parameters:dict success:^(AFHTTPRequestOperation *op, id reta) {
+      
+      //获取到数据后把未读信息赋值到指标上
+      LCUnReacount *reaCount =[LCUnReacount new];
+      [reaCount setKeyValues:reta];
+      
+      //如果指标有值
+      if (reaCount.status) {
+          self.tabBarItem.badgeValue =[NSString stringWithFormat:@"%zd",reaCount.status];
+      }else{
+          self.tabBarItem.badgeValue=nil;
+      }
+      
+  } failure:^(AFHTTPRequestOperation *op, NSError * error) {
+      NSLog(@"获取未读信息失败%@,",error);
+  }];
+
+
+
+
+}
+
+
+
 
 
 #pragma mark - 数据源方法

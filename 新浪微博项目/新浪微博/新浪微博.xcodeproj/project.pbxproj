@@ -20,6 +20,8 @@
 		9D4697A01B6BCCDC000B7CC4 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4697991B6BCCDC000B7CC4 /* NSObject+MJKeyValue.m */; };
 		9D4697A31B6BDD49000B7CC4 /* LCStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4697A21B6BDD49000B7CC4 /* LCStatus.m */; };
 		9D4697A71B6BE75B000B7CC4 /* UIViewController+ESSeparatorInset.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4697A61B6BE75B000B7CC4 /* UIViewController+ESSeparatorInset.m */; };
+		9D4697AA1B6C8D2C000B7CC4 /* LCLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4697A91B6C8D2C000B7CC4 /* LCLoadMoreView.m */; };
+		9D4697AC1B6C8D3F000B7CC4 /* LCLoadMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4697AB1B6C8D3F000B7CC4 /* LCLoadMoreView.xib */; };
 		9D49A4A81B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4961B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m */; };
 		9D49A4A91B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A4981B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m */; };
 		9D49A4AA1B6A5ED000B9F3E3 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49A49A1B6A5ED000B9F3E3 /* AFHTTPSessionManager.m */; };
@@ -37,6 +39,7 @@
 		9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */; };
 		9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */; };
 		9D49CEAA1B65F2A900E4DC87 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEA91B65F2A900E4DC87 /* ____Tests.m */; };
+		9D6292271B6CA17F009E30BC /* LCUnReacount.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6292261B6CA17F009E30BC /* LCUnReacount.m */; };
 		9D62CB171B67E5870035063F /* LCDiscoverViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CAE81B67E5870035063F /* LCDiscoverViewCtrl.m */; };
 		9D62CB181B67E5870035063F /* LCHomeVirewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CAEE1B67E5870035063F /* LCHomeVirewController.m */; };
 		9D62CB191B67E5870035063F /* LCHomeTitelBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CAF21B67E5870035063F /* LCHomeTitelBtn.m */; };
@@ -90,6 +93,9 @@
 		9D4697A21B6BDD49000B7CC4 /* LCStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCStatus.m; sourceTree = "<group>"; };
 		9D4697A51B6BE75B000B7CC4 /* UIViewController+ESSeparatorInset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ESSeparatorInset.h"; sourceTree = "<group>"; };
 		9D4697A61B6BE75B000B7CC4 /* UIViewController+ESSeparatorInset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ESSeparatorInset.m"; sourceTree = "<group>"; };
+		9D4697A81B6C8D2C000B7CC4 /* LCLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLoadMoreView.h; sourceTree = "<group>"; };
+		9D4697A91B6C8D2C000B7CC4 /* LCLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLoadMoreView.m; sourceTree = "<group>"; };
+		9D4697AB1B6C8D3F000B7CC4 /* LCLoadMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCLoadMoreView.xib; sourceTree = "<group>"; };
 		9D49A4951B6A5ED000B9F3E3 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		9D49A4961B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		9D49A4971B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 		9D49CEA81B65F2A900E4DC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D49CEA91B65F2A900E4DC87 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
 		9D49CEBF1B66500C00E4DC87 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		9D6292251B6CA17F009E30BC /* LCUnReacount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUnReacount.h; sourceTree = "<group>"; };
+		9D6292261B6CA17F009E30BC /* LCUnReacount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUnReacount.m; sourceTree = "<group>"; };
 		9D62CAE71B67E5870035063F /* LCDiscoverViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDiscoverViewCtrl.h; sourceTree = "<group>"; };
 		9D62CAE81B67E5870035063F /* LCDiscoverViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDiscoverViewCtrl.m; sourceTree = "<group>"; };
 		9D62CAED1B67E5870035063F /* LCHomeVirewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeVirewController.h; sourceTree = "<group>"; };
@@ -426,6 +434,8 @@
 				9D4697881B6BC9DC000B7CC4 /* LCUser.m */,
 				9D4697A11B6BDD49000B7CC4 /* LCStatus.h */,
 				9D4697A21B6BDD49000B7CC4 /* LCStatus.m */,
+				9D6292251B6CA17F009E30BC /* LCUnReacount.h */,
+				9D6292261B6CA17F009E30BC /* LCUnReacount.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,6 +447,9 @@
 				9D62CAF21B67E5870035063F /* LCHomeTitelBtn.m */,
 				9D110D901B688A4700D2B84B /* LCPopView.h */,
 				9D110D911B688A4700D2B84B /* LCPopView.m */,
+				9D4697A81B6C8D2C000B7CC4 /* LCLoadMoreView.h */,
+				9D4697A91B6C8D2C000B7CC4 /* LCLoadMoreView.m */,
+				9D4697AB1B6C8D3F000B7CC4 /* LCLoadMoreView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -676,6 +689,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4697AC1B6C8D3F000B7CC4 /* LCLoadMoreView.xib in Resources */,
 				9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */,
 				9D62CB201B67E5870035063F /* LCSearchView.xib in Resources */,
 				9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */,
@@ -698,6 +712,7 @@
 			files = (
 				9D49A4A81B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m in Sources */,
 				9D110D921B688A4700D2B84B /* LCPopView.m in Sources */,
+				9D6292271B6CA17F009E30BC /* LCUnReacount.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
 				9D62CB171B67E5870035063F /* LCDiscoverViewCtrl.m in Sources */,
 				9D49A4BA1B6B3BD100B9F3E3 /* LCAccountTool.m in Sources */,
@@ -720,6 +735,7 @@
 				9D62CB191B67E5870035063F /* LCHomeTitelBtn.m in Sources */,
 				9D49A4AD1B6A5ED000B9F3E3 /* AFURLConnectionOperation.m in Sources */,
 				9D49A4AF1B6A5ED000B9F3E3 /* AFURLResponseSerialization.m in Sources */,
+				9D4697AA1B6C8D2C000B7CC4 /* LCLoadMoreView.m in Sources */,
 				9D62CB1C1B67E5870035063F /* UIView+Inspectable.m in Sources */,
 				9D4697A01B6BCCDC000B7CC4 /* NSObject+MJKeyValue.m in Sources */,
 				9D49A4AE1B6A5ED000B9F3E3 /* AFURLRequestSerialization.m in Sources */,
