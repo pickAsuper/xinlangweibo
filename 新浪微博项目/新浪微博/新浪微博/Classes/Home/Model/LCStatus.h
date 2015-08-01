@@ -10,7 +10,10 @@
 
 @interface LCStatus : NSObject
 
-
+//用户登录后显示在首页的名称
 @property (nonatomic ,copy)NSString *text;
+
+//
+@property (nonatomic ,assign)long long id;
 
 @end
