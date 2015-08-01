@@ -26,4 +26,9 @@
 //设置XIB圆角和边框的类
 #import "UIView+Inspectable.h"
 
+//设置文字大小
+#define SYS_FONT(x) [UIFont systemFontOfSize:x]
+
+
+
 #endif

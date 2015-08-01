@@ -255,11 +255,18 @@ static NSString *identifier =@"cell";
         [self.tableView reloadData];
      
         
+        [self showCountLabelWithCount:arr.count];
+        
+        
+        
+        
     } failure:^(AFHTTPRequestOperation *op, NSError * error) {
         NSLog(@"首页数据获取失败信息 - error%@",error);
         [refreshCtrl endRefreshing];
     }];
 }
+
+
 
 
 //cell滑动到最后 >>滑动到最后在这里计算
@@ -286,6 +293,8 @@ static NSString *identifier =@"cell";
     
 
 }
+
+
 
 #pragma -mark tableViewCELL  滑动到cell的最后加载的数据
 -(void)getMoreStatus{
@@ -336,6 +345,8 @@ static NSString *identifier =@"cell";
     
 
 }
+
+
 #pragma mark -loadUnReadCount
 -(void)loadUnReadCount{
    NSString *str =@"https://rm.api.weibo.com/2/remind/unread_count.json";
@@ -374,6 +385,46 @@ static NSString *identifier =@"cell";
 
 }
 
+//showCountLabelWithCount
+-(void)showCountLabelWithCount:(NSInteger )count{
+   NSString *string =@"没有加载到更多数据";
+    if (count) {
+        string =[NSString stringWithFormat:@"共加载到%zd条数据",count];
+    }
+    UILabel *label =[UILabel new];
+    label.text =string;
+    label.font = SYS_FONT(14);
+    label.textColor =[UIColor whiteColor];
+    label.textAlignment =NSTextAlignmentCenter;
+    label.backgroundColor =[UIColor orangeColor];
+    label.size =CGSizeMake(SCREENW, 35);
+    label.y = 65 - label.width;
+    [self.navigationController.view insertSubview:label belowSubview:self.navigationController.navigationBar];
+    
+    [UIView animateWithDuration:5 animations:^{
+        
+       label.y = 65;
+     //label.transform = CGAffineTransformMakeTranslation(0, label.height);
+     
+      //label.transform = CGAffineTransformMakeTranslation(0, label.height);
+    }completion:^(BOOL finished) {
+        [UIView animateWithDuration:5 animations:^{
+
+            label.y =65-label.width;
+             //形变还原
+           // label.transform = CGAffineTransformIdentity;
+            
+        }completion:^(BOOL finished) {
+            //移除
+            [label removeFromSuperview];
+            label.hidden =YES;
+            
+        }];
+        
+    }];
+    
+
+}
 
 
 
@@ -401,6 +452,7 @@ static NSString *identifier =@"cell";
     
     return cell;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 self.tabBarItem.badgeValue =@"15";
 }
