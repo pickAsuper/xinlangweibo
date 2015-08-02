@@ -14,7 +14,7 @@
 
 //用户头像
 @property (nonatomic ,copy)NSString *profile_image_url;
-
+@property (nonatomic ,copy)NSString *created_at;
 
 
 @end

@@ -261,7 +261,7 @@
     [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id retuq) {
       
         self.tabBarItem.badgeValue= nil;
-        
+        [UIApplication sharedApplication].applicationIconBadgeNumber =0;
         //获取到数据以后 结束refreshCtrl 加载
         [refreshCtrl endRefreshing];
         

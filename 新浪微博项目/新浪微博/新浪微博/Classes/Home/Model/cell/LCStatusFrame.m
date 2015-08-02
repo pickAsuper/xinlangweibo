@@ -29,15 +29,46 @@
     CGSize nameSize = [self.status.user.screen_name sizeWithFont:SYS_FONT(NAME_LABEL_SIZE)];
     self.nameLabelF = (CGRect){{nameLabelX,nameLabelY},nameSize};
     
+    
+    // 时间位置
+    CGFloat createLabelX = CGRectGetMaxX(self.headImageF)+MARGIN;
+    CGFloat createLabelY = CGRectGetMaxY(self.nameLabelF)+MARGIN *0.5;
+    CGSize createLabelSize = [self.status.created_at sizeWithFont:SYS_FONT(CREATE_TIME_SIZE)];
+    
+    self.createLabelF = (CGRect){{createLabelX,createLabelY},createLabelSize};
+    
+    //来源的位置放在时间的后面
+    CGFloat sourceLabelX =CGRectGetMaxX(self.createLabelF) + MARGIN;
+    CGFloat sourceLabelY =createLabelY;
+    CGSize sourceLabelSize = [status.source sizeWithFont:SYS_FONT(CREATE_TIME_SIZE)];
+    self.sourceLabelF = (CGRect){{sourceLabelX,sourceLabelY},sourceLabelSize};
+    
+    
+    
+    //微博内容的位置
     CGFloat contentLabelX = headX;
     CGFloat contentLabelY = CGRectGetMaxY(self.headImageF) + MARGIN;
     CGSize contentLabelSize = [self.status.text sizeWithFont:SYS_FONT(CONTENT_LABEL_SIZE) constrainedToSize:CGSizeMake(SCREENW - 2 *MARGIN, MAXFLOAT)];
     
     self.contentLabelF =(CGRect){{contentLabelX,contentLabelY},contentLabelSize};
     
+    if (status.thumbnail_pic) {
+        CGFloat photoViewX = headX;
+        CGFloat photoViewY =CGRectGetMaxY(self.contentLabelF)+MARGIN;
+        CGSize photoViewSize = CGSizeMake(70, 70);
+        
+        self.photoViewF =(CGRect){{photoViewX,photoViewY},photoViewSize};
+        
+        self.cellHeight =CGRectGetMaxY(self.photoViewF);
+        
+        
+    }else{
+    
+    
     //cell行高
     self.cellHeight = CGRectGetMaxY(self.contentLabelF);
+        
+     }
 }
- 
 
 @end

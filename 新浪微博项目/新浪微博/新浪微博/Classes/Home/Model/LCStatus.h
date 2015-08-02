@@ -21,8 +21,14 @@
 //这条微博的信息
 @property (nonatomic,strong)LCUser *user;
 
+//创建时间
+@property (nonatomic ,copy)NSString *created_at;
 
+// 来源
+@property (nonatomic, copy) NSString *source;
 
+//缩略图
+@property (nonatomic,copy) NSString *thumbnail_pic;
 
 
 @end
