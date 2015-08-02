@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface LCUser : NSObject
+//用户名
 @property (nonatomic ,copy)NSString *screen_name;
+
+//用户头像
+@property (nonatomic ,copy)NSString *profile_image_url;
 @end

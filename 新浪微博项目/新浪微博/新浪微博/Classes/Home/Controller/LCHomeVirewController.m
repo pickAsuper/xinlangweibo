@@ -19,6 +19,8 @@
 #import "UIViewController+ESSeparatorInset.h"
 #import "LCLoadMoreView.h"
 #import "LCUnReacount.h"
+#import "LCStatusCell.h"
+#import "LCStatusFrame.h"
 
 //运行时
 #import <objc/runtime.h>
@@ -29,25 +31,42 @@
 
 @interface LCHomeVirewController ()
 
-@property(nonatomic ,strong)NSMutableArray *statueS;
+@property(nonatomic ,strong)NSMutableArray *statusFrames;
 
 @end
-static NSString *identifier =@"cell";
 @implementation LCHomeVirewController
 
--(NSMutableArray *)statueS{
-    if (!_statueS) {
-        _statueS =[NSMutableArray array];
+-(NSMutableArray *)statusFrames{
+    if (!_statusFrames) {
+        _statusFrames =[NSMutableArray array];
     }
-    return _statueS;
+    return _statusFrames;
 }
 
+//把模型转场frame
+-(NSArray *)converToFramesWithStatues:(NSArray *)statues{
+
+    
+    NSMutableArray *statusArray =[NSMutableArray array];
+    
+    for (LCStatus *status in statues) {
+        //初始化一个frame
+        LCStatusFrame *frame =[LCStatusFrame new];
+//        设置frame的模型数据 (去计算 >>setStatus)这个方法去计算
+        frame.status =status;
+        [statusArray addObject:frame];
+        
+        
+    }
+    return [statusArray copy];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //就不用去缓存池中找了
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
+    [self.tableView registerClass:[LCStatusCell class] forCellReuseIdentifier:identifier];
     
     //这段代码让cell的横线 靠左边了(系统默认是不靠左边的)
       [self setSeparatorInsetZeroWithTableView:self.tableView];
@@ -72,13 +91,13 @@ static NSString *identifier =@"cell";
     
     self.tabBarItem.badgeValue =@"10";
     
-    //创建timer 定时器
-    NSTimer *timer =[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(loadUnReadCount) userInfo:nil repeats:YES];
-    //timer立马运行
-    [timer fire];
-     //添加到消息循环
-    NSRunLoop *runloop =[NSRunLoop mainRunLoop];
-    [runloop addTimer:timer forMode:NSRunLoopCommonModes];
+//    //创建timer 定时器
+//    NSTimer *timer =[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(loadUnReadCount) userInfo:nil repeats:YES];
+//    //timer立马运行
+//    [timer fire];
+//     //添加到消息循环
+//    NSRunLoop *runloop =[NSRunLoop mainRunLoop];
+//    [runloop addTimer:timer forMode:NSRunLoopCommonModes];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -197,6 +216,7 @@ static NSString *identifier =@"cell";
     AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
     [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id reque) {
         // NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+       
         LCUser *userInfo =[LCUser new];
         
         //调用了第三方框架
@@ -208,7 +228,7 @@ static NSString *identifier =@"cell";
 
         
     } failure:^(AFHTTPRequestOperation * op, NSError *error) {
-        
+        NSLog(@"获取用户信息失败%@",error);
     }];
 
 }
@@ -226,15 +246,20 @@ static NSString *identifier =@"cell";
     dict[@"count"] =@(LOAD_COUNT);
     
     //如果是第一个数据 就从去加载最新的数据时间的数据 id 定义为了long long 类型
-    if ([self.statueS firstObject]) {
-        dict[@"since_id"] =@([[self.statueS firstObject] id]);
-        
+    if ([self.statusFrames firstObject]) {
+       // dict[@"since_id"] =@([[self.statusFrames firstObject] id]);
+
+        LCStatusFrame *frame = [self.statusFrames firstObject];
+              dict[@"since_id"] = @(frame.status.id);
+    
     }
     
     //发送请求获取数据
    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id retuq) {
       
+        self.tabBarItem.badgeValue= nil;
+        
         //获取到数据以后 结束refreshCtrl 加载
         [refreshCtrl endRefreshing];
         
@@ -243,19 +268,24 @@ static NSString *identifier =@"cell";
        // NSLog(@"retup %@",retuq[@"statuses"]);
       
         // 通过第三方框架进行字典转模型
-       NSArray *arr = [LCStatus objectArrayWithKeyValuesArray:array];
+       NSArray *status = [LCStatus objectArrayWithKeyValuesArray:array];
+
+        //得把status模型转成frame模型
+        NSArray *statuesFames =[self converToFramesWithStatues:status];
+        
         
         //初始一个范围-->我们刷新回来的数据，需要添加到的tableView的前面(添加到数组的前面)
-       NSIndexSet *indexSet =[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, arr.count)];
+       NSIndexSet *indexSet =[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, status.count)];
+        
         
          // /添加到数组的什么位置
-        [self.statueS insertObjects:arr atIndexes:indexSet];
+        [self.statusFrames insertObjects:statuesFames atIndexes:indexSet];
 
         //刷新tableView
         [self.tableView reloadData];
      
-        
-        [self showCountLabelWithCount:arr.count];
+        //显示加载条
+        [self showCountLabelWithCount:status.count];
         
         
         
@@ -272,7 +302,7 @@ static NSString *identifier =@"cell";
 //cell滑动到最后 >>滑动到最后在这里计算
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //没有数据或者有显示tableFooterView 就直接返回
-    if (self.statueS.count == 0 || self.tableView.tableFooterView.hidden ==NO) {
+    if (self.statusFrames.count == 0 || self.tableView.tableFooterView.hidden ==NO) {
         return;
         }
  
@@ -307,8 +337,11 @@ static NSString *identifier =@"cell";
     dict[@"count"] =@(LOAD_COUNT);
     
     //如果是最后的数据 就从去加载最新的数据时间的数据 id 定义为了long long 类型
-    if ([self.statueS lastObject]) {
-        dict[@"max_id"] =@([[self.statueS lastObject] id]-1);
+    if ([self.statusFrames lastObject]) {
+       // dict[@"max_id"] =@([[self.statusFrames lastObject] id]-1);
+       LCStatusFrame *statusFrame = [self.statusFrames lastObject];
+        dict[@"max_id"]=@([statusFrame.status id]-1);
+        
         
     }
     
@@ -323,14 +356,18 @@ static NSString *identifier =@"cell";
         NSArray *array = retuq[@"statuses"];
      
         // 通过第三方框架进行字典转模型
-        NSArray *arr = [LCStatus objectArrayWithKeyValuesArray:array];
+        NSArray *status = [LCStatus objectArrayWithKeyValuesArray:array];
         
-//        //初始一个范围-->我们刷新回来的数据，需要添加到的tableView的前面(添加到数组的前面)
-//        NSIndexSet *indexSet =[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, arr.count)];
-        // /添加到数组的什么位置
-       // [self.statueS insertObjects:arr atIndexes:indexSet];
+        //得把status模型转成frame模型
+        NSArray *statuesFames =[self converToFramesWithStatues:status];
         
-        [self.statueS addObjectsFromArray:arr];
+
+        //frame模型
+        [self.statusFrames addObjectsFromArray:statuesFames];
+        
+        
+        
+       // [self.statusFrames addObjectsFromArray:arr];
         
         
         //刷新tableView
@@ -339,7 +376,8 @@ static NSString *identifier =@"cell";
         
     } failure:^(AFHTTPRequestOperation *op, NSError * error) {
         NSLog(@"首页数据获取失败信息 - error%@",error);
-    
+       
+        self.tableView.tableFooterView.hidden =YES;
     }];
     
     
@@ -432,24 +470,23 @@ static NSString *identifier =@"cell";
 #pragma mark - 数据源方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.statueS.count;
+    return self.statusFrames.count;
 
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+     // 创建自定义cell
+    LCStatusCell *cell = [LCStatusCell cellWithTableView:tableView];
     
-    //NSString *ID =@"CELL";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-//    if (cell ==nil) {
-//        cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-//    }
- 
-    LCStatus *status = self.statueS[indexPath.row];
-    cell.textLabel.text =status.text;
+    // 设置frame模型
+    LCStatusFrame *statusFrame =self.statusFrames[indexPath.row];
+    // NSLog(@"%@",statusFrame.status.text);
     
+    [cell setStatusFrame:statusFrame];
     
     
+
     return cell;
 }
 

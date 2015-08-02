@@ -10,7 +10,7 @@
 #import "LCTabBar.h"
 #import "LCHomeVirewController.h"
 #import "LCDiscoverViewCtrl.h"
-
+#import "LCIWTabBarItem.h"
 
 @interface LCTabBarController ()<LCTabBarDelegate>
 
@@ -42,7 +42,9 @@
     
 }
 -(void)tableViewWithTableViewCtrl:(UITableViewController *)ctrl image:(NSString *)image titel:(NSString *)titel{
-    
+   
+    //更改为tabBarItem
+    ctrl.tabBarItem =[LCIWTabBarItem new];
     //设置底部tabbar文字颜色
     ctrl.tabBarItem.title =titel;
    // NSMutableDictionary *dict =[NSMutableDictionary dictionary];
