@@ -21,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        //设置按钮的宽高>>等于屏幕高度
+        // 设置按钮的宽高 >>等于屏幕高度
         self.width = SCREENW;
         self.height =SCREENH;
         
@@ -63,7 +63,7 @@
 }
 
 
-
+//蒙版(透明)按钮的点击事件
 -(void)btnClick:(UIButton *)btn{
   //  NSLog(@"点击了中间按钮");
     [self removeFromSuperview];

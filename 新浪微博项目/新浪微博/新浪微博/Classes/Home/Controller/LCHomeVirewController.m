@@ -74,7 +74,7 @@
     //去掉tableView  最后的cell的线
     UIView *footView =[UIView new];
     self.tableView.tableFooterView = footView;
-    //去掉cell 最后一根线
+    //去掉cell 最后一根线 >>只要在下边指定一个宽度就ok了哦
     self.tableView.separatorInset =UIEdgeInsetsMake(0, 0, 5, 0);
     
     
@@ -132,8 +132,9 @@
     
 }
 
-#pragma mark --加载首页
+#pragma mark --加载首页导航控制器
 -(void)setupNav{
+   
     //创建首页标题按钮
     LCHomeTitelBtn *titelBtn =[[LCHomeTitelBtn alloc]init];
     [titelBtn setTitle:@"首页" forState:UIControlStateNormal];
@@ -151,43 +152,46 @@
     
     
     
-//设置左右按钮
+   // 设置导航栏左右按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" target:self action:@selector(barButtonClick)];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_pop" target:self action:@selector(rightbarClick)];
 
 }
+
 #pragma mark --按钮点击事件
 -(void)barButtonClick{
    // NSLog(@"btn =%s",__func__);
     SunView *view =[[SunView alloc]init];
    
-    
+    //push到下一个控制器
     [self.navigationController pushViewController:view animated:YES];
 
 }
 -(void)rightbarClick{
-    //NSLog(@"right = %s",__func__);
+    NSLog(@"right = %s",__func__);
   
 }
 
 //首页中间按钮的点击事件
 -(void)titelBtnClick:(UIButton *)btn{
-   
+    
+    // 逻辑>>
+    // 点击中间按钮 >> 创建一个了一个view 再把创建好的view 添加到自定义的按钮(透明的蒙版按钮LCPopView)里面创建的imageView上 这个imageView就是能看见的灰色view 再把传进来的btn 添加最后一个窗口上显示;
+    
     UIView *view =[[UIView alloc]init];
     view.size = CGSizeMake(100, 100);
     view.backgroundColor =[UIColor blueColor];
   
-    //当点击中间按钮的时候就创建一个按钮作为蒙版
+    // 当点击中间按钮的时候就创建一个按钮作为蒙版
     LCPopView *popView =[[LCPopView alloc]initWithCustomsView:view];
 
     //    设置背景图片
-//    popView.backgroundColor =[UIColor redColor];
-//    popView.alpha = 0.5;
+    // popView.backgroundColor =[UIColor redColor];
+    // popView.alpha = 0.5;
     //添加到主窗口上 这个蒙版创建出来 是让用户不能和下面的控件进行交互
-  //[[UIApplication sharedApplication].keyWindow addSubview:popView];
-    
-  // UIWindow *window=  [[UIApplication sharedApplication].windows lastObject];
+    //[[UIApplication sharedApplication].keyWindow addSubview:popView];
+    // UIWindow *window=  [[UIApplication sharedApplication].windows lastObject];
     //[window addSubview:popView];
    
     [popView showFromView:btn];
@@ -208,6 +212,7 @@
     
     NSString *str =@"https://api.weibo.com/2/users/show.json";
     NSMutableDictionary *dict =[NSMutableDictionary dictionary];
+    // 解档模型取值
     LCOauth *oauth = [LCAccountTool AccountOpen];
     dict[@"access_token"]=oauth.access_token;
     dict[@"uid"]=oauth.uid;
@@ -216,43 +221,40 @@
     AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
     [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id reque) {
         // NSMutableDictionary *dic =[NSMutableDictionary dictionary];
-       
         LCUser *userInfo =[LCUser new];
         
-        //调用了第三方框架
+        // 调用了第三方框架(MJExtension)给成员变量赋值
         [userInfo setKeyValues:reque];
         
+        // 设置导航栏中间的文字为用户名(新浪用户名) >> 转成自定义的 LCHomeTitelBtn
+       
+         // LCHomeTitelBtn >> 进行了文字和图片的交换
         LCHomeTitelBtn *homeTitel =(LCHomeTitelBtn *)self.navigationItem.titleView;
         [homeTitel setTitle:userInfo.screen_name forState:UIControlStateNormal];
-        
-
-        
+   
     } failure:^(AFHTTPRequestOperation * op, NSError *error) {
         NSLog(@"获取用户信息失败%@",error);
     }];
-
 }
 
-#pragma -mark  加载首页微博数据
- 
+
+
+#pragma -mark  加载首页微博数据 
 -(void)getNewStatus:(UIRefreshControl *)refreshCtrl{
    
     //请求地址
     NSString *str =@"https://api.weibo.com/2/statuses/friends_timeline.json";
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    //解档模型取值
+    // 解档模型取值
     LCOauth *oau =[LCAccountTool AccountOpen];
     dict[@"access_token"] = oau.access_token;
     dict[@"count"] =@(LOAD_COUNT);
     
     //如果是第一个数据 就从去加载最新的数据时间的数据 id 定义为了long long 类型
     if ([self.statusFrames firstObject]) {
-       // dict[@"since_id"] =@([[self.statusFrames firstObject] id]);
-
         LCStatusFrame *frame = [self.statusFrames firstObject];
-              dict[@"since_id"] = @(frame.status.id);
-    
-    }
+        dict[@"since_id"] = @(frame.status.id);
+       }
     
     //发送请求获取数据
    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -341,8 +343,6 @@
        // dict[@"max_id"] =@([[self.statusFrames lastObject] id]-1);
        LCStatusFrame *statusFrame = [self.statusFrames lastObject];
         dict[@"max_id"]=@([statusFrame.status id]-1);
-        
-        
     }
     
     //发送请求获取数据
@@ -360,17 +360,10 @@
         
         //得把status模型转成frame模型
         NSArray *statuesFames =[self converToFramesWithStatues:status];
-        
 
         //frame模型
         [self.statusFrames addObjectsFromArray:statuesFames];
-        
-        
-        
-       // [self.statusFrames addObjectsFromArray:arr];
-        
-        
-        //刷新tableView
+         //刷新tableView
         [self.tableView reloadData];
         
         
@@ -491,8 +484,12 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-self.tabBarItem.badgeValue =@"15";
-}
+       self.tabBarItem.badgeValue =@"15";
 
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+   return [self.statusFrames[indexPath.row] cellHeight];
+    
+}
 
 @end

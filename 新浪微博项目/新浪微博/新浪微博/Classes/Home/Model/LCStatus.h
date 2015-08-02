@@ -12,7 +12,7 @@
 
 @interface LCStatus : NSObject
 
-//用户登录后显示在首页的名称
+//用户登录后显示在首页的微博信息内容
 @property (nonatomic ,copy)NSString *text;
 
 //时间
@@ -20,6 +20,9 @@
 
 //这条微博的信息
 @property (nonatomic,strong)LCUser *user;
+
+
+
 
 
 @end

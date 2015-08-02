@@ -7,6 +7,8 @@
 //
 
 #import "LCStatusFrame.h"
+#import "LCStatus.h"
+#import "LCUser.h"
 
 @implementation LCStatusFrame
 
@@ -14,13 +16,27 @@
     _status =status;
     
     //给LCStatusFrame的成员 frame 赋值
-    CGFloat headW =30;
-    CGFloat headH =20;
-    self.headImageF =CGRectMake(MARGEN,MARGEN, headW, headH);
-
+    // 头像的位置
+    CGFloat headX =MARGIN;
+    CGFloat headY =MARGIN;
+    CGFloat headWH = 30;
+    self.headImageF =CGRectMake(headX, headY, headWH, headWH);
     
-//    self.nameLabelF =CGRectMake(10, 10, 20,20 );
-   self.contentLabelF =CGRectMake(20, 20, 20, 20);
+    //微博昵称的位置
+    CGFloat nameLabelX = CGRectGetMaxX(self.headImageF) + MARGIN;
+    CGFloat nameLabelY = headY;
+    //根据字体大小算出 size
+    CGSize nameSize = [self.status.user.screen_name sizeWithFont:SYS_FONT(NAME_LABEL_SIZE)];
+    self.nameLabelF = (CGRect){{nameLabelX,nameLabelY},nameSize};
+    
+    CGFloat contentLabelX = headX;
+    CGFloat contentLabelY = CGRectGetMaxY(self.headImageF) + MARGIN;
+    CGSize contentLabelSize = [self.status.text sizeWithFont:SYS_FONT(CONTENT_LABEL_SIZE) constrainedToSize:CGSizeMake(SCREENW - 2 *MARGIN, MAXFLOAT)];
+    
+    self.contentLabelF =(CGRect){{contentLabelX,contentLabelY},contentLabelSize};
+    
+    //cell行高
+    self.cellHeight = CGRectGetMaxY(self.contentLabelF);
 }
  
 

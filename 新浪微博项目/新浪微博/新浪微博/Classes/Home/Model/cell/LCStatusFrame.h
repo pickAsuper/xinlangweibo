@@ -17,7 +17,7 @@
 //原创微博内容的字体
 #define CONTENT_LABEL_SIZE 12
 
-#define MARGEN 10
+#define MARGIN 10
 
 
 
@@ -38,6 +38,7 @@
  */
 @property (nonatomic ,assign)CGRect contentLabelF;
 
+//cell的行高
 @property (nonatomic ,assign)CGFloat cellHeight;
 
 

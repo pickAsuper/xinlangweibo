@@ -18,11 +18,6 @@
     
     self.width = CGRectGetMaxX(self.imageView.frame)+5;
     self.centerX =self.superview.centerX;
-    
-    
-    
-    
-    
 }
 
 @end
