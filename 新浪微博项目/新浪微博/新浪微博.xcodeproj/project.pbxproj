@@ -10,6 +10,7 @@
 		9D110D921B688A4700D2B84B /* LCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D911B688A4700D2B84B /* LCPopView.m */; };
 		9D27311B1B69F08800108ED9 /* LCOAuthViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */; };
 		9D3D1AD11B68B5D000E93011 /* LCNewFeatureCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */; };
+		9D40FBE31B6F0359000E012E /* LCStatusToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D40FBE21B6F0359000E012E /* LCStatusToolBar.m */; };
 		9D4697891B6BC9DC000B7CC4 /* LCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4697881B6BC9DC000B7CC4 /* LCUser.m */; };
 		9D46979A1B6BCCDC000B7CC4 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D46978C1B6BCCDC000B7CC4 /* MJConst.m */; };
 		9D46979B1B6BCCDC000B7CC4 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D46978F1B6BCCDC000B7CC4 /* MJFoundation.m */; };
@@ -91,6 +92,8 @@
 		9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOAuthViewCtrl.m; sourceTree = "<group>"; };
 		9D3D1ACF1B68B5D000E93011 /* LCNewFeatureCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNewFeatureCtrl.h; sourceTree = "<group>"; };
 		9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNewFeatureCtrl.m; sourceTree = "<group>"; };
+		9D40FBE11B6F0359000E012E /* LCStatusToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStatusToolBar.h; sourceTree = "<group>"; };
+		9D40FBE21B6F0359000E012E /* LCStatusToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCStatusToolBar.m; sourceTree = "<group>"; };
 		9D4697871B6BC9DC000B7CC4 /* LCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUser.h; sourceTree = "<group>"; };
 		9D4697881B6BC9DC000B7CC4 /* LCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUser.m; sourceTree = "<group>"; };
 		9D46978B1B6BCCDC000B7CC4 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
@@ -433,6 +436,8 @@
 			children = (
 				9D6292341B6CD645009E30BC /* LCStatusCell.h */,
 				9D6292351B6CD645009E30BC /* LCStatusCell.m */,
+				9D40FBE11B6F0359000E012E /* LCStatusToolBar.h */,
+				9D40FBE21B6F0359000E012E /* LCStatusToolBar.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -833,6 +838,7 @@
 			files = (
 				9D49A4A81B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m in Sources */,
 				9D110D921B688A4700D2B84B /* LCPopView.m in Sources */,
+				9D40FBE31B6F0359000E012E /* LCStatusToolBar.m in Sources */,
 				9D6292271B6CA17F009E30BC /* LCUnReacount.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
 				9D62CB171B67E5870035063F /* LCDiscoverViewCtrl.m in Sources */,

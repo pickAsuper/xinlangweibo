@@ -53,6 +53,11 @@
 @property (nonatomic ,assign)CGRect createLabelF;
 
 
+//底部的工具条(转发 评论 赞)
+@property (nonatomic ,assign)CGRect statusToolBarF;
+
+
+
 
 //cell的行高
 @property (nonatomic ,assign)CGFloat cellHeight;

@@ -11,6 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "LCUser.h"
 #import "LCStatus.h"
+#import "LCStatusToolBar.h"
+
 @interface LCStatusCell ()
 
 //头像
@@ -28,7 +30,14 @@
 //发布来源
 @property(nonatomic,strong)UILabel *sourceLabel;
 
+//发布缩略图
 @property(nonatomic,strong)UIImageView *phonoView;
+
+
+//底部的view(包括了转发 评论 赞)
+@property (nonatomic ,strong)LCStatusToolBar *statusToolBar;
+
+
 @end
 
 
@@ -72,11 +81,19 @@
     }else{
         self.phonoView.hidden =YES;
     }
+    
+    self.statusToolBar.frame =statusFrame.statusToolBarF;
+    
+     
+    
+    
 }
+
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
       // 必须先初始化父控件 >>必须要有super init...
-    if (self =[super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+    
+    if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
       // 添加子控件
         
         //添加头像
@@ -118,6 +135,12 @@
         [self.contentView addSubview:phonoView];
         self.phonoView = phonoView;
     
+        //添加底部的view (转发 赞)
+        LCStatusToolBar *statusToolBar =[[LCStatusToolBar alloc]init];
+        [self.contentView addSubview:statusToolBar];
+        self.statusToolBar =statusToolBar;
+        
+        
         
         
     }

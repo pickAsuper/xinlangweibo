@@ -52,6 +52,9 @@
     
     self.contentLabelF =(CGRect){{contentLabelX,contentLabelY},contentLabelSize};
     
+    //底部工具条的Y值
+    CGFloat statusToolBarY = CGRectGetMaxY(self.contentLabelF)+MARGIN;
+    
     if (status.thumbnail_pic) {
         CGFloat photoViewX = headX;
         CGFloat photoViewY =CGRectGetMaxY(self.contentLabelF)+MARGIN;
@@ -59,16 +62,20 @@
         
         self.photoViewF =(CGRect){{photoViewX,photoViewY},photoViewSize};
         
-        self.cellHeight =CGRectGetMaxY(self.photoViewF);
-        
-        
-    }else{
+        statusToolBarY =CGRectGetMaxY(self.photoViewF)+ MARGIN;
+       // self.cellHeight =CGRectGetMaxY(self.photoViewF);
     
+    }
+    
+        CGFloat statusToolBarX =0;
+        CGSize statusToolBarSize = CGSizeMake(SCREENW, 35);
+        self.statusToolBarF =(CGRect){{statusToolBarX,statusToolBarY},statusToolBarSize};
+        
     
     //cell行高
-    self.cellHeight = CGRectGetMaxY(self.contentLabelF);
+    self.cellHeight = CGRectGetMaxY(self.statusToolBarF);
         
-     }
+    
 }
 
 @end
