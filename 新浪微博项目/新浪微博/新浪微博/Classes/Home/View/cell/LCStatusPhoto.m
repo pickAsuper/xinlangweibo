@@ -22,6 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
         //图片显示的样式
         self.contentMode =UIViewContentModeScaleAspectFill ;
           //把多余的地方裁剪掉

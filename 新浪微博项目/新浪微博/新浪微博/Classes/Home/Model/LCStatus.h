@@ -47,6 +47,8 @@
 //多张图片的集合 >>图片地址列表
 @property (nonatomic,strong)NSArray *pic_urls;
 
+//转发条数
+@property (nonatomic,strong)LCStatus *retweeted_status;
 
 
 @end

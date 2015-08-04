@@ -21,13 +21,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        self.backgroundColor =[UIColor redColor];
+       
         for (int i = 0 ; i < 9; i++) {
             
         
 
          //在这个view上面添加一个imageView >> LCStatusPhoto 来展示图片
         LCStatusPhoto *statusPhoto =[[LCStatusPhoto alloc]init];
+            
         [self addSubview:statusPhoto];
         
         }
@@ -109,12 +110,13 @@
         NSInteger row =i / maxCR;
         
         //获取到子控件 >> imageView LCStatusPhoto
-        UIView *childView =self.subviews[i];
+        LCStatusPhoto *childView =self.subviews[i];
+        
      
          //imageView 的位置
         childView.size = CGSizeMake(childWidth, childWidth);
-        childView.x =col *(childView.width +MARGIN);
-        childView.y =row *(childView.height +MARGIN);
+        childView.x =col *(childWidth +MARGIN);
+        childView.y =row *(childWidth +MARGIN);
         
         
     }

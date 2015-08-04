@@ -57,6 +57,16 @@
 @property (nonatomic ,assign)CGRect statusToolBarF;
 
 
+//转发微博视图
+@property (nonatomic ,assign)CGRect retweetViewF;
+
+//转发微博的相册
+@property (nonatomic ,assign)CGRect retweetPhotoF;
+
+//转发微博的整体内容的高度
+@property (nonatomic ,assign)CGRect retweetContentLabelF;
+
+
 
 
 //cell的行高

@@ -39,6 +39,17 @@
 //底部的view(包括了转发 评论 赞)
 @property (nonatomic ,strong)LCStatusToolBar *statusToolBar;
 
+ /** 转发微博整体的view */
+@property (nonatomic, weak) UIView *retweetView;
+
+ /** 转发微博的内容 */
+@property (nonatomic, weak) UILabel *retweetContentLabel;
+
+/**
+ *  转发微博的相册
+ */
+@property (nonatomic, weak) LCStatusPhotos *retweetPhoto;
+
 
 @end
 
@@ -76,18 +87,40 @@
     //如果有缩略图就赋值 >>注意在cell里面有if 必须要有else 要不然cell会显示出问题
     if (statusFrame.status.thumbnail_pic) {
         self.phonoView.hidden =NO;
-//        self.phonoView.frame =statusFrame.photoViewF;
-//        NSString *url = self.statusFrame.status.thumbnail_pic;
-//        [self.phonoView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
- 
-      //  NSString *imageUrlStr =self.statusFrame.status.thumbnail_pic;
-       
         self.phonoView.pic_url =statusFrame.status.pic_urls;
-        self.phonoView.frame =statusFrame.photoViewF;
+        self.phonoView.frame = statusFrame.photoViewF;
   
     }else{
         self.phonoView.hidden =YES;
     }
+    
+    //是否有转发微博
+    if (statusFrame.status.retweeted_status) {
+        self.retweetView.hidden = NO; //显示
+        self.retweetView.frame =statusFrame.retweetViewF;
+        
+        NSString *retweetContent = [NSString stringWithFormat:@"@%@%@",statusFrame.status.user.screen_name,statusFrame.status.text];
+           //转发的内容就是 @原创人名 和 原创的内容
+       
+        self.retweetContentLabel.text =retweetContent;
+        self.retweetContentLabel.frame = statusFrame.retweetContentLabelF;
+        
+        if (statusFrame.status.retweeted_status.pic_urls) {
+            self.retweetPhoto.hidden =NO; //显示配图
+            self.retweetPhoto.frame =statusFrame.retweetPhotoF;
+            
+            self.retweetPhoto.pic_url =statusFrame.status.retweeted_status.pic_urls;
+         
+        }else{
+        
+            self.retweetPhoto.hidden= YES; //隐藏配图
+        }
+    }else{
+      
+        self.retweetView.hidden=YES; //隐藏整个视图
+        
+    }
+
     
     self.statusToolBar.frame =statusFrame.statusToolBarF;
     self.statusToolBar.status =statusFrame.status;
@@ -147,12 +180,37 @@
         [self.contentView addSubview:statusToolBar];
         self.statusToolBar =statusToolBar;
         
-        
+        [self  setUpRetweetView];
         
         
     }
     return self;
 }
+//设置转发微博的view 及子控件
+-(void)setUpRetweetView{
+    
+    //创建转发微博的 整体 View
+    UIView *retweetView =[[UIView alloc]init];
+    retweetView .backgroundColor =RGB(247, 247, 247);
+    [self.contentView addSubview:retweetView];
+    self.retweetView =retweetView;
+    
+     //转发微博的内容
+    UILabel *retweetContentLabel =[[UILabel alloc]init];
+    retweetContentLabel.numberOfLines =0;
+    retweetContentLabel.font =SYS_FONT(CONTENT_LABEL_SIZE);
+    //把转发微博的内容添加到 整体 View 上
+    [retweetView addSubview:retweetContentLabel];
+    self.retweetContentLabel =retweetContentLabel;
+    
+    //创建转发微博的配图
+    LCStatusPhotos *retweetPhoto = [[LCStatusPhotos alloc]init];
+    [retweetView addSubview:retweetPhoto];
+    self.retweetPhoto =retweetPhoto;
+    
+
+}
+
 
 +(instancetype)cellWithTableView:(UITableView *)tableView{
    
