@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface LCStatusPhotos : UIView
+
+
+//为了获取图片张数
+@property (nonatomic ,strong)NSArray *pic_url;
+
+
+
+
 /**
  *  根据自己的显示个数,返回自己的大小
  */

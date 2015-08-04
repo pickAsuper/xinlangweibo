@@ -80,13 +80,11 @@
 //        NSString *url = self.statusFrame.status.thumbnail_pic;
 //        [self.phonoView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
  
-        NSString *imageUrlStr =self.statusFrame.status.thumbnail_pic;
+      //  NSString *imageUrlStr =self.statusFrame.status.thumbnail_pic;
+       
+        self.phonoView.pic_url =statusFrame.status.pic_urls;
         self.phonoView.frame =statusFrame.photoViewF;
-        
-        
-        
-        
-        
+  
     }else{
         self.phonoView.hidden =YES;
     }
@@ -120,14 +118,14 @@
         //添加时间的控件
         UILabel *createLabel =[UILabel new];
         //设置名字大小
-        createLabel.font =SYS_FONT(NAME_LABEL_SIZE);
+        createLabel.font =SYS_FONT(CREATE_TIME_SIZE);
         [self.contentView addSubview:createLabel];
         self.createLabel =createLabel;
         
         //添加来源
         UILabel *sourceLabel =[UILabel new];
         //设置名字大小
-        sourceLabel.font =SYS_FONT(NAME_LABEL_SIZE);
+        sourceLabel.font =SYS_FONT(CREATE_TIME_SIZE);
         [self.contentView addSubview:sourceLabel];
         self.sourceLabel =sourceLabel;
         
