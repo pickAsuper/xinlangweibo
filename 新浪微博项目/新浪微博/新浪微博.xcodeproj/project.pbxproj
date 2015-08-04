@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9D110D921B688A4700D2B84B /* LCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D911B688A4700D2B84B /* LCPopView.m */; };
 		9D27311B1B69F08800108ED9 /* LCOAuthViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */; };
+		9D30ED9D1B6FC43F00A92E71 /* LCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */; };
+		9D30EDA01B6FC6A000A92E71 /* LCStatusPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30ED9F1B6FC6A000A92E71 /* LCStatusPhotos.m */; };
 		9D3D1AD11B68B5D000E93011 /* LCNewFeatureCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */; };
 		9D40FBE31B6F0359000E012E /* LCStatusToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D40FBE21B6F0359000E012E /* LCStatusToolBar.m */; };
 		9D4697891B6BC9DC000B7CC4 /* LCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4697881B6BC9DC000B7CC4 /* LCUser.m */; };
@@ -90,6 +92,10 @@
 		9D110D911B688A4700D2B84B /* LCPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPopView.m; sourceTree = "<group>"; };
 		9D2731191B69F08800108ED9 /* LCOAuthViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCOAuthViewCtrl.h; sourceTree = "<group>"; };
 		9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOAuthViewCtrl.m; sourceTree = "<group>"; };
+		9D30ED9B1B6FC43F00A92E71 /* LCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPhoto.h; sourceTree = "<group>"; };
+		9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPhoto.m; sourceTree = "<group>"; };
+		9D30ED9E1B6FC6A000A92E71 /* LCStatusPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStatusPhotos.h; sourceTree = "<group>"; };
+		9D30ED9F1B6FC6A000A92E71 /* LCStatusPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCStatusPhotos.m; sourceTree = "<group>"; };
 		9D3D1ACF1B68B5D000E93011 /* LCNewFeatureCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNewFeatureCtrl.h; sourceTree = "<group>"; };
 		9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNewFeatureCtrl.m; sourceTree = "<group>"; };
 		9D40FBE11B6F0359000E012E /* LCStatusToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStatusToolBar.h; sourceTree = "<group>"; };
@@ -438,6 +444,8 @@
 				9D6292351B6CD645009E30BC /* LCStatusCell.m */,
 				9D40FBE11B6F0359000E012E /* LCStatusToolBar.h */,
 				9D40FBE21B6F0359000E012E /* LCStatusToolBar.m */,
+				9D30ED9E1B6FC6A000A92E71 /* LCStatusPhotos.h */,
+				9D30ED9F1B6FC6A000A92E71 /* LCStatusPhotos.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -559,6 +567,8 @@
 				9D4697A21B6BDD49000B7CC4 /* LCStatus.m */,
 				9D6292251B6CA17F009E30BC /* LCUnReacount.h */,
 				9D6292261B6CA17F009E30BC /* LCUnReacount.m */,
+				9D30ED9B1B6FC43F00A92E71 /* LCPhoto.h */,
+				9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -849,6 +859,7 @@
 				9D62CB1A1B67E5870035063F /* UIBarButtonItem+Extetion.m in Sources */,
 				9D6292651B6CE4BB009E30BC /* UIImage+WebP.m in Sources */,
 				9D6292591B6CE4BB009E30BC /* MKAnnotationView+WebCache.m in Sources */,
+				9D30EDA01B6FC6A000A92E71 /* LCStatusPhotos.m in Sources */,
 				9D4697A31B6BDD49000B7CC4 /* LCStatus.m in Sources */,
 				9D62CB231B67E5870035063F /* SunView.m in Sources */,
 				9D46979A1B6BCCDC000B7CC4 /* MJConst.m in Sources */,
@@ -891,6 +902,7 @@
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,
 				9D6292681B6CE4BB009E30BC /* UIView+WebCacheOperation.m in Sources */,
 				9D62922F1B6CD409009E30BC /* LCStatusFrame.m in Sources */,
+				9D30ED9D1B6FC43F00A92E71 /* LCPhoto.m in Sources */,
 				9D49A4B61B6A89B400B9F3E3 /* UIWindow+Extetion.m in Sources */,
 				9D49A4A91B6A5ED000B9F3E3 /* AFHTTPRequestOperationManager.m in Sources */,
 				9D49A4AC1B6A5ED000B9F3E3 /* AFSecurityPolicy.m in Sources */,

@@ -12,6 +12,8 @@
 #import "LCUser.h"
 #import "LCStatus.h"
 #import "LCStatusToolBar.h"
+#import "LCStatusPhotos.h"
+
 
 @interface LCStatusCell ()
 
@@ -31,7 +33,7 @@
 @property(nonatomic,strong)UILabel *sourceLabel;
 
 //发布缩略图
-@property(nonatomic,strong)UIImageView *phonoView;
+@property(nonatomic,strong)LCStatusPhotos *phonoView;
 
 
 //底部的view(包括了转发 评论 赞)
@@ -74,16 +76,23 @@
     //如果有缩略图就赋值 >>注意在cell里面有if 必须要有else 要不然cell会显示出问题
     if (statusFrame.status.thumbnail_pic) {
         self.phonoView.hidden =NO;
+//        self.phonoView.frame =statusFrame.photoViewF;
+//        NSString *url = self.statusFrame.status.thumbnail_pic;
+//        [self.phonoView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+ 
+        NSString *imageUrlStr =self.statusFrame.status.thumbnail_pic;
         self.phonoView.frame =statusFrame.photoViewF;
-        NSString *url = self.statusFrame.status.thumbnail_pic;
-        [self.phonoView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+        
+        
+        
+        
         
     }else{
         self.phonoView.hidden =YES;
     }
     
     self.statusToolBar.frame =statusFrame.statusToolBarF;
-    
+    self.statusToolBar.status =statusFrame.status;
      
     
     
@@ -131,7 +140,7 @@
         self.contentLabel = contentLabel;
         
         //添加缩略图 一个显示图片的imageView
-        UIImageView *phonoView =[[UIImageView alloc]init];
+        LCStatusPhotos *phonoView =[[LCStatusPhotos alloc]init];
         [self.contentView addSubview:phonoView];
         self.phonoView = phonoView;
     

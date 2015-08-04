@@ -9,6 +9,8 @@
 #import "LCStatusFrame.h"
 #import "LCStatus.h"
 #import "LCUser.h"
+#import "LCStatusPhotos.h"
+
 
 @implementation LCStatusFrame
 
@@ -52,19 +54,34 @@
     
     self.contentLabelF =(CGRect){{contentLabelX,contentLabelY},contentLabelSize};
     
+  
     //底部工具条的Y值
     CGFloat statusToolBarY = CGRectGetMaxY(self.contentLabelF)+MARGIN;
+    
     
     if (status.thumbnail_pic) {
         CGFloat photoViewX = headX;
         CGFloat photoViewY =CGRectGetMaxY(self.contentLabelF)+MARGIN;
-        CGSize photoViewSize = CGSizeMake(70, 70);
         
-        self.photoViewF =(CGRect){{photoViewX,photoViewY},photoViewSize};
+        CGSize photoViewSize  =[LCStatusPhotos sizeWithCount:status.pic_urls.count];
+       
+        self.photoViewF = (CGRect){{photoViewX,photoViewY},photoViewSize};
+        statusToolBarY = CGRectGetMaxY(self.photoViewF)+MARGIN;
         
-        statusToolBarY =CGRectGetMaxY(self.photoViewF)+ MARGIN;
-       // self.cellHeight =CGRectGetMaxY(self.photoViewF);
-    
+        
+        
+        
+//        CGSize photoViewSize = CGSizeMake(70, 70);
+//        
+//        self.photoViewF =(CGRect){{photoViewX,photoViewY},photoViewSize};
+//        
+//        statusToolBarY =CGRectGetMaxY(self.photoViewF)+ MARGIN;
+//       // self.cellHeight =CGRectGetMaxY(self.photoViewF);
+          
+        
+        
+        
+        
     }
     
         CGFloat statusToolBarX =0;

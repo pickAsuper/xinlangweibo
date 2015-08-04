@@ -303,25 +303,25 @@
 
 //cell滑动到最后 >>滑动到最后在这里计算
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    //没有数据或者有显示tableFooterView 就直接返回
-//    if (self.statusFrames.count == 0 || self.tableView.tableFooterView.hidden ==NO) {
-//        return;
-//        }
-// 
-//    // scrollView的滚动的高度 - 整个屏幕的高度
-//  CGFloat result =  scrollView.contentSize.height-SCREENH;
-//   
-//    // 如果说这个宽度小于 或者 等于了 scrollView的偏移量 就要加载旧的数据(之前的数据)
-//    // self.tabBarController.tabBar.height tabBar(底部)高度 49
-//    if (result <= scrollView.contentOffset.y - self.tabBarController.tabBar.height) {
-//        //显示加载条 tableFooterView >> (是Xib)
-//        self.tableView.tableFooterView.hidden=NO;
-//        
-//        //加载底部数据(之前的数据)
-//        [self getMoreStatus];
-//        
-//        
-//    }
+    //没有数据或者有显示tableFooterView 就直接返回
+    if (self.statusFrames.count == 0 || self.tableView.tableFooterView.hidden ==NO) {
+        return;
+        }
+ 
+    // scrollView的滚动的高度 - 整个屏幕的高度
+  CGFloat result =  scrollView.contentSize.height-SCREENH;
+   
+    // 如果说这个宽度小于 或者 等于了 scrollView的偏移量 就要加载旧的数据(之前的数据)
+    // self.tabBarController.tabBar.height tabBar(底部)高度 49
+    if (result <= scrollView.contentOffset.y - self.tabBarController.tabBar.height) {
+        //显示加载条 tableFooterView >> (是Xib)
+        self.tableView.tableFooterView.hidden=NO;
+        
+        //加载底部数据(之前的数据)
+        [self getMoreStatus];
+        
+        
+    }
     
 
 }

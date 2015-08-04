@@ -7,10 +7,16 @@
 //
 
 #import "LCStatus.h"
+#import "MJExtension.h"
+#import "LCPhoto.h"
 
 @implementation LCStatus
 
-
++(NSDictionary *)objectClassInArray{
+   //告诉pic_ids 集合里面存的是神马对象 >>框架转
+    return @{@"pic_urls":[LCPhoto class]};
+ 
+}
 
 @end
 

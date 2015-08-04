@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class LCStatus;
+
 @interface LCStatusToolBar : UIView
+
+@property (nonatomic,strong)LCStatus *status;
+
 
 @end
