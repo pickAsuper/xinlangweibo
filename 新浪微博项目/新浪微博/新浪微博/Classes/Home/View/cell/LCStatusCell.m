@@ -17,6 +17,8 @@
 
 @interface LCStatusCell ()
 
+@property(nonatomic,strong)UIView *originalView;
+
 //头像
 @property(nonatomic,strong)UIImageView *headImage;
 
@@ -130,50 +132,15 @@
 }
 
 
+
+
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
       // 必须先初始化父控件 >>必须要有super init...
     
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
       // 添加子控件
-        
-        //添加头像
-        UIImageView *headImage =[[UIImageView alloc]init];
-        [self.contentView addSubview:headImage];
-        self.headImage =headImage;
-        
-        //添加名字的控件
-        UILabel *nameLabel =[UILabel new];
-        //设置名字大小
-        nameLabel.font =SYS_FONT(NAME_LABEL_SIZE);
-        [self.contentView addSubview:nameLabel];
-        self.nameLabel =nameLabel;
-        
-        //添加时间的控件
-        UILabel *createLabel =[UILabel new];
-        //设置名字大小
-        createLabel.font =SYS_FONT(CREATE_TIME_SIZE);
-        [self.contentView addSubview:createLabel];
-        self.createLabel =createLabel;
-        
-        //添加来源
-        UILabel *sourceLabel =[UILabel new];
-        //设置名字大小
-        sourceLabel.font =SYS_FONT(CREATE_TIME_SIZE);
-        [self.contentView addSubview:sourceLabel];
-        self.sourceLabel =sourceLabel;
-        
-        
-        //添加内容控件
-        UILabel *contentLabel =[UILabel new];
-        contentLabel.font = SYS_FONT(CONTENT_LABEL_SIZE);
-        contentLabel.numberOfLines =0;
-        [self.contentView addSubview:contentLabel];
-        self.contentLabel = contentLabel;
-        
-        //添加缩略图 一个显示图片的imageView
-        LCStatusPhotos *phonoView =[[LCStatusPhotos alloc]init];
-        [self.contentView addSubview:phonoView];
-        self.phonoView = phonoView;
+        [self setUpOriginalView];
+       
     
         //添加底部的view (转发 赞)
         LCStatusToolBar *statusToolBar =[[LCStatusToolBar alloc]init];
@@ -186,6 +153,57 @@
     }
     return self;
 }
+
+//添加子控件
+-(void)setUpOriginalView{
+    UIView *originalView =[[UIView alloc]init];
+    originalView.backgroundColor= [UIColor whiteColor];
+    [self.contentView addSubview:originalView];
+    self.originalView =originalView;
+    
+    
+    
+    //添加头像
+    UIImageView *headImage =[[UIImageView alloc]init];
+    [originalView addSubview:headImage];
+    self.headImage =headImage;
+    
+    //添加名字的控件
+    UILabel *nameLabel =[UILabel new];
+    //设置名字大小
+    nameLabel.font =SYS_FONT(NAME_LABEL_SIZE);
+    [originalView addSubview:nameLabel];
+    self.nameLabel =nameLabel;
+    
+    //添加时间的控件
+    UILabel *createLabel =[UILabel new];
+    //设置名字大小
+    createLabel.font =SYS_FONT(CREATE_TIME_SIZE);
+    [originalView addSubview:createLabel];
+    self.createLabel =createLabel;
+    
+    //添加来源
+    UILabel *sourceLabel =[UILabel new];
+    //设置名字大小
+    sourceLabel.font =SYS_FONT(CREATE_TIME_SIZE);
+    [originalView addSubview:sourceLabel];
+    self.sourceLabel =sourceLabel;
+    
+    
+    //添加内容添加原创微博的内容
+    UILabel *contentLabel =[UILabel new];
+    contentLabel.font = SYS_FONT(CONTENT_LABEL_SIZE);
+    contentLabel.numberOfLines =0;
+    [originalView addSubview:contentLabel];
+    self.contentLabel = contentLabel;
+    
+    //添加缩略图 一个显示图片的imageView
+    LCStatusPhotos *phonoView =[[LCStatusPhotos alloc]init];
+    [originalView addSubview:phonoView];
+    self.phonoView = phonoView;
+
+}
+
 //设置转发微博的view 及子控件
 -(void)setUpRetweetView{
     

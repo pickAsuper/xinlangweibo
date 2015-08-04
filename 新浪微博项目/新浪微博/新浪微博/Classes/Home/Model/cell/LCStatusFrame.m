@@ -10,7 +10,7 @@
 #import "LCStatus.h"
 #import "LCUser.h"
 #import "LCStatusPhotos.h"
-
+#import "NSString+Extension.h"
 
 @implementation LCStatusFrame
 
@@ -56,7 +56,8 @@
     
   
     //底部工具条的Y值
-    CGFloat statusToolBarY = CGRectGetMaxY(self.contentLabelF)+MARGIN;
+   // CGFloat statusToolBarY = CGRectGetMaxY(self.contentLabelF)+MARGIN;
+    CGFloat originalViewH =CGRectGetMaxY(self.contentLabelF)+MARGIN;
     
     //根据是否有图片去计算frame
     if (status.pic_urls.count) {
@@ -66,9 +67,20 @@
         CGSize photoViewSize  =[LCStatusPhotos sizeWithCount:self.status.pic_urls.count];
        
         self.photoViewF = (CGRect){{photoViewX,photoViewY},photoViewSize};
-        statusToolBarY = CGRectGetMaxY(self.photoViewF)+MARGIN;
-    }
+       // statusToolBarY = CGRectGetMaxY(self.photoViewF)+MARGIN;
+        originalViewH =CGRectGetMaxY(self.photoViewF)+MARGIN;
         
+    }
+    
+    //计算原创微博整体view的大小
+    CGFloat originalViewX =0;
+    CGFloat originalViewY =MARGIN;
+    CGSize originalViewSize = CGSizeMake(SCREENW, originalViewH);
+    self.originalViewF =(CGRect){{originalViewX,originalViewY},originalViewSize};
+
+    //底部工具条的Y值
+    CGFloat statusToolBarY =CGRectGetMaxY(self.originalViewF);
+
         //计算转发微博的frame
     if (status.retweeted_status) {
         
@@ -85,7 +97,7 @@
         CGFloat retweetViewH =CGRectGetMaxY(self.retweetContentLabelF)+MARGIN;
        
         //2.计算转发微博的 >>如果有配图
-    if (status.retweeted_status.pic_urls) {
+    if (status.retweeted_status.pic_urls.count) {
             
             CGFloat retweetPhotoX = MARGIN;
             CGFloat retweetPhotoY = CGRectGetMaxY(self.retweetContentLabelF)+MARGIN;

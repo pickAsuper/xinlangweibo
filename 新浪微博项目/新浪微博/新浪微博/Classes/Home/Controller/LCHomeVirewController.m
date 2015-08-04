@@ -65,6 +65,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.tableView.backgroundColor =RGB(240, 240, 240);
+    
+    
+    
     //就不用去缓存池中找了
     [self.tableView registerClass:[LCStatusCell class] forCellReuseIdentifier:identifier];
     
@@ -485,6 +490,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
        self.tabBarItem.badgeValue =@"15";
+   //  取消选择的行
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

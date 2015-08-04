@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D110D921B688A4700D2B84B /* LCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D911B688A4700D2B84B /* LCPopView.m */; };
+		9D2426141B70E67D00FD65A6 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2426131B70E67D00FD65A6 /* NSString+Extension.m */; };
 		9D27311B1B69F08800108ED9 /* LCOAuthViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */; };
 		9D30ED9D1B6FC43F00A92E71 /* LCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */; };
 		9D30EDA01B6FC6A000A92E71 /* LCStatusPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30ED9F1B6FC6A000A92E71 /* LCStatusPhotos.m */; };
@@ -91,6 +92,8 @@
 /* Begin PBXFileReference section */
 		9D110D901B688A4700D2B84B /* LCPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPopView.h; sourceTree = "<group>"; };
 		9D110D911B688A4700D2B84B /* LCPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPopView.m; sourceTree = "<group>"; };
+		9D2426121B70E67D00FD65A6 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		9D2426131B70E67D00FD65A6 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		9D2731191B69F08800108ED9 /* LCOAuthViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCOAuthViewCtrl.h; sourceTree = "<group>"; };
 		9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOAuthViewCtrl.m; sourceTree = "<group>"; };
 		9D30ED9B1B6FC43F00A92E71 /* LCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPhoto.h; sourceTree = "<group>"; };
@@ -678,6 +681,8 @@
 				9D62CB021B67E5870035063F /* UIView+Inspectable.m */,
 				9D49A4B41B6A89B400B9F3E3 /* UIWindow+Extetion.h */,
 				9D49A4B51B6A89B400B9F3E3 /* UIWindow+Extetion.m */,
+				9D2426121B70E67D00FD65A6 /* NSString+Extension.h */,
+				9D2426131B70E67D00FD65A6 /* NSString+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -896,6 +901,7 @@
 				9D4697AA1B6C8D2C000B7CC4 /* LCLoadMoreView.m in Sources */,
 				9D62CB1C1B67E5870035063F /* UIView+Inspectable.m in Sources */,
 				9D6292361B6CD645009E30BC /* LCStatusCell.m in Sources */,
+				9D2426141B70E67D00FD65A6 /* NSString+Extension.m in Sources */,
 				9D4697A01B6BCCDC000B7CC4 /* NSObject+MJKeyValue.m in Sources */,
 				9D49A4AE1B6A5ED000B9F3E3 /* AFURLRequestSerialization.m in Sources */,
 				9D4697891B6BC9DC000B7CC4 /* LCUser.m in Sources */,

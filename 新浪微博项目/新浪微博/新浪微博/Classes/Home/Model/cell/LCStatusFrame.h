@@ -25,6 +25,12 @@
 
 
 @interface LCStatusFrame : UITabBarItem
+
+
+//1.要包含其对应的cell里面子控件的frame
+@property (nonatomic, assign) CGRect originalViewF;
+
+
 //基本数据模型
 @property (nonatomic,strong)LCStatus *status;
 
