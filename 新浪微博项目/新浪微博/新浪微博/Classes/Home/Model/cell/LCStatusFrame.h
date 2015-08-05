@@ -51,6 +51,8 @@
  *  创建时间
  */
 @property (nonatomic ,assign)CGRect sourceLabelF;
+/** vip图标 */
+@property (nonatomic, assign) CGRect vipImageF;
 
 //微博内容里面的图片
 @property (nonatomic ,assign)CGRect photoViewF;

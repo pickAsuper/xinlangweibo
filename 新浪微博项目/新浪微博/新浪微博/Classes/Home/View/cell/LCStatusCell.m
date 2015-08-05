@@ -22,6 +22,9 @@
 //头像
 @property(nonatomic,strong)UIImageView *headImage;
 
+//会员
+@property(nonatomic,strong)UIImageView *vipImage;
+
 //微博昵称
 @property(nonatomic,strong)UILabel *nameLabel;
 
@@ -64,11 +67,27 @@
     _statusFrame =statusFrame;
     // 给子控件赋值
      // 给子控件设置位置
-   
+    self.originalView.frame =statusFrame.originalViewF;
     //发布者的头像
     NSString *userProfile =self.statusFrame.status.user.profile_image_url;
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:userProfile]];
     self.headImage.frame = statusFrame.headImageF;
+    
+    //是否是会员
+    if (statusFrame.status.user.isVip) {
+        //是会员
+        self.vipImage.hidden =NO;
+        
+        self.vipImage.image =[UIImage imageNamed:[NSString stringWithFormat:@"common_icon_membership_level%zd",statusFrame.status.user.mbrank]];
+        
+        self.vipImage.frame =statusFrame.vipImageF;
+        self.nameLabel.textColor =[UIColor orangeColor];
+        
+    }else{
+        self.vipImage.hidden=YES;
+        self.nameLabel.textColor =[UIColor blackColor];
+    }
+    
     
     //发布者是谁
     self.nameLabel.frame = statusFrame.nameLabelF;
@@ -84,6 +103,7 @@
     
     //发布消息的来源
     self.sourceLabel.text =statusFrame.status.source;
+  //  NSLog(@"source%@",statusFrame.status.source);
     self.sourceLabel.frame =statusFrame.sourceLabelF;
     
     //如果有缩略图就赋值 >>注意在cell里面有if 必须要有else 要不然cell会显示出问题
@@ -156,9 +176,10 @@
 
 //添加子控件
 -(void)setUpOriginalView{
+   
     UIView *originalView =[[UIView alloc]init];
-    originalView.backgroundColor= [UIColor whiteColor];
     [self.contentView addSubview:originalView];
+    originalView.backgroundColor =[UIColor whiteColor];
     self.originalView =originalView;
     
     
@@ -168,23 +189,26 @@
     [originalView addSubview:headImage];
     self.headImage =headImage;
     
+    //添加会员图标
+    UIImageView *vipImage =[[UIImageView alloc]init];
+    [originalView addSubview:vipImage];
+    self.vipImage =vipImage;
+    
+    
     //添加名字的控件
     UILabel *nameLabel =[UILabel new];
-    //设置名字大小
     nameLabel.font =SYS_FONT(NAME_LABEL_SIZE);
     [originalView addSubview:nameLabel];
     self.nameLabel =nameLabel;
     
     //添加时间的控件
     UILabel *createLabel =[UILabel new];
-    //设置名字大小
     createLabel.font =SYS_FONT(CREATE_TIME_SIZE);
     [originalView addSubview:createLabel];
     self.createLabel =createLabel;
     
     //添加来源
     UILabel *sourceLabel =[UILabel new];
-    //设置名字大小
     sourceLabel.font =SYS_FONT(CREATE_TIME_SIZE);
     [originalView addSubview:sourceLabel];
     self.sourceLabel =sourceLabel;
@@ -233,7 +257,7 @@
 +(instancetype)cellWithTableView:(UITableView *)tableView{
    
     LCStatusCell *cell =[tableView dequeueReusableCellWithIdentifier:identifier];
- 
+    cell.backgroundColor =[UIColor clearColor];
     
     return cell;
 }

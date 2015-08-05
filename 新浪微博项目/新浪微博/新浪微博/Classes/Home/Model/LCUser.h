@@ -16,5 +16,20 @@
 @property (nonatomic ,copy)NSString *profile_image_url;
 @property (nonatomic ,copy)NSString *created_at;
 
+/**
+ *  会员类型-->如果mbtype>2就代表是会员
+ */
+@property (nonatomic, assign) NSInteger mbtype;
+
+/**
+ *  会员等级
+ */
+@property (nonatomic, assign) NSInteger mbrank;
+
+/**
+ *  可能通过这个值直接判断是否是vip
+ */
+@property (nonatomic, assign,getter=isVip) BOOL vip;
+
 
 @end

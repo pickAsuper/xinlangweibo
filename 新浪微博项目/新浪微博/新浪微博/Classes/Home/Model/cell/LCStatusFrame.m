@@ -31,6 +31,17 @@
     CGSize nameSize = [self.status.user.screen_name sizeWithFont:SYS_FONT(NAME_LABEL_SIZE)];
     self.nameLabelF = (CGRect){{nameLabelX,nameLabelY},nameSize};
     
+    if (status.user.isVip) {
+        CGFloat vipImageX = CGRectGetMaxX(self.nameLabelF) + MARGIN;
+        CGFloat vipImageY = headY;
+        CGSize vipImageSize = CGSizeMake(nameSize.height, nameSize.height);
+     
+        self.vipImageF = (CGRect){{vipImageX, vipImageY},vipImageSize};
+
+    
+    }
+    
+    
     
     // 时间位置
     CGFloat createLabelX = CGRectGetMaxX(self.headImageF)+MARGIN;
@@ -81,21 +92,27 @@
     //底部工具条的Y值
     CGFloat statusToolBarY =CGRectGetMaxY(self.originalViewF);
 
-        //计算转发微博的frame
+  
+    
+    
+    //计算转发微博的frame
     if (status.retweeted_status) {
         
         //1.计算转发微博正文的frame
-            CGFloat retweetContentLabelX =MARGIN;
+           CGFloat retweetContentLabelX =MARGIN;
             CGFloat retweetContentLabelY =MARGIN;
            
             NSString *retweetContent =[NSString stringWithFormat:@"@%@%@",status.retweeted_status.user.screen_name,status.retweeted_status.text];
-            CGSize retweetContentLabelSize = [retweetContent sizeWithFont:SYS_FONT(CONTENT_LABEL_SIZE) constrainedToSize:CGSizeMake(SCREENW -2 *MARGIN, MAXFLOAT)];
+        
+        CGSize retweetContentLabelSize = [retweetContent sizeWithFont:SYS_FONT(CONTENT_LABEL_SIZE) constrainedToSize:CGSizeMake(SCREENW -2 *MARGIN, MAXFLOAT)];
 
             //转发内容的位置
             self.retweetContentLabelF =(CGRect){{retweetContentLabelX,retweetContentLabelY},retweetContentLabelSize};
          //第一次计算转发微博是相对于整体的View的高度 >> 相对于转发微博内容来说的
         CGFloat retweetViewH =CGRectGetMaxY(self.retweetContentLabelF)+MARGIN;
        
+   
+        
         //2.计算转发微博的 >>如果有配图
     if (status.retweeted_status.pic_urls.count) {
             
@@ -111,7 +128,7 @@
         
         //计算转发 整体微博的view 的大小
         CGFloat retweetViewX = 0;
-        CGFloat retweetViewY = CGRectGetMaxY(self.retweetContentLabelF)+MARGIN;
+        CGFloat retweetViewY = CGRectGetMaxY(self.originalViewF)-10;
         CGSize retweetViewSize = CGSizeMake(SCREENW, retweetViewH);
         self.retweetViewF = (CGRect){{retweetViewX,retweetViewY},retweetViewSize};
        
