@@ -21,6 +21,9 @@
 #import "LCUnReacount.h"
 #import "LCStatusCell.h"
 #import "LCStatusFrame.h"
+#import "LCHttpTool.h"
+#import "LCBaseTool.h"
+#import "LCStatusRes.h"
 
 //运行时
 #import <objc/runtime.h>
@@ -204,108 +207,6 @@
 
 }
 
-
-
-
-
-#pragma mark -获取用户信息
--(void)getUserData{
-    
-    //NSString *str =@"https://api.weibo.com/2/users/show.json?access_token=2.009JDZsFbIHNLDd2f5f867cbUDEeUE&uid=5386939902";
-   // 2.009JDZsFbIHNLDd2f5f867cbUDEeUE
-//     5386939902
-    
-    NSString *str =@"https://api.weibo.com/2/users/show.json";
-    NSMutableDictionary *dict =[NSMutableDictionary dictionary];
-    // 解档模型取值
-    LCOauth *oauth = [LCAccountTool AccountOpen];
-    dict[@"access_token"]=oauth.access_token;
-    dict[@"uid"]=oauth.uid;
-    
-    
-    AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
-    [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id reque) {
-        // NSMutableDictionary *dic =[NSMutableDictionary dictionary];
-        LCUser *userInfo =[LCUser new];
-        
-        // 调用了第三方框架(MJExtension)给成员变量赋值
-        [userInfo setKeyValues:reque];
-        
-        // 设置导航栏中间的文字为用户名(新浪用户名) >> 转成自定义的 LCHomeTitelBtn
-       
-         // LCHomeTitelBtn >> 进行了文字和图片的交换
-        LCHomeTitelBtn *homeTitel =(LCHomeTitelBtn *)self.navigationItem.titleView;
-        [homeTitel setTitle:userInfo.screen_name forState:UIControlStateNormal];
-   
-    } failure:^(AFHTTPRequestOperation * op, NSError *error) {
-        NSLog(@"获取用户信息失败%@",error);
-    }];
-}
-
-
-
-#pragma -mark  加载首页微博数据 
--(void)getNewStatus:(UIRefreshControl *)refreshCtrl{
-   
-    //请求地址
-    NSString *str =@"https://api.weibo.com/2/statuses/friends_timeline.json";
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    // 解档模型取值
-    LCOauth *oau =[LCAccountTool AccountOpen];
-    dict[@"access_token"] = oau.access_token;
-    dict[@"count"] =@(LOAD_COUNT);
-    
-    //如果是第一个数据 就从去加载最新的数据时间的数据 id 定义为了long long 类型
-    if ([self.statusFrames firstObject]) {
-        LCStatusFrame *frame = [self.statusFrames firstObject];
-        dict[@"since_id"] = @(frame.status.id);
-       }
-    
-    //发送请求获取数据
-   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id retuq) {
-      
-        self.tabBarItem.badgeValue= nil;
-        [UIApplication sharedApplication].applicationIconBadgeNumber =0;
-        //获取到数据以后 结束refreshCtrl 加载
-        [refreshCtrl endRefreshing];
-        
-        // 取出 statuses 里面的值>>最外层是字典{statuses是字典里面的数组 statuses里面存的也是字典}
-        NSArray *array = retuq[@"statuses"];
-       // NSLog(@"retup %@",retuq[@"statuses"]);
-      
-        // 通过第三方框架进行字典转模型
-       NSArray *status = [LCStatus objectArrayWithKeyValuesArray:array];
-
-        //得把status模型转成frame模型
-        NSArray *statuesFames =[self converToFramesWithStatues:status];
-        
-        
-        //初始一个范围-->我们刷新回来的数据，需要添加到的tableView的前面(添加到数组的前面)
-       NSIndexSet *indexSet =[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, status.count)];
-        
-        
-         // /添加到数组的什么位置
-        [self.statusFrames insertObjects:statuesFames atIndexes:indexSet];
-
-        //刷新tableView
-        [self.tableView reloadData];
-     
-        //显示加载条
-        [self showCountLabelWithCount:status.count];
-        
-        
-        
-        
-    } failure:^(AFHTTPRequestOperation *op, NSError * error) {
-        NSLog(@"首页数据获取失败信息 - error%@",error);
-        [refreshCtrl endRefreshing];
-    }];
-}
-
-
-
-
 //cell滑动到最后 >>滑动到最后在这里计算
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //没有数据或者有显示tableFooterView 就直接返回
@@ -330,6 +231,108 @@
     
 
 }
+
+#pragma mark -获取用户信息
+-(void)getUserData{
+    
+    //NSString *str =@"https://api.weibo.com/2/users/show.json?access_token=2.009JDZsFbIHNLDd2f5f867cbUDEeUE&uid=5386939902";
+    // 2.009JDZsFbIHNLDd2f5f867cbUDEeUE
+    //     5386939902
+    
+    NSString *str =@"https://api.weibo.com/2/users/show.json";
+    NSMutableDictionary *dict =[NSMutableDictionary dictionary];
+    // 解档模型取值
+    LCOauth *oauth = [LCAccountTool AccountOpen];
+    dict[@"access_token"]=oauth.access_token;
+    dict[@"uid"]=oauth.uid;
+    
+    
+    AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
+    [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id reque) {
+        // NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+        LCUser *userInfo =[LCUser new];
+        
+        // 调用了第三方框架(MJExtension)给成员变量赋值
+        [userInfo setKeyValues:reque];
+        
+        // 设置导航栏中间的文字为用户名(新浪用户名) >> 转成自定义的 LCHomeTitelBtn
+        
+        // LCHomeTitelBtn >> 进行了文字和图片的交换
+        LCHomeTitelBtn *homeTitel =(LCHomeTitelBtn *)self.navigationItem.titleView;
+        [homeTitel setTitle:userInfo.screen_name forState:UIControlStateNormal];
+        
+    } failure:^(AFHTTPRequestOperation * op, NSError *error) {
+        NSLog(@"获取用户信息失败%@",error);
+    }];
+}
+
+
+
+#pragma -mark  加载首页微博数据
+-(void)getNewStatus:(UIRefreshControl *)refreshCtrl{
+    
+    //请求地址
+    NSString *str =@"https://api.weibo.com/2/statuses/friends_timeline.json";
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    // 解档模型取值
+    LCOauth *oau =[LCAccountTool AccountOpen];
+    dict[@"access_token"] = oau.access_token;
+    dict[@"count"] =@(LOAD_COUNT);
+    
+    //如果是第一个数据 就从去加载最新的数据时间的数据 id 定义为了long long 类型
+    if ([self.statusFrames firstObject]) {
+        LCStatusFrame *frame = [self.statusFrames firstObject];
+        dict[@"since_id"] = @(frame.status.id);
+    }
+    
+    //发送请求获取数据
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id retuq) {
+    
+    [LCBaseTool getWithUrl:str params:dict class:[LCStatusRes class] success:^(LCStatusRes *responseObject) {
+        self.tabBarItem.badgeValue= nil;
+        [UIApplication sharedApplication].applicationIconBadgeNumber =0;
+        //获取到数据以后 结束refreshCtrl 加载
+        [refreshCtrl endRefreshing];
+        
+        // 取出 statuses 里面的值>>最外层是字典{statuses是字典里面的数组 statuses里面存的也是字典}
+     //   NSArray *array = retuq[@"statuses"];
+        // NSLog(@"retup %@",retuq[@"statuses"]);
+        
+        // 通过第三方框架进行字典转模型
+      //  NSArray *status = [LCStatus objectArrayWithKeyValuesArray:array];
+        
+        //得把status模型转成frame模型
+        NSArray *statuesFames =[self converToFramesWithStatues:responseObject.statuses];
+        
+        
+        //初始一个范围-->我们刷新回来的数据，需要添加到的tableView的前面(添加到数组的前面)
+        NSIndexSet *indexSet =[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, responseObject.statuses.count)];
+        
+        
+        // /添加到数组的什么位置
+        [self.statusFrames insertObjects:statuesFames atIndexes:indexSet];
+        
+        //刷新tableView
+        [self.tableView reloadData];
+        
+        //显示加载条
+        [self showCountLabelWithCount:responseObject.statuses.count];
+
+    } failure:^(NSError *error) {
+        NSLog(@"首页数据获取失败信息 - error%@",error);
+        [refreshCtrl endRefreshing];
+    }];
+    
+    
+        
+        
+        
+   // } failure:^(AFHTTPRequestOperation *op, NSError * error) {
+    
+  //  }];
+}
+
 
 
 

@@ -43,6 +43,10 @@
 		9D49CE9B1B65F2A900E4DC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9A1B65F2A900E4DC87 /* Images.xcassets */; };
 		9D49CE9E1B65F2A900E4DC87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D49CE9C1B65F2A900E4DC87 /* LaunchScreen.xib */; };
 		9D49CEAA1B65F2A900E4DC87 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D49CEA91B65F2A900E4DC87 /* ____Tests.m */; };
+		9D4CFEB51B7331DB0059C38A /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CFEB41B7331DB0059C38A /* NSDate+Extension.m */; };
+		9D4CFEB91B7374330059C38A /* LCHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CFEB81B7374330059C38A /* LCHttpTool.m */; };
+		9D4CFEBC1B7381450059C38A /* LCStatusRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CFEBB1B7381450059C38A /* LCStatusRes.m */; };
+		9D4CFEBF1B7382B30059C38A /* LCBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CFEBE1B7382B30059C38A /* LCBaseTool.m */; };
 		9D6292271B6CA17F009E30BC /* LCUnReacount.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6292261B6CA17F009E30BC /* LCUnReacount.m */; };
 		9D62922A1B6CBD95009E30BC /* LCIWTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6292291B6CBD95009E30BC /* LCIWTabBarItem.m */; };
 		9D62922F1B6CD409009E30BC /* LCStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62922E1B6CD409009E30BC /* LCStatusFrame.m */; };
@@ -164,6 +168,14 @@
 		9D49CEA81B65F2A900E4DC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D49CEA91B65F2A900E4DC87 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
 		9D49CEBF1B66500C00E4DC87 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		9D4CFEB31B7331DB0059C38A /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		9D4CFEB41B7331DB0059C38A /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		9D4CFEB71B7374330059C38A /* LCHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHttpTool.h; sourceTree = "<group>"; };
+		9D4CFEB81B7374330059C38A /* LCHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHttpTool.m; sourceTree = "<group>"; };
+		9D4CFEBA1B7381450059C38A /* LCStatusRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStatusRes.h; sourceTree = "<group>"; };
+		9D4CFEBB1B7381450059C38A /* LCStatusRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCStatusRes.m; sourceTree = "<group>"; };
+		9D4CFEBD1B7382B30059C38A /* LCBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaseTool.h; sourceTree = "<group>"; };
+		9D4CFEBE1B7382B30059C38A /* LCBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaseTool.m; sourceTree = "<group>"; };
 		9D6292251B6CA17F009E30BC /* LCUnReacount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUnReacount.h; sourceTree = "<group>"; };
 		9D6292261B6CA17F009E30BC /* LCUnReacount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUnReacount.m; sourceTree = "<group>"; };
 		9D6292281B6CBD95009E30BC /* LCIWTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCIWTabBarItem.h; sourceTree = "<group>"; };
@@ -434,6 +446,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9D4CFEB61B7373E00059C38A /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				9D4CFEB71B7374330059C38A /* LCHttpTool.h */,
+				9D4CFEB81B7374330059C38A /* LCHttpTool.m */,
+				9D4CFEBD1B7382B30059C38A /* LCBaseTool.h */,
+				9D4CFEBE1B7382B30059C38A /* LCBaseTool.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		9D62922B1B6CD3C2009E30BC /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +600,8 @@
 				9D6292261B6CA17F009E30BC /* LCUnReacount.m */,
 				9D30ED9B1B6FC43F00A92E71 /* LCPhoto.h */,
 				9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */,
+				9D4CFEBA1B7381450059C38A /* LCStatusRes.h */,
+				9D4CFEBB1B7381450059C38A /* LCStatusRes.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -661,6 +686,7 @@
 		9D62CAFB1B67E5870035063F /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				9D4CFEB61B7373E00059C38A /* NetWork */,
 				9D62CAFC1B67E5870035063F /* Category */,
 				9D62CB031B67E5870035063F /* Controller */,
 				9D62CB081B67E5870035063F /* Model */,
@@ -683,6 +709,8 @@
 				9D49A4B51B6A89B400B9F3E3 /* UIWindow+Extetion.m */,
 				9D2426121B70E67D00FD65A6 /* NSString+Extension.h */,
 				9D2426131B70E67D00FD65A6 /* NSString+Extension.m */,
+				9D4CFEB31B7331DB0059C38A /* NSDate+Extension.h */,
+				9D4CFEB41B7331DB0059C38A /* NSDate+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -858,6 +886,7 @@
 			files = (
 				9D49A4A81B6A5ED000B9F3E3 /* AFHTTPRequestOperation.m in Sources */,
 				9D110D921B688A4700D2B84B /* LCPopView.m in Sources */,
+				9D4CFEB51B7331DB0059C38A /* NSDate+Extension.m in Sources */,
 				9D40FBE31B6F0359000E012E /* LCStatusToolBar.m in Sources */,
 				9D6292271B6CA17F009E30BC /* LCUnReacount.m in Sources */,
 				9D49CE931B65F2A900E4DC87 /* AppDelegate.m in Sources */,
@@ -876,6 +905,7 @@
 				9D46979A1B6BCCDC000B7CC4 /* MJConst.m in Sources */,
 				9D4697A71B6BE75B000B7CC4 /* UIViewController+ESSeparatorInset.m in Sources */,
 				9D62925E1B6CE4BB009E30BC /* SDWebImageDownloader.m in Sources */,
+				9D4CFEBC1B7381450059C38A /* LCStatusRes.m in Sources */,
 				9D46979F1B6BCCDC000B7CC4 /* NSObject+MJIvar.m in Sources */,
 				9D62CB1F1B67E5870035063F /* LCSearchView.m in Sources */,
 				9D49A4AA1B6A5ED000B9F3E3 /* AFHTTPSessionManager.m in Sources */,
@@ -899,6 +929,7 @@
 				9D6292631B6CE4BB009E30BC /* UIImage+GIF.m in Sources */,
 				9D49A4AF1B6A5ED000B9F3E3 /* AFURLResponseSerialization.m in Sources */,
 				9D4697AA1B6C8D2C000B7CC4 /* LCLoadMoreView.m in Sources */,
+				9D4CFEBF1B7382B30059C38A /* LCBaseTool.m in Sources */,
 				9D62CB1C1B67E5870035063F /* UIView+Inspectable.m in Sources */,
 				9D6292361B6CD645009E30BC /* LCStatusCell.m in Sources */,
 				9D2426141B70E67D00FD65A6 /* NSString+Extension.m in Sources */,
@@ -911,6 +942,7 @@
 				9D62CB211B67E5870035063F /* LCTabBar.m in Sources */,
 				9D62CB1D1B67E5870035063F /* LCNavigationController.m in Sources */,
 				9D62925F1B6CE4BB009E30BC /* SDWebImageDownloaderOperation.m in Sources */,
+				9D4CFEB91B7374330059C38A /* LCHttpTool.m in Sources */,
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,
 				9D6292681B6CE4BB009E30BC /* UIView+WebCacheOperation.m in Sources */,
 				9D62922F1B6CD409009E30BC /* LCStatusFrame.m in Sources */,

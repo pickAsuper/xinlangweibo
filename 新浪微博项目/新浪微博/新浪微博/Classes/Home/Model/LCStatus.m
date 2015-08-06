@@ -9,6 +9,7 @@
 #import "LCStatus.h"
 #import "MJExtension.h"
 #import "LCPhoto.h"
+#import "NSDate+Extension.h"
 
 @implementation LCStatus
 
@@ -58,10 +59,10 @@
    // _created_at = [formatter stringFromDate:date];
     NSDate *currentDate =[NSDate date];
    
-    if ([self isThisYearWithDate:createDate]) {
+    if ([NSDate isThisYearWithDate:createDate]) {
         //是今年 >>在继续判断是在 今天 或 昨天
           NSLog(@"是今年");
-        if ([self isTodayWithDate:createDate]) {
+        if ([NSDate isTodayWithDate:createDate]) {
              //是今天 >> 还得去判断在今天的什么时间之前
           NSDate *retulDate = [createDate dateByAddingTimeInterval:60];
             if ([retulDate compare:currentDate]==NSOrderedDescending) {
@@ -85,7 +86,7 @@
             
             
         }else{
-            if ([self isYesterdayWithDate:createDate]) {
+            if ([NSDate isYesterdayWithDate:createDate]) {
                 //不是今天>>昨天
                 
                 formatter.dateFormat =@"昨天 HH:mm";
@@ -108,66 +109,66 @@
      }
 
 //判断是否是今年
--(BOOL)isThisYearWithDate:(NSDate *)date{
-    NSDateFormatter *formatter =[[NSDateFormatter alloc]init];
-    
-     //时间格式
-    formatter.dateFormat =@"yyyy";
-    
-    //创建时间
-    NSDate *createDate =date;
-
-    //获取当前时间
-    NSDate *currentDate =[NSDate date];
-
-      formatter.dateFormat =@"yyyy";
-    NSString *create =  [formatter stringFromDate:createDate];
-    NSString *current =[formatter stringFromDate:currentDate];
-    return [create isEqualToString:current];
-    
-
-
-}
-//判断是否是今天
--(BOOL)isTodayWithDate:(NSDate *)date
-{
-    NSDateFormatter *formatter =[[NSDateFormatter alloc]init];
-    formatter.dateFormat =@"yyyy-MM-dd";
-    
-    NSDate *creatDate = date;
-    NSDate *currentDate =[NSDate date];
-    
-   NSString *creat = [formatter stringFromDate:creatDate];
-    //当前时间
-   NSString *current = [formatter stringFromDate:currentDate];
-    
-    return [creat isEqualToString:current];
-
-}
-//判断是否为昨天
--(BOOL)isYesterdayWithDate:(NSDate *)date{
-    
-    //当前时间
-    NSDate *currentDate =[NSDate date];
-    
-    //取出当前日历
-    NSCalendar *canlender =[NSCalendar currentCalendar];
-    
-    //设置对比 对象 年 月 日 时 分 秒
-    NSCalendarUnit unit = NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond;
-    
-   NSDateComponents *components = [canlender components:unit fromDate:date toDate:currentDate options:NSCalendarWrapComponents];
-    
-    return components.day ==1;
-    
-    
-    
-    
-
-
-
-
-}
+//-(BOOL)isThisYearWithDate:(NSDate *)date{
+//    NSDateFormatter *formatter =[[NSDateFormatter alloc]init];
+//    
+//     //时间格式
+//    formatter.dateFormat =@"yyyy";
+//    
+//    //创建时间
+//    NSDate *createDate =date;
+//
+//    //获取当前时间
+//    NSDate *currentDate =[NSDate date];
+//
+//      formatter.dateFormat =@"yyyy";
+//    NSString *create =  [formatter stringFromDate:createDate];
+//    NSString *current =[formatter stringFromDate:currentDate];
+//    return [create isEqualToString:current];
+//    
+//
+//
+//}
+////判断是否是今天
+//-(BOOL)isTodayWithDate:(NSDate *)date
+//{
+//    NSDateFormatter *formatter =[[NSDateFormatter alloc]init];
+//    formatter.dateFormat =@"yyyy-MM-dd";
+//    
+//    NSDate *creatDate = date;
+//    NSDate *currentDate =[NSDate date];
+//    
+//   NSString *creat = [formatter stringFromDate:creatDate];
+//    //当前时间
+//   NSString *current = [formatter stringFromDate:currentDate];
+//    
+//    return [creat isEqualToString:current];
+//
+//}
+////判断是否为昨天
+//-(BOOL)isYesterdayWithDate:(NSDate *)date{
+//    
+//    //当前时间
+//    NSDate *currentDate =[NSDate date];
+//    
+//    //取出当前日历
+//    NSCalendar *canlender =[NSCalendar currentCalendar];
+//    
+//    //设置对比 对象 年 月 日 时 分 秒
+//    NSCalendarUnit unit = NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond;
+//    
+//   NSDateComponents *components = [canlender components:unit fromDate:date toDate:currentDate options:NSCalendarWrapComponents];
+//    
+//    return components.day ==1;
+//    
+//    
+//    
+//    
+//
+//
+//
+//
+//}
 
 
 @end
