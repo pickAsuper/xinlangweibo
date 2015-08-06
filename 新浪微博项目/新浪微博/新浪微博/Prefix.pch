@@ -29,6 +29,6 @@
 //设置文字大小
 #define SYS_FONT(x) [UIFont systemFontOfSize:x]
 
-
+#import "NSString+Extension.h"
 
 #endif

@@ -98,8 +98,16 @@
     self.contentLabel.frame =statusFrame.contentLabelF;
     
     //发布微博消息时间
+//    self.createLabel.text =statusFrame.status.created_at;
+//    self.createLabel.frame =statusFrame.createLabelF;
+
+    //直接调用get方法 >> 这样cell上的时间就回更改
     self.createLabel.text =statusFrame.status.created_at;
-    self.createLabel.frame =statusFrame.createLabelF;
+    CGSize createLabelSize =[self.createLabel.text sizeWithFont:self.createLabel.font];
+    self.createLabel.frame =(CGRect){statusFrame.createLabelF.origin,createLabelSize};
+    
+    
+    
     
     //发布消息的来源
     self.sourceLabel.text =statusFrame.status.source;
