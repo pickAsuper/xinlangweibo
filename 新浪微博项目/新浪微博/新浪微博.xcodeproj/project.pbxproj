@@ -10,6 +10,7 @@
 		9D110D921B688A4700D2B84B /* LCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D110D911B688A4700D2B84B /* LCPopView.m */; };
 		9D2426141B70E67D00FD65A6 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2426131B70E67D00FD65A6 /* NSString+Extension.m */; };
 		9D27311B1B69F08800108ED9 /* LCOAuthViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */; };
+		9D2F7EA61B73C55000101E21 /* LCHomeDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2F7EA51B73C55000101E21 /* LCHomeDataTool.m */; };
 		9D30ED9D1B6FC43F00A92E71 /* LCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */; };
 		9D30EDA01B6FC6A000A92E71 /* LCStatusPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30ED9F1B6FC6A000A92E71 /* LCStatusPhotos.m */; };
 		9D3D1AD11B68B5D000E93011 /* LCNewFeatureCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */; };
@@ -100,6 +101,8 @@
 		9D2426131B70E67D00FD65A6 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		9D2731191B69F08800108ED9 /* LCOAuthViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCOAuthViewCtrl.h; sourceTree = "<group>"; };
 		9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOAuthViewCtrl.m; sourceTree = "<group>"; };
+		9D2F7EA41B73C55000101E21 /* LCHomeDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeDataTool.h; sourceTree = "<group>"; };
+		9D2F7EA51B73C55000101E21 /* LCHomeDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeDataTool.m; sourceTree = "<group>"; };
 		9D30ED9B1B6FC43F00A92E71 /* LCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPhoto.h; sourceTree = "<group>"; };
 		9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPhoto.m; sourceTree = "<group>"; };
 		9D30ED9E1B6FC6A000A92E71 /* LCStatusPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStatusPhotos.h; sourceTree = "<group>"; };
@@ -293,6 +296,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9D2F7EA31B73C51800101E21 /* HomeDataTool */ = {
+			isa = PBXGroup;
+			children = (
+				9D2F7EA41B73C55000101E21 /* LCHomeDataTool.h */,
+				9D2F7EA51B73C55000101E21 /* LCHomeDataTool.m */,
+			);
+			path = HomeDataTool;
+			sourceTree = "<group>";
+		};
 		9D3D1ACD1B68B53600E93011 /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +461,7 @@
 		9D4CFEB61B7373E00059C38A /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				9D2F7EA31B73C51800101E21 /* HomeDataTool */,
 				9D4CFEB71B7374330059C38A /* LCHttpTool.h */,
 				9D4CFEB81B7374330059C38A /* LCHttpTool.m */,
 				9D4CFEBD1B7382B30059C38A /* LCBaseTool.h */,
@@ -923,6 +936,7 @@
 				9D6292611B6CE4BB009E30BC /* SDWebImagePrefetcher.m in Sources */,
 				9D49A4B01B6A5ED000B9F3E3 /* AFURLSessionManager.m in Sources */,
 				9D62CB221B67E5870035063F /* Sun2View.m in Sources */,
+				9D2F7EA61B73C55000101E21 /* LCHomeDataTool.m in Sources */,
 				9D62925C1B6CE4BB009E30BC /* SDWebImageCompat.m in Sources */,
 				9D62CB191B67E5870035063F /* LCHomeTitelBtn.m in Sources */,
 				9D49A4AD1B6A5ED000B9F3E3 /* AFURLConnectionOperation.m in Sources */,

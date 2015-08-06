@@ -24,6 +24,8 @@
 #import "LCHttpTool.h"
 #import "LCBaseTool.h"
 #import "LCStatusRes.h"
+#import "LCHomeDataTool.h"
+
 
 //运行时
 #import <objc/runtime.h>
@@ -235,9 +237,6 @@
 #pragma mark -获取用户信息
 -(void)getUserData{
     
-    //NSString *str =@"https://api.weibo.com/2/users/show.json?access_token=2.009JDZsFbIHNLDd2f5f867cbUDEeUE&uid=5386939902";
-    // 2.009JDZsFbIHNLDd2f5f867cbUDEeUE
-    //     5386939902
     
     NSString *str =@"https://api.weibo.com/2/users/show.json";
     NSMutableDictionary *dict =[NSMutableDictionary dictionary];
@@ -271,43 +270,31 @@
 #pragma -mark  加载首页微博数据
 -(void)getNewStatus:(UIRefreshControl *)refreshCtrl{
     
-    //请求地址
-    NSString *str =@"https://api.weibo.com/2/statuses/friends_timeline.json";
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    // 解档模型取值
-    LCOauth *oau =[LCAccountTool AccountOpen];
-    dict[@"access_token"] = oau.access_token;
-    dict[@"count"] =@(LOAD_COUNT);
+//    //请求地址
+//    NSString *str =@"https://api.weibo.com/2/statuses/friends_timeline.json";
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//    // 解档模型取值
+//    LCOauth *oau =[LCAccountTool AccountOpen];
+//    dict[@"access_token"] = oau.access_token;
+//    dict[@"count"] =@(LOAD_COUNT);
     
+    long long since_id =0;
     //如果是第一个数据 就从去加载最新的数据时间的数据 id 定义为了long long 类型
     if ([self.statusFrames firstObject]) {
         LCStatusFrame *frame = [self.statusFrames firstObject];
-        dict[@"since_id"] = @(frame.status.id);
+        since_id = frame.status.id;
     }
-    
-    //发送请求获取数据
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    [manager GET:str parameters:dict success:^(AFHTTPRequestOperation * op, id retuq) {
-    
-    [LCBaseTool getWithUrl:str params:dict class:[LCStatusRes class] success:^(LCStatusRes *responseObject) {
+[LCHomeDataTool getStatusWithSinceId:since_id maxId:0 count:LOAD_COUNT success:^(LCStatusRes *res) {
         self.tabBarItem.badgeValue= nil;
         [UIApplication sharedApplication].applicationIconBadgeNumber =0;
         //获取到数据以后 结束refreshCtrl 加载
         [refreshCtrl endRefreshing];
         
-        // 取出 statuses 里面的值>>最外层是字典{statuses是字典里面的数组 statuses里面存的也是字典}
-     //   NSArray *array = retuq[@"statuses"];
-        // NSLog(@"retup %@",retuq[@"statuses"]);
-        
-        // 通过第三方框架进行字典转模型
-      //  NSArray *status = [LCStatus objectArrayWithKeyValuesArray:array];
-        
-        //得把status模型转成frame模型
-        NSArray *statuesFames =[self converToFramesWithStatues:responseObject.statuses];
+    NSArray *statuesFames =[self converToFramesWithStatues:res.statuses];
         
         
         //初始一个范围-->我们刷新回来的数据，需要添加到的tableView的前面(添加到数组的前面)
-        NSIndexSet *indexSet =[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, responseObject.statuses.count)];
+        NSIndexSet *indexSet =[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, res.statuses.count)];
         
         
         // /添加到数组的什么位置
@@ -317,15 +304,20 @@
         [self.tableView reloadData];
         
         //显示加载条
-        [self showCountLabelWithCount:responseObject.statuses.count];
+        [self showCountLabelWithCount:res.statuses.count];
+        
 
     } failure:^(NSError *error) {
         NSLog(@"首页数据获取失败信息 - error%@",error);
         [refreshCtrl endRefreshing];
+        
+
     }];
     
     
-        
+    
+    
+    
         
         
    // } failure:^(AFHTTPRequestOperation *op, NSError * error) {
@@ -388,41 +380,25 @@
 
 #pragma mark -loadUnReadCount
 -(void)loadUnReadCount{
-   NSString *str =@"https://rm.api.weibo.com/2/remind/unread_count.json";
-    NSMutableDictionary *dict =[NSMutableDictionary dictionary];
-    
-    LCOauth *oua =[LCAccountTool AccountOpen];
-    dict[@"access_token"]=oua.access_token;
-    dict[@"uid"]=oua.uid;
-    
-    
-    
-    AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
-  [manager GET:str parameters:dict success:^(AFHTTPRequestOperation *op, id reta) {
       
-      //获取到数据后把未读信息赋值到指标上
-      LCUnReacount *reaCount =[LCUnReacount new];
-      [reaCount setKeyValues:reta];
-      
+    
+    LCOauth *account =[LCAccountTool AccountOpen];
+  [LCHomeDataTool getUnReadUid:account.uid success:^(LCUnReacount *res) {
       //如果指标有值
-      if (reaCount.status) {
-          self.tabBarItem.badgeValue =[NSString stringWithFormat:@"%zd",reaCount.status];
+      if (res.status) {
+          self.tabBarItem.badgeValue =[NSString stringWithFormat:@"%zd",res.status];
           //设置桌面上应用图标右上角的badgeNumber
-          [UIApplication sharedApplication].applicationIconBadgeNumber =reaCount.status;
+          [UIApplication sharedApplication].applicationIconBadgeNumber =res.status;
           
           
       }else{
           self.tabBarItem.badgeValue=nil;
       }
-      
-  } failure:^(AFHTTPRequestOperation *op, NSError * error) {
-      NSLog(@"获取未读信息失败%@,",error);
+
+  } failure:^(NSError *error) {
+        NSLog(@"获取未读信息失败%@,",error);
   }];
-
-
-
-
-}
+  }
 
 //showCountLabelWithCount
 -(void)showCountLabelWithCount:(NSInteger )count{
