@@ -52,9 +52,16 @@
 
 //中间按钮点击事件
 -(void)btnClick:(UIButton *)btn{
+    //使用代理
   //  NSLog(@"asd");
-    if ([self.delegate respondsToSelector:@selector(tabbar:btnClick:)]) {
-        [self.delegate tabbar:self btnClick:btn];
+//    if ([self.delegate respondsToSelector:@selector(tabbar:btnClick:)]) {
+//        [self.delegate tabbar:self btnClick:btn];
+//    }
+    
+    
+    //使用block传点击事件出去
+    if (self.btnClik) {
+        self.btnClik(btn);
     }
     
 }

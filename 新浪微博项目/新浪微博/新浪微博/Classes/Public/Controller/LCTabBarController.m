@@ -11,7 +11,7 @@
 #import "LCHomeVirewController.h"
 #import "LCDiscoverViewCtrl.h"
 #import "LCIWTabBarItem.h"
-
+#import "LCComposeView.h"
 @interface LCTabBarController ()<LCTabBarDelegate>
 
 @end
@@ -23,7 +23,11 @@
     
     
     LCTabBar *tabbar =[[LCTabBar alloc]init];
-    tabbar.delegate =self;
+     [tabbar setBtnClik:^(UIButton *btn) {
+         NSLog(@"通过block传的点击事件");
+         [self addModalCtrl];
+     }];
+  //  tabbar.delegate =self;
     //不能直接赋值给系统tabBar 需要通过KVC的方式
     [self setValue:tabbar forKeyPath:@"tabBar"];
     
@@ -64,13 +68,21 @@
     [self addChildViewController:navctrl];
 
 }
--(void)tabbar:(LCTabBar *)tabbar btnClick:(UIButton *)btn{
-    
-   // NSLog(@"xzfa");
-    NSLog(@"%s",__func__);
+//代理的点击事件
+//-(void)tabbar:(LCTabBar *)tabbar btnClick:(UIButton *)btn{
+//    
+//   // NSLog(@"xzfa");
+//    NSLog(@"%s",__func__);
+//    
+//    
+//
+//}
+//block的点击事件
+-(void)addModalCtrl{
+    LCComposeView *composeView =[[LCComposeView alloc]init];
+    [self.view addSubview:composeView];
 
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

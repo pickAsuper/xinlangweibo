@@ -11,6 +11,8 @@
 		9D2426141B70E67D00FD65A6 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2426131B70E67D00FD65A6 /* NSString+Extension.m */; };
 		9D27311B1B69F08800108ED9 /* LCOAuthViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */; };
 		9D2F7EA61B73C55000101E21 /* LCHomeDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2F7EA51B73C55000101E21 /* LCHomeDataTool.m */; };
+		9D2F7EAD1B74541A00101E21 /* LCComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2F7EAC1B74541A00101E21 /* LCComposeView.m */; };
+		9D2F7EB01B745C9D00101E21 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2F7EAF1B745C9D00101E21 /* UIImage+ImageEffects.m */; };
 		9D30ED9D1B6FC43F00A92E71 /* LCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */; };
 		9D30EDA01B6FC6A000A92E71 /* LCStatusPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30ED9F1B6FC6A000A92E71 /* LCStatusPhotos.m */; };
 		9D3D1AD11B68B5D000E93011 /* LCNewFeatureCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1AD01B68B5D000E93011 /* LCNewFeatureCtrl.m */; };
@@ -103,6 +105,10 @@
 		9D27311A1B69F08800108ED9 /* LCOAuthViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOAuthViewCtrl.m; sourceTree = "<group>"; };
 		9D2F7EA41B73C55000101E21 /* LCHomeDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeDataTool.h; sourceTree = "<group>"; };
 		9D2F7EA51B73C55000101E21 /* LCHomeDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeDataTool.m; sourceTree = "<group>"; };
+		9D2F7EAB1B74541A00101E21 /* LCComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCComposeView.h; sourceTree = "<group>"; };
+		9D2F7EAC1B74541A00101E21 /* LCComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCComposeView.m; sourceTree = "<group>"; };
+		9D2F7EAE1B745C9D00101E21 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		9D2F7EAF1B745C9D00101E21 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		9D30ED9B1B6FC43F00A92E71 /* LCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPhoto.h; sourceTree = "<group>"; };
 		9D30ED9C1B6FC43F00A92E71 /* LCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPhoto.m; sourceTree = "<group>"; };
 		9D30ED9E1B6FC6A000A92E71 /* LCStatusPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStatusPhotos.h; sourceTree = "<group>"; };
@@ -303,6 +309,39 @@
 				9D2F7EA51B73C55000101E21 /* LCHomeDataTool.m */,
 			);
 			path = HomeDataTool;
+			sourceTree = "<group>";
+		};
+		9D2F7EA71B7453EB00101E21 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				9D2F7EA81B7453EB00101E21 /* Controller */,
+				9D2F7EA91B7453EB00101E21 /* Model */,
+				9D2F7EAA1B7453EB00101E21 /* View */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		9D2F7EA81B7453EB00101E21 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D2F7EA91B7453EB00101E21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D2F7EAA1B7453EB00101E21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D2F7EAB1B74541A00101E21 /* LCComposeView.h */,
+				9D2F7EAC1B74541A00101E21 /* LCComposeView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9D3D1ACD1B68B53600E93011 /* NewFeature */ = {
@@ -537,6 +576,7 @@
 		9D62CAE41B67E5870035063F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9D2F7EA71B7453EB00101E21 /* Compose */,
 				9D2731161B69E81C00108ED9 /* OAuth(授权登录) */,
 				9D3D1ACD1B68B53600E93011 /* NewFeature */,
 				9D62CAE51B67E5870035063F /* Discover */,
@@ -724,6 +764,8 @@
 				9D2426131B70E67D00FD65A6 /* NSString+Extension.m */,
 				9D4CFEB31B7331DB0059C38A /* NSDate+Extension.h */,
 				9D4CFEB41B7331DB0059C38A /* NSDate+Extension.m */,
+				9D2F7EAE1B745C9D00101E21 /* UIImage+ImageEffects.h */,
+				9D2F7EAF1B745C9D00101E21 /* UIImage+ImageEffects.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -929,6 +971,7 @@
 				9D46979D1B6BCCDC000B7CC4 /* MJType.m in Sources */,
 				9D46979C1B6BCCDC000B7CC4 /* MJIvar.m in Sources */,
 				9D6292671B6CE4BB009E30BC /* UIImageView+WebCache.m in Sources */,
+				9D2F7EB01B745C9D00101E21 /* UIImage+ImageEffects.m in Sources */,
 				9D6292641B6CE4BB009E30BC /* UIImage+MultiFormat.m in Sources */,
 				9D46979E1B6BCCDC000B7CC4 /* NSObject+MJCoding.m in Sources */,
 				9D6292621B6CE4BB009E30BC /* UIButton+WebCache.m in Sources */,
@@ -938,6 +981,7 @@
 				9D62CB221B67E5870035063F /* Sun2View.m in Sources */,
 				9D2F7EA61B73C55000101E21 /* LCHomeDataTool.m in Sources */,
 				9D62925C1B6CE4BB009E30BC /* SDWebImageCompat.m in Sources */,
+				9D2F7EAD1B74541A00101E21 /* LCComposeView.m in Sources */,
 				9D62CB191B67E5870035063F /* LCHomeTitelBtn.m in Sources */,
 				9D49A4AD1B6A5ED000B9F3E3 /* AFURLConnectionOperation.m in Sources */,
 				9D6292631B6CE4BB009E30BC /* UIImage+GIF.m in Sources */,

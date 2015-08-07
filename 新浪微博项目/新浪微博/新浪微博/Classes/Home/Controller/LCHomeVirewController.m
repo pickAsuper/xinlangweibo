@@ -310,24 +310,9 @@
     } failure:^(NSError *error) {
         NSLog(@"首页数据获取失败信息 - error%@",error);
         [refreshCtrl endRefreshing];
-        
-
     }];
-    
-    
-    
-    
-    
-        
-        
-   // } failure:^(AFHTTPRequestOperation *op, NSError * error) {
-    
-  //  }];
+
 }
-
-
-
-
 #pragma -mark tableViewCELL  滑动到cell的最后加载的数据
 -(void)getMoreStatus{
     //请求地址
@@ -380,17 +365,13 @@
 
 #pragma mark -loadUnReadCount
 -(void)loadUnReadCount{
-      
-    
     LCOauth *account =[LCAccountTool AccountOpen];
   [LCHomeDataTool getUnReadUid:account.uid success:^(LCUnReacount *res) {
-      //如果指标有值
+       // 如果指标有值 >>未读条数
       if (res.status) {
           self.tabBarItem.badgeValue =[NSString stringWithFormat:@"%zd",res.status];
-          //设置桌面上应用图标右上角的badgeNumber
+               // 设置桌面上应用图标右上角的badgeNumber
           [UIApplication sharedApplication].applicationIconBadgeNumber =res.status;
-          
-          
       }else{
           self.tabBarItem.badgeValue=nil;
       }
