@@ -28,6 +28,7 @@
          [self addModalCtrl];
      }];
   //  tabbar.delegate =self;
+   
     //不能直接赋值给系统tabBar 需要通过KVC的方式
     [self setValue:tabbar forKeyPath:@"tabBar"];
     
@@ -45,6 +46,8 @@
     [self tableViewWithTableViewCtrl:profile image:@"tabbar_profile" titel:@"我"];
     
 }
+
+
 -(void)tableViewWithTableViewCtrl:(UITableViewController *)ctrl image:(NSString *)image titel:(NSString *)titel{
    
     //更改为tabBarItem
@@ -68,7 +71,10 @@
     [self addChildViewController:navctrl];
 
 }
-//代理的点击事件
+
+
+
+//如果是代理就用 >> 代理的点击事件
 //-(void)tabbar:(LCTabBar *)tabbar btnClick:(UIButton *)btn{
 //    
 //   // NSLog(@"xzfa");
@@ -77,25 +83,27 @@
 //    
 //
 //}
+
+
+
+
 //block的点击事件
 -(void)addModalCtrl{
-    LCComposeView *composeView =[[LCComposeView alloc]init];
-    [self.view addSubview:composeView];
-
+    LCComposeView *composeView =[[LCComposeView alloc]initWithTagert:self];
+    [composeView show];
+    
+//    不应该从主窗口弹出来
+//  [self.view addSubview:composeView];
+//    UIWindow *window =[UIApplication sharedApplication].keyWindow;
+//    [window addSubview:composeView];
+//    [composeView startAnim];
+    
+    
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
+
 
 @end

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 ___Super___. All rights reserved.
 //
 
+//这是tabbar的中间 >> 加号按钮
 #import "LCTabBar.h"
 @interface LCTabBar ()
 
@@ -86,30 +87,16 @@
            //NSLog(@"%@",view);
         //判断是不是系统的UITabBarButton
         if ([view isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-          //  NSLog(@"%@",view);
-
             //每个控件的位置
-           view.width = barw;
+            view.width = barw;
             view.x =index * barw;
               //让tabar往后加一个位置 来摆放中间加号按钮
             if (index == 1) {
                 index ++;
             }
-            
             index++;
-            
-           
-            
-            
+        }
     }
-        
-        
-    }
-
-    
-
-    
-    
 
 }
 
