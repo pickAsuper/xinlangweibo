@@ -260,6 +260,14 @@
         LCHomeTitelBtn *homeTitel =(LCHomeTitelBtn *)self.navigationItem.titleView;
         [homeTitel setTitle:userInfo.screen_name forState:UIControlStateNormal];
         
+        
+        //保存昵称 
+        LCOauth *account =[LCAccountTool AccountOpen];
+        account.screen_name =userInfo.screen_name;
+        [LCAccountTool accountTool:account];
+        
+        
+        
     } failure:^(AFHTTPRequestOperation * op, NSError *error) {
         NSLog(@"获取用户信息失败%@",error);
     }];

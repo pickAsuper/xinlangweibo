@@ -107,6 +107,7 @@
 		9D62CB211B67E5870035063F /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CB0E1B67E5870035063F /* LCTabBar.m */; };
 		9D62CB221B67E5870035063F /* Sun2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CB121B67E5870035063F /* Sun2View.m */; };
 		9D62CB231B67E5870035063F /* SunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CB141B67E5870035063F /* SunView.m */; };
+		9D665A221B75137E00BC1080 /* LCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D665A211B75137E00BC1080 /* LCTextView.m */; };
 		9D705C711B7075B6001093F1 /* LCStatusPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D705C701B7075B6001093F1 /* LCStatusPhoto.m */; };
 /* End PBXBuildFile section */
 
@@ -336,6 +337,8 @@
 		9D62CB121B67E5870035063F /* Sun2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sun2View.m; sourceTree = "<group>"; };
 		9D62CB131B67E5870035063F /* SunView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunView.h; sourceTree = "<group>"; };
 		9D62CB141B67E5870035063F /* SunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunView.m; sourceTree = "<group>"; };
+		9D665A201B75137E00BC1080 /* LCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextView.h; sourceTree = "<group>"; };
+		9D665A211B75137E00BC1080 /* LCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextView.m; sourceTree = "<group>"; };
 		9D705C6F1B7075B6001093F1 /* LCStatusPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStatusPhoto.h; sourceTree = "<group>"; };
 		9D705C701B7075B6001093F1 /* LCStatusPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCStatusPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -431,6 +434,8 @@
 				9D2F7EAC1B74541A00101E21 /* LCComposeView.m */,
 				9D2F7EB61B74833C00101E21 /* LCComposeMenuButton.h */,
 				9D2F7EB71B74833C00101E21 /* LCComposeMenuButton.m */,
+				9D665A201B75137E00BC1080 /* LCTextView.h */,
+				9D665A211B75137E00BC1080 /* LCTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1182,6 +1187,7 @@
 				9D62CB211B67E5870035063F /* LCTabBar.m in Sources */,
 				9D62CB1D1B67E5870035063F /* LCNavigationController.m in Sources */,
 				9D62925F1B6CE4BB009E30BC /* SDWebImageDownloaderOperation.m in Sources */,
+				9D665A221B75137E00BC1080 /* LCTextView.m in Sources */,
 				9D4CFEB91B7374330059C38A /* LCHttpTool.m in Sources */,
 				9D2F7F011B749C1000101E21 /* POPMath.mm in Sources */,
 				9D49CE901B65F2A900E4DC87 /* main.m in Sources */,

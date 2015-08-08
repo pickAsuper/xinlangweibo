@@ -47,5 +47,22 @@
 
 }
 
++(instancetype)itemWithTitel:(NSString *)titel target:(id)target action:(SEL)action{
+    UIButton *button =[[UIButton alloc]init];
+    [button setTitle:titel forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+    
+    [button sizeToFit];
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    
+    
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return [[UIBarButtonItem alloc]initWithCustomView:button];
+    
+    
 
+
+
+}
 @end

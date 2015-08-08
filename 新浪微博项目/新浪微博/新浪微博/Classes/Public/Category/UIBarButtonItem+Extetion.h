@@ -14,4 +14,10 @@
 +(instancetype)itemWithImageName:(NSString *)imageName target:(id)target action:(SEL)action;
 
 +(instancetype)itemWithImageName:(NSString *)imageName target:(id)target action:(SEL)action titel:(NSString *)titel;
+
++(instancetype)itemWithTitel:(NSString *)titel target:(id)target action:(SEL)action;
+
+
+
+
 @end

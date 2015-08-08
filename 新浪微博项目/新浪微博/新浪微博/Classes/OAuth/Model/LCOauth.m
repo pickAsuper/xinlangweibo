@@ -7,6 +7,8 @@
 //
 
 #import "LCOauth.h"
+#import "MJExtension.h"
+
 
 @implementation LCOauth
 
@@ -15,24 +17,29 @@
     _expires_in =expires_in;
     self.create_at =[NSDate date];
 }
-//获取的数据进行归档操作
--(void)encodeWithCoder:(NSCoder *)encode{
-    [encode encodeInteger:self.expires_in forKey:@"expires_in"];
-    [encode encodeObject:self.access_token forKey:@"access_token"];
-    [encode encodeObject:self.remind_in forKey:@"remind_in"];
-    [encode encodeObject:self.uid forKey:@"uid"];
-    
-}
--(id)initWithCoder:(NSCoder *)aDecoder{
-    if (self =[super init]) {
-        self.expires_in =  [aDecoder decodeIntegerForKey:@"expires_in"];
-        self.access_token =[aDecoder decodeObjectForKey:@"access_token"];
-        self.remind_in =[aDecoder decodeObjectForKey:@"remind_in"];
-        self.uid =[aDecoder decodeObjectForKey:@"uid"];
 
-    
-    }
-    return self;
-    
-}
+
+MJCodingImplementation
+
+
+//获取的数据进行归档操作
+//-(void)encodeWithCoder:(NSCoder *)encode{
+//    [encode encodeInteger:self.expires_in forKey:@"expires_in"];
+//    [encode encodeObject:self.access_token forKey:@"access_token"];
+//    [encode encodeObject:self.remind_in forKey:@"remind_in"];
+//    [encode encodeObject:self.uid forKey:@"uid"];
+//    
+//}
+//-(id)initWithCoder:(NSCoder *)aDecoder{
+//    if (self =[super init]) {
+//        self.expires_in =  [aDecoder decodeIntegerForKey:@"expires_in"];
+//        self.access_token =[aDecoder decodeObjectForKey:@"access_token"];
+//        self.remind_in =[aDecoder decodeObjectForKey:@"remind_in"];
+//        self.uid =[aDecoder decodeObjectForKey:@"uid"];
+//
+//    
+//    }
+//    return self;
+//    
+//}
 @end

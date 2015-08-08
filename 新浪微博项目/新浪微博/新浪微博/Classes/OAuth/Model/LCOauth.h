@@ -31,5 +31,6 @@
 
 //请求超时时间
 @property (nonatomic ,strong)NSDate *create_at;
+@property (nonatomic,copy) NSString *screen_name;
 
 @end
