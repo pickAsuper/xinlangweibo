@@ -108,7 +108,9 @@
 		9D62CB221B67E5870035063F /* Sun2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CB121B67E5870035063F /* Sun2View.m */; };
 		9D62CB231B67E5870035063F /* SunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62CB141B67E5870035063F /* SunView.m */; };
 		9D665A221B75137E00BC1080 /* LCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D665A211B75137E00BC1080 /* LCTextView.m */; };
+		9D665A251B7616AE00BC1080 /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D665A241B7616AE00BC1080 /* UITextView+PlaceHolder.m */; };
 		9D705C711B7075B6001093F1 /* LCStatusPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D705C701B7075B6001093F1 /* LCStatusPhoto.m */; };
+		9DA827431B762A4300301DCD /* LCComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA827421B762A4300301DCD /* LCComposeToolBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -339,8 +341,12 @@
 		9D62CB141B67E5870035063F /* SunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunView.m; sourceTree = "<group>"; };
 		9D665A201B75137E00BC1080 /* LCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextView.h; sourceTree = "<group>"; };
 		9D665A211B75137E00BC1080 /* LCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextView.m; sourceTree = "<group>"; };
+		9D665A231B7616AE00BC1080 /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
+		9D665A241B7616AE00BC1080 /* UITextView+PlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PlaceHolder.m"; sourceTree = "<group>"; };
 		9D705C6F1B7075B6001093F1 /* LCStatusPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStatusPhoto.h; sourceTree = "<group>"; };
 		9D705C701B7075B6001093F1 /* LCStatusPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCStatusPhoto.m; sourceTree = "<group>"; };
+		9DA827411B762A4300301DCD /* LCComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCComposeToolBar.h; sourceTree = "<group>"; };
+		9DA827421B762A4300301DCD /* LCComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCComposeToolBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +442,8 @@
 				9D2F7EB71B74833C00101E21 /* LCComposeMenuButton.m */,
 				9D665A201B75137E00BC1080 /* LCTextView.h */,
 				9D665A211B75137E00BC1080 /* LCTextView.m */,
+				9DA827411B762A4300301DCD /* LCComposeToolBar.h */,
+				9DA827421B762A4300301DCD /* LCComposeToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -933,6 +941,8 @@
 				9D4CFEB41B7331DB0059C38A /* NSDate+Extension.m */,
 				9D2F7EAE1B745C9D00101E21 /* UIImage+ImageEffects.h */,
 				9D2F7EAF1B745C9D00101E21 /* UIImage+ImageEffects.m */,
+				9D665A231B7616AE00BC1080 /* UITextView+PlaceHolder.h */,
+				9D665A241B7616AE00BC1080 /* UITextView+PlaceHolder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1130,6 +1140,7 @@
 				9D6292651B6CE4BB009E30BC /* UIImage+WebP.m in Sources */,
 				9D2F7EF71B749C1000101E21 /* POPAnimationExtras.mm in Sources */,
 				9D6292591B6CE4BB009E30BC /* MKAnnotationView+WebCache.m in Sources */,
+				9D665A251B7616AE00BC1080 /* UITextView+PlaceHolder.m in Sources */,
 				9D30EDA01B6FC6A000A92E71 /* LCStatusPhotos.m in Sources */,
 				9D2F7EB51B74641A00101E21 /* LCComposeMenuInfo.m in Sources */,
 				9D4697A31B6BDD49000B7CC4 /* LCStatus.m in Sources */,
@@ -1177,6 +1188,7 @@
 				9D2F7F001B749C1000101E21 /* POPLayerExtras.mm in Sources */,
 				9D2426141B70E67D00FD65A6 /* NSString+Extension.m in Sources */,
 				9D4697A01B6BCCDC000B7CC4 /* NSObject+MJKeyValue.m in Sources */,
+				9DA827431B762A4300301DCD /* LCComposeToolBar.m in Sources */,
 				9D49A4AE1B6A5ED000B9F3E3 /* AFURLRequestSerialization.m in Sources */,
 				9D4697891B6BC9DC000B7CC4 /* LCUser.m in Sources */,
 				9D27311B1B69F08800108ED9 /* LCOAuthViewCtrl.m in Sources */,

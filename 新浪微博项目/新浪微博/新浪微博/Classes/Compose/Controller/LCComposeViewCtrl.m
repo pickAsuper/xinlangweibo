@@ -10,8 +10,12 @@
 #import "LCAccountTool.h"
 #import "LCOauth.h"
 #import "LCTextView.h"
+#import "LCComposeToolBar.h"
 
-@interface LCComposeViewCtrl ()<UITextViewDelegate>
+
+@interface LCComposeViewCtrl ()<UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+@property(nonatomic,strong)LCTextView *textView;
 
 @end
 
@@ -21,22 +25,92 @@
     [super viewDidLoad];
    // self.view.backgroundColor =randomColor;
     
-    
+     //设置导航栏
     [self setupNav];
     
-   //创建占位文字
-    LCTextView *textView =[[LCTextView alloc]initWithFrame:self.view.bounds];
-    textView.font =SYS_FONT(16);
-    textView.placehoder =@"每当我错过一个女孩的时候,我就向山上放一块砖,于是就有了长城";
-    textView.delegate =self;
-    [self.view addSubview:textView];
-    
-    
+//    设置 占位文字和 底部按钮
+    [self setupChildView];
     
     
     
     
 }
+-(void)setupChildView{
+    //创建占位文字
+    LCTextView *textView =[[LCTextView alloc]initWithFrame:self.view.bounds];
+    textView.font =SYS_FONT(16);
+    textView.placehoder =@"每当我错过一个女孩的时候,我就向山上放一块砖,于是就有了长城";
+    textView.delegate =self;
+    [self.view addSubview:textView];
+    self.textView = textView;
+    //创建底部toolBar
+    LCComposeToolBar *toolBar =[[LCComposeToolBar alloc]init];
+    
+    [toolBar setButtonClick:^(LCComposeToolBarType type) {
+        [self buttonClick:type];
+        
+    }];
+    
+    toolBar.width =SCREENW;
+    toolBar.height =44;
+    toolBar.y =SCREENH -toolBar.height;
+    [self.view addSubview:toolBar];
+
+}
+-(void)buttonClick:(LCComposeToolBarType)type{
+    switch (type) {
+        case LCComposeToolBarTypeCamera:{
+            NSLog(@"LCComposeToolBarTypeCamera");
+             NSLog(@"照相机");
+            [self selectImageWithSourceType:UIImagePickerControllerSourceTypeCamera];
+        }
+            break;
+        case LCComposeToolBarTypePicture:
+            NSLog(@"LCComposeToolBarTypePicture");
+             NSLog(@"图片");
+            [self selectImageWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            break;
+        case LCComposeToolBarTypeMetion:
+            NSLog(@"LCComposeToolBarTypeMetion");
+                NSLog(@"@");
+            break;
+        case LCComposeToolBarTypeTrend:
+            NSLog(@"LCComposeToolBarTypeTrend");
+            NSLog(@"#");
+            break;
+       
+        case LCComposeToolBarTypeEmotion:
+            NSLog(@"LCComposeToolBarTypeEmotion");
+             NSLog(@"表情");
+            break;
+    }
+
+}
+
+-(void)selectImageWithSourceType:(UIImagePickerControllerSourceType)type{
+    
+     // 先判断照相机 >> 模拟器不可以用>> 照相机不可用
+    if (![UIImagePickerController isSourceTypeAvailable:type]) {
+        NSLog(@"不可用");
+        return;
+    }
+    UIImagePickerController *ctrl =[[UIImagePickerController alloc]init];
+    ctrl.sourceType =type;
+    ctrl.delegate =self;
+    [self presentViewController:ctrl animated:YES completion:nil];
+    
+    
+    
+
+}
+//图片选结束--->如果重写这个代理方法,imagepickerctrl在选择完图片,不会自己dismiss
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInf
+{
+    self.textView.backgroundColor =[UIColor colorWithPatternImage:image];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+
+}
+
 
 -(void)setupNav{
     //导航栏左右按钮
@@ -44,9 +118,7 @@
     self.navigationItem.rightBarButtonItem =[UIBarButtonItem itemWithTitel:@"发送" target:self action:@selector(send)];
     self.navigationItem.rightBarButtonItem.enabled =NO;
     
-    
-    
-//  导航栏中间按钮
+    // 导航栏中间按钮
     
     UILabel *titelLabel =[[UILabel alloc]init] ;
     titelLabel.numberOfLines =0;
@@ -82,12 +154,7 @@
         titelLabel.attributedText =attributedStr;
         [titelLabel sizeToFit];
         self.navigationItem.titleView =titelLabel;
-        
-        
     }
-    
-
-
 }
 
 
@@ -104,14 +171,6 @@
 -(void)textViewDidChange:(UITextView *)textView{
   self.navigationItem.rightBarButtonItem.enabled = textView.text.length;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

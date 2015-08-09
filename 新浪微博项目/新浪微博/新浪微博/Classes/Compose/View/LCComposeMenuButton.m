@@ -44,13 +44,23 @@
 }
 -(void)showWithType:(LCComposeMenuButtonType)type index:(NSInteger)index{
     POPSpringAnimation *anim =[POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
+    if (type == LCComposeMenuButtonTypeUp) {
+        anim.toValue =[NSValue valueWithCGPoint:CGPointMake(self.centerX, self.centerY- 350)];
+    }else{
+        anim.toValue =[NSValue valueWithCGPoint:CGPointMake(self.centerX, self.centerY+ 350)];
+    }
     
-    anim.toValue =[NSValue valueWithCGPoint:CGPointMake(self.centerX, self.centerY- 350)];
+    
     
     //弹簧摩擦力
     anim.springBounciness = 9;
     //速度
     anim.springSpeed =12;
+    
+    //把子控件一个添加上去 >>(时间的控制)
+    anim.beginTime = CACurrentMediaTime() +0.025 +index;
+    
+    
     [self pop_addAnimation:anim forKey:nil];
 
 

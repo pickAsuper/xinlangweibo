@@ -212,7 +212,8 @@
        }];
 
    }completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.25 animations:^{
+       
+       [UIView animateWithDuration:0.25 animations:^{
             LCComposeViewCtrl *composeCtrl =[[LCComposeViewCtrl alloc]init];
             [self.tagert presentViewController:[[LCNavigationController alloc]initWithRootViewController:composeCtrl] animated:YES completion:^{
                 [self removeFromSuperview];
