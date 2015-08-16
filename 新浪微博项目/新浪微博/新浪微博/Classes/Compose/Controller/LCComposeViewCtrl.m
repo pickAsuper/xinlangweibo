@@ -11,11 +11,13 @@
 #import "LCOauth.h"
 #import "LCTextView.h"
 #import "LCComposeToolBar.h"
-
+#import "LCComposePhotosView.h"
 
 @interface LCComposeViewCtrl ()<UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property(nonatomic,strong)LCTextView *textView;
+@property (nonatomic ,weak) LCComposePhotosView *PhotosView ;
+
+@property(nonatomic,weak)LCTextView *textView;
 
 @end
 
@@ -48,13 +50,21 @@
     
     [toolBar setButtonClick:^(LCComposeToolBarType type) {
         [self buttonClick:type];
-        
     }];
-    
     toolBar.width =SCREENW;
     toolBar.height =44;
     toolBar.y =SCREENH -toolBar.height;
     [self.view addSubview:toolBar];
+    
+   LCComposePhotosView *PhotosView = [[LCComposePhotosView alloc]init];
+    PhotosView.y =200;
+    PhotosView.width =SCREENW;
+    PhotosView.height =SCREENW;
+    self.PhotosView =PhotosView;
+    
+    [self.view addSubview:PhotosView];
+    
+    
 
 }
 -(void)buttonClick:(LCComposeToolBarType)type{
@@ -106,7 +116,9 @@
 //图片选结束--->如果重写这个代理方法,imagepickerctrl在选择完图片,不会自己dismiss
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInf
 {
-    self.textView.backgroundColor =[UIColor colorWithPatternImage:image];
+   // self.textView.backgroundColor =[UIColor colorWithPatternImage:image];
+    
+    [self.PhotosView addImage:image];
     [picker dismissViewControllerAnimated:YES completion:nil];
 
 }

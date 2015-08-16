@@ -74,6 +74,8 @@
 		9D4CFEB91B7374330059C38A /* LCHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CFEB81B7374330059C38A /* LCHttpTool.m */; };
 		9D4CFEBC1B7381450059C38A /* LCStatusRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CFEBB1B7381450059C38A /* LCStatusRes.m */; };
 		9D4CFEBF1B7382B30059C38A /* LCBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CFEBE1B7382B30059C38A /* LCBaseTool.m */; };
+		9D5714BE1B77A836004DBC78 /* LCComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5714BD1B77A836004DBC78 /* LCComposePhotosView.m */; };
+		9D5714C11B78EDD1004DBC78 /* LCComposePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5714C01B78EDD1004DBC78 /* LCComposePhotoView.m */; };
 		9D6292271B6CA17F009E30BC /* LCUnReacount.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6292261B6CA17F009E30BC /* LCUnReacount.m */; };
 		9D62922A1B6CBD95009E30BC /* LCIWTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6292291B6CBD95009E30BC /* LCIWTabBarItem.m */; };
 		9D62922F1B6CD409009E30BC /* LCStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62922E1B6CD409009E30BC /* LCStatusFrame.m */; };
@@ -273,6 +275,10 @@
 		9D4CFEBB1B7381450059C38A /* LCStatusRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCStatusRes.m; sourceTree = "<group>"; };
 		9D4CFEBD1B7382B30059C38A /* LCBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaseTool.h; sourceTree = "<group>"; };
 		9D4CFEBE1B7382B30059C38A /* LCBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaseTool.m; sourceTree = "<group>"; };
+		9D5714BC1B77A836004DBC78 /* LCComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCComposePhotosView.h; sourceTree = "<group>"; };
+		9D5714BD1B77A836004DBC78 /* LCComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCComposePhotosView.m; sourceTree = "<group>"; };
+		9D5714BF1B78EDD1004DBC78 /* LCComposePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCComposePhotoView.h; sourceTree = "<group>"; };
+		9D5714C01B78EDD1004DBC78 /* LCComposePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCComposePhotoView.m; sourceTree = "<group>"; };
 		9D6292251B6CA17F009E30BC /* LCUnReacount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUnReacount.h; sourceTree = "<group>"; };
 		9D6292261B6CA17F009E30BC /* LCUnReacount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUnReacount.m; sourceTree = "<group>"; };
 		9D6292281B6CBD95009E30BC /* LCIWTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCIWTabBarItem.h; sourceTree = "<group>"; };
@@ -444,6 +450,10 @@
 				9D665A211B75137E00BC1080 /* LCTextView.m */,
 				9DA827411B762A4300301DCD /* LCComposeToolBar.h */,
 				9DA827421B762A4300301DCD /* LCComposeToolBar.m */,
+				9D5714BC1B77A836004DBC78 /* LCComposePhotosView.h */,
+				9D5714BD1B77A836004DBC78 /* LCComposePhotosView.m */,
+				9D5714BF1B78EDD1004DBC78 /* LCComposePhotoView.h */,
+				9D5714C01B78EDD1004DBC78 /* LCComposePhotoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1132,6 +1142,7 @@
 				9D6292601B6CE4BB009E30BC /* SDWebImageManager.m in Sources */,
 				9D705C711B7075B6001093F1 /* LCStatusPhoto.m in Sources */,
 				9D2F7F031B749C1000101E21 /* POPSpringAnimation.mm in Sources */,
+				9D5714BE1B77A836004DBC78 /* LCComposePhotosView.m in Sources */,
 				9D2F7F051B749C1000101E21 /* TransformationMatrix.cpp in Sources */,
 				9D62922A1B6CBD95009E30BC /* LCIWTabBarItem.m in Sources */,
 				9D49A4BA1B6B3BD100B9F3E3 /* LCAccountTool.m in Sources */,
@@ -1143,6 +1154,7 @@
 				9D665A251B7616AE00BC1080 /* UITextView+PlaceHolder.m in Sources */,
 				9D30EDA01B6FC6A000A92E71 /* LCStatusPhotos.m in Sources */,
 				9D2F7EB51B74641A00101E21 /* LCComposeMenuInfo.m in Sources */,
+				9D5714C11B78EDD1004DBC78 /* LCComposePhotoView.m in Sources */,
 				9D4697A31B6BDD49000B7CC4 /* LCStatus.m in Sources */,
 				9D62CB231B67E5870035063F /* SunView.m in Sources */,
 				9D46979A1B6BCCDC000B7CC4 /* MJConst.m in Sources */,

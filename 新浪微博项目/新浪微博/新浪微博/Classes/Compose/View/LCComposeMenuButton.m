@@ -58,8 +58,8 @@
     anim.springSpeed =12;
     
     //把子控件一个添加上去 >>(时间的控制)
-    anim.beginTime = CACurrentMediaTime() +0.025 +index;
-    
+    anim.beginTime = CACurrentMediaTime() +0.025 *index;
+    NSLog(@"%f",anim.beginTime);
     
     [self pop_addAnimation:anim forKey:nil];
 
